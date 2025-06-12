@@ -7,8 +7,10 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>ステッチデザイン</title>
+
+    <title>Stitch Design</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
@@ -26,14 +28,13 @@
               <a class="text-white text-sm font-medium leading-normal" href="#">ホーム</a>
               <a class="text-white text-sm font-medium leading-normal" href="#">探索</a>
               <a class="text-white text-sm font-medium leading-normal" href="#">発見</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">サイトについて</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">概要</a>
             </div>
             <div class="flex gap-2">
               <button
-                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
               >
                 <div class="text-white" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-                  <!-- 検索アイコン -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path
                       d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
@@ -42,13 +43,12 @@
                 </div>
               </button>
               <button
-                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
               >
                 <div class="text-white" data-icon="Bookmark" data-size="20px" data-weight="regular">
-                  <!-- ブックマークアイコン -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path
-                      d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,16V161.57l-51.77-32.35a8,8,0,0,0-8.48,0L72,161.56V48a0,0,0,0,1,0,0Z"
+                      d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,16V161.57l-51.77-32.35a8,8,0,0,0-8.48,0L72,161.56V48ZM132.23,177.22a8,8,0,0,0-8.48,0L72,209.57V180.43l56-35,56,35v29.14Z"
                     ></path>
                   </svg>
                 </div>
@@ -56,7 +56,7 @@
             </div>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgdd8SPs9px32OFUbih5ol9-e0__5yqnamlkVR7iGhYNHevGUfIusGOpYYRU_iRemdNgT5s7X3ZQQ2zXbdYLbOsP-cuVlh1rFcff[...]");'
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgdd8SPs9px32OFUbih5ol9-e0__5yqnamlkVR7iGhYNHevGUfIusGOpYYRU_iRemdNgT5s7X3ZQQ2zXbdYLbOsP-cuVlh1rFcffGQeCZnwe5tyKVOQVSHGVS6yiMFWCiLDA5m-SRXPA2nRQoSjS4LbPjitY6Fq-XPKHDx_OAgDVX3x1qAVpKlDJScvcnlj42QbkZiSu0wV0UzRSxtsb0l6EnHboQX3k2hkH1OhOhSdom1gJYpdM9cS-pDE56yqiWJ1gvTQkGbJ6I8");'
             ></div>
           </div>
         </header>
@@ -65,102 +65,102 @@
             <div class="@container">
               <div class="@[480px]:p-4">
                 <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNAYmi0NkxMwlU13_cyGMoOiujWQSmH[...]");'
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNAYmi0NkxMwlU13_cyGMoOiujWQSmHQhVIFLOurIx6ZHAAz5n4F0Yzs86LIZqhYUKFKkRRy_WQGb2NQj2GItssXZAHDmIM0S8mssCZjVmhPHFCXfuZHSIpUkVl6bUxbn49XFXa1F-Rq6rA_o8-9Bp0NuwgMoZcADyvxbY0TPe0fBTHypT1wzbir9Obbg_Fp8bOujpnS_VXYwU64C3Ap-qg4X47yeT-fPFPtTJKcQcxen7E49OBE3owQVaiNn2P2Hwrt_qiwR0K4b1");'
                 >
                   <div class="flex flex-col gap-2 text-center">
                     <h1
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                     >
-                      テクノロジーの未来を発見しよう
+                      未来のテクノロジーを探る
                     </h1>
                     <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      QWERと共に発見の旅に出ましょう。最先端技術を探求し、革新的なアイデアを見つけ、テクノロジーに情熱を持つ仲間と知見を共有しましょう。
+                      QWERとともに探索の旅に出ましょう. 最先端のテクノロジーを探索し、革新的なアイデアを発見し、テクノロジーエンジニアのコミュニティと情報を共有しましょう.
                     </h2>
                   </div>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1172d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#2a8bed] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                   >
-                    <span class="truncate">探索を始める</span>
+                    <span class="truncate">探索を開始</span>
                   </button>
                 </div>
               </div>
             </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">注目のテックインサイト</h2>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">注目のテクノロジーインサイト</h2>
             <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
               <div class="flex items-stretch p-4 gap-3">
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
                   <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMsuLsAIjaGZMn1TCWzyAmf3r8Aar5jgGuuPdjaZf5rzycj3ZYSx6T92s8K_ihNVwG4eN2JgYQIBmtX8yGEUaqxcoD4Nes[...]");'
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMsuLsAIjaGZMn1TCWzyAmf3r8Aar5jgGuuPdjaZf5rzycj3ZYSx6T92s8K_ihNVwG4eN2JgYQIBmtX8yGEUaqxcoD4Nes79rfh1uR-4X4UKAoAvdwMsiTE-EeCCCztk5UMs9A1qMYoEW-CdS78REL1zY2Nli8oMXBbDDFICGbFBYOvpfmUk3WFkcZKr9wh4QwbUEe9nuGilRKzbaJyRQ-adaHKPuYF9MCs0lDSIKyGRIXiYKJB2UvI0EAdLwJakB9M_ee3PIgnp0b");'
                   ></div>
                   <div>
-                    <p class="text-white text-base font-medium leading-normal">明日を変える革新的なプログラムアイデア</p>
-                    <p class="text-[#92adc9] text-sm font-normal leading-normal">テクノロジーの未来を形作る画期的なプログラムのアイデアを探ろう。</p>
+                    <p class="text-white text-base font-medium leading-normal">未来のプログラムアイデア</p>
+                    <p class="text-[#92adc9] text-sm font-normal leading-normal">未来のテクノロジーを形成する革新的なプログラムアイデアを探索します.</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
                   <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZTK7rPrLAJ5JTyyHDhQiqM9Cup4Mq507U9-ZCtyQVjZWOlAsCm5hGAEaSf2hoqHXiZMEAcEfYKd_vOxecvKMsZ4Vxmx1[...]");'
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZTK7rPrLAJ5JTyyHDhQiqM9Cup4Mq507U9-ZCtyQVjZWOlAsCm5hGAEaSf2hoqHXiZMEAcEfYKd_vOxecvKMsZ4Vxmx18B8cawZ-OIh7nVKiMfgjSBkGoQF-A6KHa-xEYK9y869h1k4hoY90ReRxfK48z0eWhNIBE9UTQev3fA0qWZLVjezIyIYA63C1ATObXWwmA58WJFFXvtKbEmzIjKQmz1KXzIseHWXigdr9rkdDgolGM5G-vdXGhoX2krzL2VlojA2HWzfVP");'
                   ></div>
                   <div>
-                    <p class="text-white text-base font-medium leading-normal">仕事の未来：革新的なアプローチ</p>
-                    <p class="text-[#92adc9] text-sm font-normal leading-normal">テック業界における新しい働き方や革新的なアプローチを発見しよう。</p>
+                    <p class="text-white text-base font-medium leading-normal">他の人とは違う働き方の提案</p>
+                    <p class="text-[#92adc9] text-sm font-normal leading-normal">テクノロジー業界での新しい革新的な他の人とは違う働き方を発見します.</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
                   <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlrV_07SZEO19AL3hInMCAeGbwBqDOSrW65UIiu-j24VRC9pnNnAlUCM8iI-683GduytBjwkNZ_H59ZW1DWTZ2IAUvys4[...]");'
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlrV_07SZEO19AL3hInMCAeGbwBqDOSrW65UIiu-j24VRC9pnNnAlUCM8iI-683GduytBjwkNZ_H59ZW1DWTZ2IAUvys4nPpWS5lo43WWVVzijdjHhnObQfiG1IRZITLmVR4JAXv_2dK-WHRxeDTUMyReCvD3027HjeqaayAjqScIcVyOD4nfWZKaEm6cAM5noyT5Sc69KD73DLPXjxsRA7PFlJdUGERCAh49vcpCb7EwTSnn8dH_H2RpW1Wu6oPQIAuywZNKT_TRI");'
                   ></div>
                   <div>
-                    <p class="text-white text-base font-medium leading-normal">最新技術の革新を紹介</p>
-                    <p class="text-[#92adc9] text-sm font-normal leading-normal">最新の技術進歩とその世界への影響を深掘りしよう。</p>
+                    <p class="text-white text-base font-medium leading-normal">最新のテクノロジーイノベーションを解き放つ</p>
+                    <p class="text-[#92adc9] text-sm font-normal leading-normal">最新の技術的進歩とそれらが世界に及ぼす影響を深く探ります.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">カテゴリーで探す</h2>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">カテゴリーから探索</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-col gap-3 pb-3">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4YgiGY8pm4rS-I_VJ9d7E2_lVFgY-AY1lg8aBSOqh0cMnGmf6nq2fb6LQFvogAZkqmkTs5desC9VLYHiUUhOxnuVBHNUHi[...]");'
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4YgiGY8pm4rS-I_VJ9d7E2_lVFgY-AY1lg8aBSOqh0cMnGmf6nq2fb6LQFvogAZkqmkTs5desC9VLYHiUUhOxnuVBHNUHiKzu44UDzOXkTf434mQfPFYXEaLuydezuB2HJobpP9tj_U0NayLuoCT43X64knvACsn5fKFPPq8fW8vHngCel-LsQN7St6-bdGbESvqpkVl7MTW0Qtnih_vwNT0yH7282F-mpCyAUfYvolkF1oH_i8cmlpBaXsmRTg7RIFlbTebbwKx4");'
                 ></div>
                 <p class="text-white text-base font-medium leading-normal">プログラミング</p>
               </div>
               <div class="flex flex-col gap-3 pb-3">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0xV4zQ1Edtn8yE7nUObgTn3aN8jtnxLpKWgFd6X0LHX_-tflPKNSujHPEomqiG9d-y2Hkq_2wc7MYlfPsUt88U7nh21gTI[...]");'
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0xV4zQ1Edtn8yE7nUObgTn3aN8jtnxLpKWgFd6X0LHX_-tflPKNSujHPEomqiG9d-y2Hkq_2wc7MYlfPsUt88U7nh21gTIaUpci_1JRZwasevyswO6gQgwy7NGJ4dmBLoDBO1m2PzHMsspuMXUhIeqxHj8dkAyQsF4NKK1GfQ_-6y81pX9wnDG2fXLPxd6B-6Fb28BiWXmXnXa0CxQmQBlU0n4x7sUSuPROn0tXkXKnpr_wbeJl2Rw57c5jhO3B4uTFhFM4Un4q2q");'
                 ></div>
-                <p class="text-white text-base font-medium leading-normal">職場の革新</p>
+                <p class="text-white text-base font-medium leading-normal">他の人とは違う働き方</p>
               </div>
               <div class="flex flex-col gap-3 pb-3">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCcm7qS1OQ4q0unDzWmgzuNCXHOPpSXxhXdfR4gOhqT6Ttw3jRZYuOA-sAvWBhUMYDQgOFzdgYOrQnZ1jl60gOHNxqvAWmA[...]");'
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCcm7qS1OQ4q0unDzWmgzuNCXHOPpSXxhXdfR4gOhqT6Ttw3jRZYuOA-sAvWBhUMYDQgOFzdgYOrQnZ1jl60gOHNxqvAWmAW2_Va2LqZWiJp7MVLeM5UH5_LDzqc9-fIpb_419r0RTuZR5S-CM5VXurgGmPN-PLim1WgTD1IKdktJTIX_4GQ6IFivEI-fLmnhw6fdOZkjAdcenLgeTIyhvycnIn8h1nmzdzU7OH3uha0AXXVEQiZz3EpqWpWVqCGZGbdlKEE7f-Ht-");'
                 ></div>
                 <p class="text-white text-base font-medium leading-normal">データサイエンス</p>
               </div>
               <div class="flex flex-col gap-3 pb-3">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7DY88fPIsXpbcAzeDH4YHPRAr3-2xmGVTueODk1_jQqdHgvHakyR1IytlOhtmKN10OMFVVO8HLiQpbem1ZIFKk0XF2fYWi[...]");'
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7DY88fPIsXpbcAzeDH4YHPRAr3-2xmGVTueODk1_jQqdHgvHakyR1IytlOhtmKN10OMFVVO8HLiQpbem1ZIFKk0XF2fYWitHGs8ouC2Mlf2Yv8PghyRmR7yPgR51EOC4lp-CfHxBmLs1vjy0VQp2ygL_beecQ1agFAVPUzdZV3YBP9RpI-zL3yOO3gAoJVfHIIuvNyiyrY83f3mY_nehoZmAU6XTeRR3zciQMJynPa1BS-BJ2zw9znulhhq-4SJxMEX-TeOiwCJiV");'
                 ></div>
-                <p class="text-white text-base font-medium leading-normal">新興技術</p>
+                <p class="text-white text-base font-medium leading-normal">新規テクノロジー</p>
               </div>
             </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">QWERテックコミュニティに参加しよう</h2>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">QWERテクノロジーコミュニティに参加</h2>
             <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
-              他のテック愛好者とつながり、発見を共有し、進化し続けるテクノロジーの世界を一緒に探求しましょう。
+              テクノロジーエンジニアと交流し、発見を共有し、常に進化するテクノロジーの世界を探索するように他の人を勺激します.
             </p>
             <div class="flex px-4 py-3 justify-center">
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1172d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#2a8bed] text-white text-sm font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">今すぐ参加</span>
+                <span class="truncate">今すぐに参加</span>
               </button>
             </div>
           </div>
@@ -169,44 +169,41 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="#">サイトについて</a>
+                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="#">概要</a>
                 <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="#">お問い合わせ</a>
-                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="#">利用規約</a>
+                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="#">サービス規約</a>
                 <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="#">プライバシーポリシー</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="#">
                   <div class="text-[#92adc9]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                    <!-- Twitterアイコン -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-[...]"
+                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
                       ></path>
                     </svg>
                   </div>
                 </a>
                 <a href="#">
                   <div class="text-[#92adc9]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                    <!-- Instagramアイコン -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56[...]" 
+                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
                       ></path>
                     </svg>
                   </div>
                 </a>
                 <a href="#">
                   <div class="text-[#92adc9]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-                    <!-- Facebookアイコン -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0[...]" 
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
                       ></path>
                     </svg>
                   </div>
                 </a>
               </div>
-              <p class="text-[#92adc9] text-base font-normal leading-normal">©2024 QWER. 全著作権所有。</p>
+              <p class="text-[#92adc9] text-base font-normal leading-normal">@2024 QWER. 無断転載を禁ず。</p>
             </footer>
           </div>
         </footer>
