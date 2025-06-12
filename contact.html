@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>お問い合わせ - QWER</title>
+  <link rel="stylesheet" href="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+</head>
+<body class="bg-[#111a22] text-white" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+  <header class="border-b border-[#233648] px-10 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <span class="font-bold text-lg">QWER</span>
+      <nav class="flex gap-6">
+        <a href="index.html">ホーム</a>
+        <a href="explore.html">探索</a>
+        <a href="discover.html">発見</a>
+        <a href="about.html">概要</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold mb-6">お問い合わせ</h1>
+    <form class="max-w-xl mx-auto bg-[#233648] p-6 rounded-lg">
+      <label class="block mb-4">
+        <span class="block mb-1">お名前</span>
+        <input type="text" class="w-full rounded p-2 text-black" required>
+      </label>
+      <label class="block mb-4">
+        <span class="block mb-1">メールアドレス</span>
+        <input type="email" class="w-full rounded p-2 text-black" required>
+      </label>
+      <label class="block mb-4">
+        <span class="block mb-1">お問い合わせ内容</span>
+        <textarea class="w-full rounded p-2 text-black" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="bg-[#2a8bed] rounded px-6 py-2 font-bold">送信</button>
+    </form>
+  </main>
+</body>
+</html>
