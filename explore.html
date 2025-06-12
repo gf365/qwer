@@ -1,25 +1,78 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>探索 - QWER</title>
-  <link rel="stylesheet" href="https://cdn.tailwindcss.com?plugins=forms,container-queries">
-</head>
-<body class="bg-[#111a22] text-white" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-  <header class="border-b border-[#233648] px-10 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <span class="font-bold text-lg">QWER</span>
-      <nav class="flex gap-6">
-        <a href="index.html">ホーム</a>
-        <a href="explore.html" class="underline">探索</a>
-        <a href="discover.html">発見</a>
-        <a href="about.html">概要</a>
-      </nav>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+    <title>探索 - QWER</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#111a22] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- ヘッダーここから（index.htmlと同じ） -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] px-10 py-3">
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+            </div>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">QWER</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-white text-sm font-medium leading-normal" href="./index.html">ホーム</a>
+              <a class="text-white text-sm font-medium leading-normal underline" href="./explore.html">探索</a>
+              <a class="text-white text-sm font-medium leading-normal" href="./discover.html">発見</a>
+              <a class="text-white text-sm font-medium leading-normal" href="./about.html">概要</a>
+            </div>
+            <!-- 検索やブックマーク等のボタン部分はお好みでコピペ -->
+          </div>
+        </header>
+        <!-- ヘッダーここまで -->
+
+        <!-- メインコンテンツここから -->
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <h1 class="text-white text-3xl font-bold mb-6">探索</h1>
+            <p class="text-[#92adc9] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              最新のテクノロジーリソースや記事を一覧で探索できます。
+            </p>
+            <!-- ここにコンテンツ一覧を追加できます -->
+          </div>
+        </div>
+        <!-- メインコンテンツここまで -->
+
+        <!-- フッターここから（index.htmlと同じ） -->
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./about.html">概要</a>
+                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./contact.html">お問い合わせ</a>
+                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./terms.html">サービス規約</a>
+                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./privacy.html">プライバシーポリシー</a>
+              </div>
+              <div class="flex flex-wrap justify-center gap-4">
+                <a href="#"><div class="text-[#92adc9]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
+                  <!-- TwitterアイコンSVG -->
+                </div></a>
+                <a href="#"><div class="text-[#92adc9]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
+                  <!-- InstagramアイコンSVG -->
+                </div></a>
+                <a href="#"><div class="text-[#92adc9]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
+                  <!-- FacebookアイコンSVG -->
+                </div></a>
+              </div>
+              <p class="text-[#92adc9] text-base font-normal leading-normal">@2024 QWER. 無断転載を禁ず。</p>
+            </footer>
+          </div>
+        </footer>
+        <!-- フッターここまで -->
+      </div>
     </div>
-  </header>
-  <main class="container mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold mb-6">探索</h1>
-    <p>最新のテクノロジーリソースや記事を一覧で探索できます。</p>
-    <!-- ここにコンテンツ一覧を追加できます -->
-  </main>
-</body>
+  </body>
 </html>
