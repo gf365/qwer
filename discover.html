@@ -62,26 +62,33 @@
             <div class="flex flex-col gap-2 text-center mb-8">
               <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">発見</h1>
               <h2 class="text-white text-base font-normal leading-normal">おすすめのテクノロジーやユーザー投稿を紹介します。</h2>
+              <p class="text-[#92adc9] text-sm font-normal leading-normal">より幅広い記事やリソースを検索したい場合は <a href="./explore.html" class="underline">探索ページ</a> をご利用ください。</p>
             </div>
             <!-- index.htmlのようなおすすめピックアップ例 -->
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">ピックアップ</h2>
             <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <div class="flex items-stretch p-4 gap-3">
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=960&q=80");'
-                  ></div>
+                  <div class="w-full rounded-xl overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=960&q=80"
+                      alt="未来のプログラムアイデア"
+                      class="w-full aspect-video object-cover"
+                    />
+                  </div>
                   <div>
                     <p class="text-white text-base font-medium leading-normal">未来のプログラムアイデア</p>
                     <p class="text-[#92adc9] text-sm font-normal leading-normal">未来のテクノロジーを形成する革新的なプログラムアイデアを探索します.</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=960&q=80");'
-                  ></div>
+                  <div class="w-full rounded-xl overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=960&q=80"
+                      alt="他の人とは違う働き方の提案"
+                      class="w-full aspect-video object-cover"
+                    />
+                  </div>
                   <div>
                     <p class="text-white text-base font-medium leading-normal">他の人とは違う働き方の提案</p>
                     <p class="text-[#92adc9] text-sm font-normal leading-normal">テクノロジー業界での新しい革新的な他の人とは違う働き方を発見します.</p>
@@ -93,17 +100,23 @@
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">カテゴリーから探索</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=500&q=80");'
-                ></div>
+                <div class="w-full rounded-xl overflow-hidden aspect-square">
+                  <img
+                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=500&q=80"
+                    alt="プログラミング"
+                    class="w-full aspect-square object-cover"
+                  />
+                </div>
                 <p class="text-white text-base font-medium leading-normal">プログラミング</p>
               </div>
               <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=500&q=80");'
-                ></div>
+                <div class="w-full rounded-xl overflow-hidden aspect-square">
+                  <img
+                    src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=500&q=80"
+                    alt="他の人とは違う働き方"
+                    class="w-full aspect-square object-cover"
+                  />
+                </div>
                 <p class="text-white text-base font-medium leading-normal">他の人とは違う働き方</p>
               </div>
             </div>
