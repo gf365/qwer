@@ -17,7 +17,47 @@
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#111a22] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
-        <header>{% include header.html %}</header>
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] px-10 py-3" role="banner">
+  <div class="flex items-center gap-4 text-white">
+    <a href="./index.html" class="flex items-center gap-4 text-white" aria-label="QWER ホーム">
+      <div class="size-4" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+      </div>
+      <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">QWER</h2>
+    </a>
+  </div>
+  <div class="flex flex-1 justify-end gap-8">
+    <nav aria-label="Main Navigation" class="flex items-center">
+      <ul class="flex items-center gap-9 m-0 p-0 list-none">
+        <li><a class="text-white text-sm font-medium leading-normal" href="./index.html">ホーム</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="./explore.html">探索</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="./discover.html">発見</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="./about.html">概要</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="./signin.html">サインイン</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="./signup.html">サインアップ</a></li>
+      </ul>
+    </nav>
+    <div class="flex items-center gap-2">
+      <form role="search" action="./search.html" method="get" class="flex items-center gap-2" aria-label="サイト内検索">
+        <label for="search-q" class="sr-only">検索</label>
+        <input id="search-q" name="q" type="search" placeholder="検索" class="hidden md:inline-block" />
+        <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5" aria-label="検索">
+          <div class="text-white" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+          </div>
+        </button>
+      </form>
+      <div class="flex gap-2">
+        <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5" aria-label="ブックマーク">
+          <div class="text-white" data-icon="Bookmark" data-size="20px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,16V161.57l-51.77-32.35a8,8,0,0,0-8.48,0L72,161.56V48ZM132.23,177.22a8,8,0,0,0-8.48,0L72,209.57V180.43l56-35,56,35v29.14Z"></path></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgdd8SPs9px32OFUbih5ol9-e0__5yqnamlkVR7iGhYNHevGUfIusGOpYYRU_iRemdNgT5s7X3ZQQ2zXbdYLbOsP-cuVlh1rFcffGQeCZnwe5tyKVOQVSHGVS6yiMFWCiLDA5m-SRXPA2nRQoSjS4LbPjitY6Fq-XPKHDx_OAgDVX3x1qAVpKlDJScvcnlj42QbkZiSu0wV0UzRSxtsb0l6EnHboQX3k2hkH1OhOhSdom1gJYpdM9cS-pDE56yqiWJ1gvTQkGbJ6I8");'></div>
+  </div>
+</header>
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="@container">
