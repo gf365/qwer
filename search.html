@@ -15,6 +15,149 @@
 
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      .search-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .search-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .search-form__control {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .search-input {
+        border-radius: 999px;
+        border: 1px solid #cbd5f5;
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+        background: #fff;
+      }
+      .search-input:focus {
+        outline: 2px solid #0f62fe;
+        outline-offset: 2px;
+      }
+      .search-button {
+        border-radius: 999px;
+        border: none;
+        padding: 0.9rem 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(135deg, #0f62fe 0%, #5d42ff 100%);
+        cursor: pointer;
+      }
+      .search-button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      .search-hint {
+        font-size: 0.9rem;
+        color: #64748b;
+      }
+      .results-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .results-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        color: #475569;
+        font-size: 0.95rem;
+      }
+      .result-status {
+        font-weight: 600;
+        color: #0f172a;
+      }
+      .results-grid {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 768px) {
+        .results-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      .result-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .result-card:hover {
+        border-color: #0f62fe;
+        transform: translateY(-2px);
+      }
+      .result-link {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+      }
+      .result-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: #1e293b;
+      }
+      .result-badge {
+        padding: 0.1rem 0.6rem;
+        border-radius: 999px;
+        background: #edf2ff;
+        color: #4338ca;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .result-url {
+        color: #64748b;
+        font-size: 0.75rem;
+      }
+      .result-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 0;
+        color: #0f172a;
+      }
+      .result-snippet {
+        font-size: 0.95rem;
+        color: #475569;
+        line-height: 1.6;
+      }
+      .result-snippet mark {
+        background: #fff1a6;
+        color: #0f172a;
+        border-radius: 0.2rem;
+        padding: 0 0.15rem;
+      }
+      .result-footer {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+        color: #0f62fe;
+        font-weight: 600;
+      }
+      .empty-state {
+        text-align: center;
+        padding: 2rem;
+        color: #64748b;
+      }
+    </style>
   </head>
   <body>
     <div class="page-shell">
@@ -22,14 +165,40 @@
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
-            <section class="hero-panel">
-              <p class="section-eyebrow">Search</p>
-              <h1 id="search-title">検索結果</h1>
-              <p>学習ログ / テンプレ / ポリシーなど、QWER Atlas内のコンテンツを横断検索します。タグやカテゴリも含めて全文検索できるため、過去のナレッジへすばやく到達できます。</p>
+            <section class="hero-panel search-hero">
+              <div>
+                <p class="section-eyebrow">Search</p>
+                <h1>全文検索</h1>
+                <p>
+                  QWER Atlas内の学習ログ、テンプレート、利用規約、ポリシーなどを横断検索します。タグやカテゴリ、本文の一部でも検索できるため、
+                  過去のナレッジに素早くアクセスできます。
+                </p>
+              </div>
+              <form id="search-form" class="search-form" role="search">
+                <div class="search-form__control">
+                  <input
+                    type="search"
+                    id="search-input"
+                    name="q"
+                    class="search-input"
+                    placeholder="例：LLM、UEFN、プライバシー"
+                    aria-label="検索ワードを入力"
+                    autocomplete="off"
+                  />
+                  <button class="search-button" type="submit" id="search-submit">検索</button>
+                </div>
+                <p class="search-hint">⚡ タグ / カテゴリ / 本文をすべて対象にしています。スペースで複数キーワード検索も可能です。</p>
+              </form>
             </section>
             <section class="surface-card section-stack">
-              <h2 class="section-heading">結果一覧</h2>
-              <div id="search-results" class="section-stack" aria-live="polite"></div>
+              <div class="results-header">
+                <h2 class="section-heading">結果一覧</h2>
+                <div class="results-meta">
+                  <span id="search-title" class="result-status">検索ワードを入力してください</span>
+                  <span id="search-status"></span>
+                </div>
+              </div>
+              <div id="search-results" class="results-grid" aria-live="polite"></div>
             </section>
           </div>
         </main>
@@ -38,11 +207,15 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('search-input');
+        const searchForm = document.getElementById('search-form');
         const searchTitle = document.getElementById('search-title');
+        const searchStatus = document.getElementById('search-status');
         const resultsContainer = document.getElementById('search-results');
-        const query = new URLSearchParams(window.location.search).get('q');
+        const searchButton = document.getElementById('search-submit');
+        const params = new URLSearchParams(window.location.search);
+        const initialQuery = params.get('q')?.trim() || '';
 
-        // 検索対象のファイルリスト (手動で定義)
         const searchableFiles = [
           './index.html',
           './about.html',
@@ -56,70 +229,177 @@
           './terms.html'
         ];
 
-        if (query) {
-          searchTitle.textContent = `「${query}」の検索結果`;
-          resultsContainer.innerHTML = '<p class="section-text">検索中...</p>';
-          search(query, searchableFiles, resultsContainer);
+        if (initialQuery) {
+          searchInput.value = initialQuery;
+          runSearch(initialQuery);
         } else {
-          searchTitle.textContent = '検索語を入力してください';
-          resultsContainer.innerHTML = '<p class="section-text">検索バーからキーワードを入力してください。</p>';
+          resultsContainer.innerHTML =
+            '<div class="empty-state">検索バーにキーワードを入力すると結果が表示されます。</div>';
         }
-      });
 
-      async function search(query, files, container) {
-        const results = [];
-        
-        for (const file of files) {
-          try {
-            const response = await fetch(file);
-            if (!response.ok) {
-              console.error(`Error fetching ${file}: ${response.statusText}`);
-              continue;
-            }
-            const html = await response.text();
-            
-            // 簡単な文字列検索
-            if (html.toLowerCase().includes(query.toLowerCase())) {
-              // DOMをパースしてタイトルを取得
+        searchForm.addEventListener('submit', event => {
+          event.preventDefault();
+          const query = searchInput.value.trim();
+          if (!query) {
+            searchTitle.textContent = '検索ワードを入力してください';
+            searchStatus.textContent = '';
+            resultsContainer.innerHTML =
+              '<div class="empty-state">検索ワードを入力すると、全文検索が開始されます。</div>';
+            return;
+          }
+          const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
+          window.history.replaceState({}, '', newUrl);
+          runSearch(query);
+        });
+
+        async function runSearch(query) {
+          searchTitle.textContent = `「${query}」の検索結果`;
+          searchStatus.textContent = '検索中...';
+          searchButton.disabled = true;
+          resultsContainer.innerHTML =
+            '<div class="empty-state">インデックスを走査しています...</div>';
+
+          const results = await search(query, searchableFiles);
+          displayResults(results, query);
+          searchButton.disabled = false;
+        }
+
+        async function search(query, files) {
+          const results = [];
+          const q = query.toLowerCase();
+
+          for (const file of files) {
+            try {
+              const response = await fetch(file);
+              if (!response.ok) {
+                console.error(`Error fetching ${file}: ${response.statusText}`);
+                continue;
+              }
+              const html = await response.text();
+              const plainHtml = html.toLowerCase();
+
+              if (!plainHtml.includes(q)) continue;
+
               const parser = new DOMParser();
               const doc = parser.parseFromString(html, 'text/html');
-              const title = doc.querySelector('title')?.textContent || file;
-              
-              results.push({ file, title });
+              const title = doc.querySelector('title')?.textContent?.trim() || file;
+              const description =
+                doc.querySelector('meta[name="description"]')?.content?.trim() || '';
+              const snippet = createSnippet(doc.body?.textContent || '', query);
+              results.push({
+                file,
+                title,
+                description,
+                snippet,
+                badge: getBadge(file)
+              });
+            } catch (error) {
+              console.error(`Error processing ${file}:`, error);
             }
-          } catch (error) {
-            console.error(`Error processing ${file}:`, error);
           }
-        }
-        
-        displayResults(results, container);
-      }
-
-      function displayResults(results, container) {
-        container.innerHTML = ''; // 古い結果をクリア
-
-        if (results.length === 0) {
-          container.innerHTML = '<p class="section-text">一致する結果は見つかりませんでした。</p>';
-          return;
+          return results;
         }
 
-        results.forEach(result => {
-          const card = document.createElement('a');
-          card.href = result.file;
-          card.className = 'surface-card';
+        function displayResults(results, query) {
+          resultsContainer.innerHTML = '';
 
-          const title = document.createElement('h3');
-          title.textContent = result.title;
-          card.appendChild(title);
+          if (results.length === 0) {
+            searchStatus.textContent = '一致したページはありませんでした。';
+            resultsContainer.innerHTML =
+              '<div class="empty-state">条件を変えて再度検索してみてください。</div>';
+            return;
+          }
 
-          const description = document.createElement('p');
-          description.className = 'section-text';
-          description.textContent = 'クリックして詳細ページを表示';
-          card.appendChild(description);
+          searchStatus.textContent = `${results.length}件ヒット`;
+          const fragment = document.createDocumentFragment();
 
-          container.appendChild(card);
-        });
-      }
+          results.forEach(result => {
+            const card = document.createElement('article');
+            card.className = 'result-card';
+
+            const link = document.createElement('a');
+            link.href = result.file;
+            link.className = 'result-link';
+            link.setAttribute('aria-label', `${result.title}のページを開く`);
+
+            const meta = document.createElement('div');
+            meta.className = 'result-meta';
+
+            const badge = document.createElement('span');
+            badge.className = 'result-badge';
+            badge.textContent = result.badge;
+
+            const url = document.createElement('span');
+            url.className = 'result-url';
+            url.textContent = result.file.replace('./', '/');
+
+            meta.appendChild(badge);
+            meta.appendChild(url);
+
+            const title = document.createElement('h3');
+            title.className = 'result-title';
+            title.textContent = result.title;
+
+            const snippet = document.createElement('p');
+            snippet.className = 'result-snippet';
+            snippet.innerHTML = highlightQuery(result.snippet || result.description, query);
+
+            const footer = document.createElement('div');
+            footer.className = 'result-footer';
+            footer.innerHTML = '詳細を表示 <span aria-hidden="true">↗</span>';
+
+            link.appendChild(meta);
+            link.appendChild(title);
+            link.appendChild(snippet);
+            link.appendChild(footer);
+            card.appendChild(link);
+            fragment.appendChild(card);
+          });
+
+          resultsContainer.appendChild(fragment);
+        }
+
+        function createSnippet(text, query) {
+          const condensed = text.replace(/\s+/g, ' ').trim();
+          if (!condensed) return '';
+
+          const lowerText = condensed.toLowerCase();
+          const lowerQuery = query.toLowerCase();
+          const index = lowerText.indexOf(lowerQuery);
+
+          if (index === -1) return condensed.slice(0, 140) + (condensed.length > 140 ? '…' : '');
+
+          const start = Math.max(0, index - 70);
+          const end = Math.min(condensed.length, index + query.length + 70);
+          const prefix = start > 0 ? '…' : '';
+          const suffix = end < condensed.length ? '…' : '';
+          return `${prefix}${condensed.slice(start, end)}${suffix}`;
+        }
+
+        function highlightQuery(text, query) {
+          if (!text) return '';
+          const safeText = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const regex = new RegExp(`(${escaped})`, 'gi');
+          return safeText.replace(regex, '<mark>$1</mark>');
+        }
+
+        function getBadge(file) {
+          const map = {
+            './index.html': 'Home',
+            './explore.html': 'Log',
+            './discover.html': 'Template',
+            './join.html': 'Archive',
+            './about.html': 'About',
+            './contact.html': 'Contact',
+            './privacy.html': 'Policy',
+            './terms.html': 'Policy',
+            './signin.html': 'Auth',
+            './signup.html': 'Auth'
+          };
+          return map[file] || 'Page';
+        }
+      });
     </script>
   </body>
 </html>
