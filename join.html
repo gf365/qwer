@@ -12,53 +12,45 @@
     />
     <title>コミュニティ参加リクエスト - QWER</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#111a22] dark:group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="page-shell">
       <div class="layout-container flex h-full grow flex-col">
-        <header>{% include header.html %}</header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <h1 class="text-white text-3xl font-bold mb-6">コミュニティ参加リクエスト</h1>
-            <p class="text-[#92adc9] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
-              QWERコミュニティへの参加をご希望の方は、以下のフォームに必要事項をご入力ください。
-            </p>
-            <form class="max-w-xl mx-auto bg-[#233648] p-6 rounded-lg">
-              <label class="block mb-4">
-                <span class="block mb-1">お名前</span>
-                <input type="text" class="w-full rounded p-2 text-black" required />
-              </label>
-              <label class="block mb-4">
-                <span class="block mb-1">メールアドレス</span>
-                <input type="email" class="w-full rounded p-2 text-black" required />
-              </label>
-              <label class="block mb-4">
-                <span class="block mb-1">興味のある分野</span>
-                <input type="text" class="w-full rounded p-2 text-black" />
-              </label>
-              <button type="submit" class="bg-[#2a8bed] rounded px-6 py-2 font-bold">送信</button>
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <h1>コミュニティ参加リクエスト</h1>
+              <p>
+                QWERコミュニティへの参加をご希望の方は、以下のフォームに必要事項をご入力ください。参加承認後にSlackとDiscordの招待URLをお送りします。
+                すべてのページが白ベースで統一され、快適に最新情報を追えます。
+              </p>
+            </section>
+
+            <form class="surface-card form-card">
+              <div>
+                <label for="join-name">お名前</label>
+                <input id="join-name" type="text" name="name" required />
+              </div>
+              <div>
+                <label for="join-email">メールアドレス</label>
+                <input id="join-email" type="email" name="email" required />
+              </div>
+              <div>
+                <label for="join-interest">興味のある分野</label>
+                <input id="join-interest" type="text" name="interest" placeholder="例: AI研究、エッジコンピューティング" />
+              </div>
+              <div>
+                <label for="join-message">ひとこと</label>
+                <textarea id="join-message" name="message" placeholder="参加したい理由ややりたいことがあればお聞かせください。"></textarea>
+              </div>
+              <button type="submit" class="button-primary">送信</button>
             </form>
           </div>
-        </div>
-        <footer class="flex justify-center">
-          <div class="flex max-w-[960px] flex-1 flex-col">
-            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./about.html">概要</a>
-                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./contact.html">お問い合わせ</a>
-                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./terms.html">サービス規約</a>
-                <a class="text-[#92adc9] text-base font-normal leading-normal min-w-40" href="./privacy.html">プライバシーポリシー</a>
-              </div>
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="#"><div class="text-[#92adc9]" data-icon="TwitterLogo" data-size="24px" data-weight="regular"></div></a>
-                <a href="#"><div class="text-[#92adc9]" data-icon="InstagramLogo" data-size="24px" data-weight="regular"></div></a>
-                <a href="#"><div class="text-[#92adc9]" data-icon="FacebookLogo" data-size="24px" data-weight="regular"></div></a>
-              </div>
-              <p class="text-[#92adc9] text-base font-normal leading-normal">@2024 QWER. 無断転載を禁ず。</p>
-            </footer>
-          </div>
-        </footer>
+        </main>
+        {% include footer.html %}
       </div>
     </div>
   </body>
