@@ -120,90 +120,104 @@
 
       </div>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const searchTitle = document.getElementById('search-title');
-        const resultsContainer = document.getElementById('search-results');
-        const query = new URLSearchParams(window.location.search).get('q');
+    <!-- 認証状態管理 -->
+    <script type="module" src="./auth-ui.js"></script>
+    <!-- 検索スクリプト -->
+    <script type="module">
+      const searchTitleEl = document.getElementById('search-title');
+      const resultsContainer = document.getElementById('search-results');
+      const query = new URLSearchParams(window.location.search).get('q');
 
-        // 検索対象のファイルリスト (手動で定義)
-        const searchableFiles = [
-          './index.html',
-          './about.html',
-          './contact.html',
-          './discover.html',
-          './explore.html',
-          './join.html',
-          './privacy.html',
-          './signin.html',
-          './signup.html',
-          './terms.html'
-        ];
+      // 検索対象のファイルリスト
+      const searchableFiles = [
+        { path: './index.html', title: 'ホーム' },
+        { path: './about.html', title: '概要' },
+        { path: './contact.html', title: 'お問い合わせ' },
+        { path: './discover.html', title: '発見' },
+        { path: './explore.html', title: '探索' },
+        { path: './join.html', title: 'コミュニティ参加リクエスト' },
+        { path: './privacy.html', title: 'プライバシーポリシー' },
+        { path: './terms.html', title: 'サービス規約' },
+      ];
 
-        if (query) {
-          searchTitle.textContent = `「${query}」の検索結果`;
-          resultsContainer.innerHTML = '<p class="section-text">検索中...</p>';
-          search(query, searchableFiles, resultsContainer);
-        } else {
-          searchTitle.textContent = '検索語を入力してください';
-          resultsContainer.innerHTML = '<p class="section-text">検索バーからキーワードを入力してください。</p>';
-        }
-      });
+      function createSnippet(text, query) {
+        const index = text.toLowerCase().indexOf(query.toLowerCase());
+        if (index === -1) return text.substring(0, 100) + '...';
 
-      async function search(query, files, container) {
-        const results = [];
-        
-        for (const file of files) {
-          try {
-            const response = await fetch(file);
-            if (!response.ok) {
-              console.error(`Error fetching ${file}: ${response.statusText}`);
-              continue;
-            }
-            const html = await response.text();
-            
-            // 簡単な文字列検索
-            if (html.toLowerCase().includes(query.toLowerCase())) {
-              // DOMをパースしてタイトルを取得
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              const title = doc.querySelector('title')?.textContent || file;
-              
-              results.push({ file, title });
-            }
-          } catch (error) {
-            console.error(`Error processing ${file}:`, error);
-          }
-        }
-        
-        displayResults(results, container);
+        const start = Math.max(0, index - 30);
+        const end = Math.min(text.length, index + query.length + 70);
+        let snippet = text.substring(start, end);
+
+        if (start > 0) snippet = '...' + snippet;
+        if (end < text.length) snippet = snippet + '...';
+
+        // キーワードをハイライト
+        const regex = new RegExp(`(${query})`, 'gi');
+        return snippet.replace(regex, '<mark class="bg-yellow-200 px-1 rounded">$1</mark>');
       }
 
-      function displayResults(results, container) {
-        container.innerHTML = ''; // 古い結果をクリア
+      async function performSearch() {
+        if (!query || query.trim() === '') {
+          searchTitleEl.textContent = '検索キーワードを入力してください';
+          resultsContainer.innerHTML = '<p class="section-text">ヘッダーの検索バーからキーワードを入力して検索できます。</p>';
+          return;
+        }
 
+        searchTitleEl.textContent = `「${query}」の検索結果`;
+        resultsContainer.innerHTML = '<p class="section-text">検索中...</p>';
+
+        const searchPromises = searchableFiles.map(async (file) => {
+          try {
+            const response = await fetch(file.path);
+            if (!response.ok) return null;
+
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            // 検索対象の要素からテキストを抽出
+            const content = Array.from(doc.querySelectorAll('h1, h2, h3, p, li'))
+              .map(el => el.textContent.trim())
+              .join(' ');
+
+            if (content.toLowerCase().includes(query.toLowerCase())) {
+              return {
+                path: file.path,
+                title: doc.querySelector('title')?.textContent || file.title,
+                snippet: createSnippet(content, query),
+              };
+            }
+          } catch (error) {
+            console.error(`Error processing ${file.path}:`, error);
+          }
+          return null;
+        });
+
+        const allResults = await Promise.all(searchPromises);
+        const results = allResults.filter(r => r !== null);
+
+        displayResults(results);
+      }
+
+      function displayResults(results) {
+        resultsContainer.innerHTML = ''; // 結果をクリア
         if (results.length === 0) {
-          container.innerHTML = '<p class="section-text">一致する結果は見つかりませんでした。</p>';
+          resultsContainer.innerHTML = '<p class="section-text">キーワードに一致するページは見つかりませんでした。</p>';
           return;
         }
 
         results.forEach(result => {
-          const card = document.createElement('a');
-          card.href = result.file;
-          card.className = 'surface-card';
-
-          const title = document.createElement('h3');
-          title.textContent = result.title;
-          card.appendChild(title);
-
-          const description = document.createElement('p');
-          description.className = 'section-text';
-          description.textContent = 'クリックして詳細ページを表示';
-          card.appendChild(description);
-
-          container.appendChild(card);
+          const resultCard = `
+            <a href="${result.path}" class="block p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-slate-200">
+              <h3 class="text-lg font-bold text-slate-800">${result.title}</h3>
+              <p class="mt-2 text-sm text-slate-600">${result.snippet}</p>
+            </a>
+          `;
+          resultsContainer.insertAdjacentHTML('beforeend', resultCard);
         });
       }
+
+      performSearch();
     </script>
   </body>
 </html>
