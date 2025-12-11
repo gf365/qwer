@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>発見 - QWER</title>
+    <title>テンプレート - QWER Atlas</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       rel="stylesheet"
@@ -22,62 +22,91 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <h1>発見</h1>
+              <p class="section-eyebrow">Template Studio</p>
+              <h1>学習ログのテンプレート</h1>
               <p>
-                編集チームとコミュニティメンバーが厳選したトピックを紹介します。新しい働き方やプロジェクトをすばやくキャッチアップしたいときにおすすめ。
-                さらにリソースを深堀りしたい場合は <a class="underline text-[#2563eb]" href="./explore.html">探索ページ</a> をどうぞ。
+                「今日学んだこと」「背景」「学んだ内容」「気づき」「今後の課題」の5ブロックを即時挿入するテンプレートをカテゴリ別に用意しています。テンプレートはMarkdownでもリッチエディタでも使用でき、投稿画面からボタン1つで呼び出せます。
               </p>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">ピックアップ</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <div class="rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=960&q=80" alt="未来のプログラムアイデア" />
-                  </div>
-                  <h3>未来のプログラムアイデア</h3>
-                  <p>次世代をつくるプログラム設計と、導入事例をまとめたディープダイブ記事。テンプレートもダウンロード可能です。</p>
-                </article>
-                <article class="surface-card">
-                  <div class="rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=960&q=80" alt="他の人とは違う働き方の提案" />
-                  </div>
-                  <h3>他の人とは違う働き方の提案</h3>
-                  <p>フルリモートでのチーム設計から、海外タイムゾーン連携のコツまで。実践者インタビュー付きで読みやすく整理しました。</p>
-                </article>
+              <div class="flex gap-3 justify-center flex-wrap">
+                <a class="button-primary" href="./signup.html">テンプレを追加</a>
+                <a class="button-secondary" href="./explore.html">ログに適用</a>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">カテゴリーから探索</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <div class="rounded-2xl overflow-hidden aspect-square">
-                    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=600&q=80" alt="プログラミング" />
-                  </div>
-                  <h3>プログラミング</h3>
-                  <p>最新のフレームワーク比較、ベストプラクティス実装集などをセットに。</p>
-                </article>
-                <article class="surface-card">
-                  <div class="rounded-2xl overflow-hidden aspect-square">
-                    <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=600&q=80" alt="他の人とは違う働き方" />
-                  </div>
-                  <h3>他の人とは違う働き方</h3>
-                  <p>場所や時間にとらわれない働き方、ポートフォリオワークのTipsなどを紹介。</p>
-                </article>
-              </div>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">QWERテクノロジーコミュニティに参加</h2>
+              <h2 class="section-heading">ベーステンプレ</h2>
               <p class="section-text">
-                テクノロジーエンジニア同士で発見を共有し、常に進化する技術の世界を共に探求しましょう。サインアップするとSlack/Discordの招待リンクが届きます。
+                依頼書に記載した5ブロックをそのまま反映。Markdown記法での挿入例を以下に記載しています。
               </p>
-              <div class="flex gap-3 flex-wrap">
-                <a class="button-secondary" href="./signin.html">サインイン</a>
-                <a class="button-primary" href="./signup.html">サインアップ</a>
+              <pre class="detail-article" style="background:#0b1221;color:#f8fbff;border-radius:24px;overflow:auto;"><code># 今日学んだこと
+- LLMのAPIを使ったタグ自動生成の最適化を試した
+
+## 背景 / きっかけ
+最小限の人手でタグ運用を回す必要があったため調査。
+
+## 学んだ内容
+- OpenAI Functionsでのスキーマ定義
+- タグの信頼度スコアリング
+
+## 気づき
+スキーマの粒度を3~5個に絞ると迷いが減った。
+
+## 今後の課題
+英語ログのタグも自動生成できるようにする。</code></pre>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">カテゴリ別テンプレート</h2>
+              <div class="template-list">
+                <article class="template-card">
+                  <span class="pill">AI / LLM</span>
+                  <h3>検証ログテンプレ</h3>
+                  <ul>
+                    <li>モデル / トークン / コスト欄を事前に用意。</li>
+                    <li>「失敗例」ブロックを標準装備し再現性を担保。</li>
+                    <li>タグ候補：#prompt, #evaluation, #agent。</li>
+                  </ul>
+                </article>
+                <article class="template-card">
+                  <span class="pill">DX</span>
+                  <h3>伴走レポートテンプレ</h3>
+                  <ul>
+                    <li>「現状」「介入」「成果」「次の打ち手」を段階管理。</li>
+                    <li>週次報告PDFにそのまま転用できます。</li>
+                    <li>タグ候補：#kpi #workflow #consulting。</li>
+                  </ul>
+                </article>
+                <article class="template-card">
+                  <span class="pill">UEFN / プログラミング</span>
+                  <h3>実装メモテンプレ</h3>
+                  <ul>
+                    <li>コードブロックとスクリーンショット欄をセット。</li>
+                    <li>「再現ステップ」ブロックで将来の自分に指示。</li>
+                    <li>タグ候補：#verse #blueprint #performance。</li>
+                  </ul>
+                </article>
+                <article class="template-card">
+                  <span class="pill">英語学習 / 読書ログ</span>
+                  <h3>インプット記録テンプレ</h3>
+                  <ul>
+                    <li>単語・フレーズ・気づきメモ欄を分離。</li>
+                    <li>公開/非公開の切り替えを簡単にするチェック付き。</li>
+                    <li>タグ候補：#reading #speaking #vocabulary。</li>
+                  </ul>
+                </article>
               </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">テンプレ自動適用</h2>
+              <p class="section-text">
+                投稿画面の「テンプレ挿入」ボタンに、上記テンプレートを割り当て済み。ショートカットキー（⌘+T）またはモバイルのクイックメニューからも呼び出せます。
+              </p>
+              <ul class="section-text list-disc pl-6">
+                <li>テンプレ修正はバージョン管理され、過去ログを壊さず改良可能。</li>
+                <li>テンプレごとに公開/非公開の初期値を設定できます。</li>
+                <li>タグ/カテゴリのデフォルトもテンプレ上で定義できます。</li>
+              </ul>
             </section>
           </div>
         </main>

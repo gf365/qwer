@@ -10,7 +10,7 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>プライバシーポリシー - QWER</title>
+    <title>プライバシーポリシー - QWER Atlas</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -21,24 +21,38 @@
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
-            <section
-              class="hero-panel"
-              style='background-image: linear-gradient(rgba(255,255,255,0.92), rgba(230,236,245,0.9)), url("https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1200&q=80"); background-size: cover; background-position: center;'
-            >
+            <section class="hero-panel">
+              <p class="section-eyebrow">Privacy</p>
               <h1>プライバシーポリシー</h1>
-              <p>ユーザー情報の取り扱い方針を明確に示し、透明性のある設計を大切にしています。各ページで同じトーン&マナーを維持しました。</p>
+              <p>
+                学習ログという個人情報に近いデータを扱うため、収集/保存/公開範囲の扱いを明確にしています。AnalyticsはGA4またはCloudflareのみ、バックアップも暗号化して保管します。
+              </p>
             </section>
 
             <article class="detail-article">
-              <p>QWERはユーザーのプライバシー保護を最優先に考え、適切な情報管理を行います。下記の項目を定期的に見直し、体験を損なわない形で運用します。</p>
+              <h2>1. 収集する情報</h2>
               <ul>
-                <li>収集した情報はサービス提供および改善の目的でのみ利用します。</li>
-                <li>法令に基づく場合を除き、第三者へ個人情報を提供することはありません。</li>
-                <li>ユーザーからの問い合わせには誠実かつ迅速に対応します。</li>
-                <li>情報の開示・訂正・削除のご要望には速やかに対応します。</li>
-                <li>データセキュリティの向上に継続的に取り組みます。</li>
+                <li>アカウント情報（名前・メールアドレス・プロフィール）</li>
+                <li>学習ログの本文、添付画像、タグ/カテゴリなどのメタデータ</li>
+                <li>利用状況の統計情報（Google Analytics / Cloudflare Analytics）</li>
               </ul>
-              <p>本ポリシーは予告なく改訂されることがあります。最新の内容はこのページにてご確認ください。</p>
+              <h2>2. 利用目的</h2>
+              <ul>
+                <li>学習ログの作成・公開・検索などサービス提供のため</li>
+                <li>バックアップ/エクスポート機能の提供・改良のため</li>
+                <li>サイト改善のためのアクセス解析（個人を特定しない形）</li>
+              </ul>
+              <h2>3. 公開 / 非公開の扱い</h2>
+              <p>各ログには公開/非公開設定があります。非公開ログは本人のみが閲覧でき、管理者が内容を参照することはありません。</p>
+              <h2>4. 第三者提供</h2>
+              <p>法令に基づく場合を除き、第三者に個人情報を提供することはありません。権限を付与しない限り、APIなどで外部に自動提供することもありません。</p>
+              <h2>5. データ保護</h2>
+              <ul>
+                <li>バックアップは暗号化してGitHubの非公開リポジトリに保管します。</li>
+                <li>アクセス権限は必要最小限に制限し、定期的に棚卸しを行います。</li>
+              </ul>
+              <h2>6. 変更について</h2>
+              <p>本ポリシーは必要に応じて更新されます。更新時はサイト上で告知し、重要な変更はメールでもお知らせします。</p>
             </article>
           </div>
         </main>

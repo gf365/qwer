@@ -10,7 +10,7 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>お問い合わせ - QWER</title>
+    <title>運用サポート - QWER Atlas</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -22,10 +22,10 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <h1>お問い合わせ</h1>
+              <p class="section-eyebrow">Operations</p>
+              <h1>運用サポート / お問い合わせ</h1>
               <p>
-                QWERへのご質問やご要望は、以下のフォームからお気軽にお送りください。内容を確認のうえ、担当者より1〜2営業日以内にご連絡いたします。
-                パートナーシップやイベントの相談も歓迎しています。
+                記事投稿・カテゴリ整理・バックアップなど、日々の運用に関する相談はこちらから。依頼書の④運用要件をもとに、ノーコードでの編集やエクスポート手順を整備しています。
               </p>
             </section>
 
@@ -40,27 +40,33 @@
                   <input id="contact-email" type="email" name="email" required />
                 </div>
                 <div>
-                  <label for="contact-topic">トピック</label>
+                  <label for="contact-topic">相談したい内容</label>
                   <select id="contact-topic" name="topic">
-                    <option>一般的なお問い合わせ</option>
-                    <option>パートナー提携について</option>
-                    <option>イベント・メディアについて</option>
+                    <option>学習ログの投稿フロー</option>
+                    <option>カテゴリ / タグ整理</option>
+                    <option>バックアップ / エクスポート</option>
+                    <option>その他</option>
                   </select>
                 </div>
                 <div>
-                  <label for="contact-message">お問い合わせ内容</label>
-                  <textarea id="contact-message" name="message" required></textarea>
+                  <label for="contact-message">詳細</label>
+                  <textarea id="contact-message" name="message" placeholder="現状の課題や希望するサポート内容をご記入ください。" required></textarea>
                 </div>
                 <button type="submit" class="button-primary">送信する</button>
               </form>
 
               <div class="surface-card section-stack">
-                <h2 class="section-heading">サポートチーム</h2>
-                <p class="section-text">平日 10:00〜18:00（JST）で対応しています。Slack でのご相談も可能です。</p>
+                <h2 class="section-heading">運用チェックリスト</h2>
+                <ul class="section-text list-disc pl-6">
+                  <li>ノーコードで投稿・編集が完結しているか。</li>
+                  <li>画像アップロードとOGP生成が機能しているか。</li>
+                  <li>カテゴリ/タグ構造が目的に沿っているか。</li>
+                  <li>Markdown / HTMLエクスポートが定期的に行われているか。</li>
+                </ul>
                 <div class="section-stack">
+                  <p class="section-text"><strong>サポート時間:</strong> 平日10:00〜18:00（JST）</p>
                   <p class="section-text"><strong>メール:</strong> support@qwer.dev</p>
-                  <p class="section-text"><strong>住所:</strong> 東京都渋谷区宇田川町1-2-3</p>
-                  <p class="section-text"><strong>コミュニティ:</strong> Discord / Slack の招待リンクはサインアップ後に届きます。</p>
+                  <p class="section-text"><strong>Slack / Discord:</strong> サインアップ後に招待URLを送付します。</p>
                 </div>
               </div>
             </section>

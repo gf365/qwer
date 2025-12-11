@@ -10,7 +10,7 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>サインアップ - QWER</title>
+    <title>サインアップ - QWER Atlas</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -22,13 +22,14 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <h1>サインアップ</h1>
-              <p>QWERコミュニティに参加して、お気に入りのトピックを保存したり、最新のインサイトを受け取りましょう。</p>
+              <p class="section-eyebrow">Sign up</p>
+              <h1>ナレッジベースをはじめる</h1>
+              <p>テンプレート、カテゴリ、タグ、エクスポート設定をまとめて利用できるようになります。</p>
             </section>
 
             <form class="surface-card form-card">
               <div>
-                <label for="signup-name">お名前</label>
+                <label for="signup-name">お名前 / 表示名</label>
                 <input id="signup-name" type="text" name="name" required />
               </div>
               <div>
@@ -40,7 +41,7 @@
                 <input id="signup-password" type="password" name="password" required />
               </div>
               <button type="submit" class="button-primary">サインアップ</button>
-              <p class="section-text">すでにアカウントをお持ちの場合は <a class="text-[#2563eb] underline" href="./signin.html">サインイン</a> してください。</p>
+              <p class="section-text">すでにアカウントをお持ちの方は <a class="text-[#0f62fe] underline" href="./signin.html">サインイン</a> してください。</p>
             </form>
           </div>
         </main>

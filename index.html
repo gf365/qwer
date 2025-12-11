@@ -11,125 +11,169 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
 
-    <title>ホーム - QWER</title>
+    <title>ホーム - QWER Atlas</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#f7f9fc] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="page-shell">
       <div class="layout-container flex h-full grow flex-col">
-        <!-- ヘッダー -->
         {% include header.html %}
-        <!-- メインコンテンツ -->
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-3xl items-center justify-center p-6 border border-white/70 shadow-2xl"
-                  style='background-image: linear-gradient(rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNAYmi0NkxMwlU13_cyGMoOiujWQSmHQhVIFLOurIx6ZHAAz5n4F0Yzs86LIZqhYUKFKkRRy_WQGb2NQj2GItssXZAHDmIM0S8mssCZjVmhPHFCXfuZHSIpUkVl6bUxbn49XFXa1F-Rq6rA_o8-9Bp0NuwgMoZcADyvxbY0TPe0fBTHypT1wzbir9Obbg_Fp8bOujpnS_VXYwU64C3Ap-qg4X47yeT-fPFPtTJKcQcxen7E49OBE3owQVaiNn2P2Hwrt_qiwR0K4b1");'
-                >
-                  <div class="flex flex-col gap-2 text-center">
-                    <h1
-                      class="text-slate-900 text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                      未来のテクノロジーを探る
-                    </h1>
-                    <h2 class="text-slate-600 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      QWERとともに探索の旅に出ましょう. 最先端のテクノロジーを探索し、革新的なアイデアを発見し、テクノロジーエンジニアのコミュニティと情報を共有しましょう.
-                    </h2>
-                  </div>
-                  <a
-                    href="./explore.html"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[#2563eb] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-semibold @[480px]:leading-normal @[480px]:tracking-[0.015em] shadow-lg transition hover:bg-[#1d4ed8]"
-                  >
-                    <span class="truncate">探索を開始</span>
-                  </a>
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Personal Knowledge Base</p>
+              <h1>学習ログを未来の実績にするナレッジベース「QWER Atlas」</h1>
+              <p>
+                依頼書で定義した「①目的〜⑥将来拡張」までをそのまま体験に落とし込みました。日々の学習ログをMarkdownで残し、カテゴリとタグで整理し、公開/非公開を切り替えながらポートフォリオとして公開できます。
+              </p>
+              <div class="flex flex-wrap gap-3 justify-center">
+                <a class="button-primary" href="./signup.html">新規ログ作成</a>
+                <a class="button-secondary" href="./discover.html">テンプレートを見る</a>
+              </div>
+              <dl class="stat-grid">
+                <div class="stat-card">
+                  <dt>投稿フォーマット</dt>
+                  <dd>Markdown / リッチ</dd>
                 </div>
-              </div>
-            </div>
-            <h2 class="text-slate-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">注目のテクノロジーインサイト</h2>
-            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-              <div class="flex items-stretch p-4 gap-3">
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-2xl min-w-60 bg-white p-4 shadow-lg border border-slate-100">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMsuLsAIjaGZMn1TCWzyAmf3r8Aar5jgGuuPdjaZf5rzycj3ZYSx6T92s8K_ihNVwG4eN2JgYQIBmtX8yGEUaqxcoD4Nes79rfh1uR-4X4UKAoAvdwMsiTE-EeCCCztk5UMs9A1qMYoEW-CdS78REL1zY2Nli8oMXBbDDFICGbFBYOvpfmUk3WFkcZKr9wh4QwbUEe9nuGilRKzbaJyRQ-adaHKPuYF9MCs0lDSIKyGRIXiYKJB2UvI0EAdLwJakB9M_ee3PIgnp0b");'
-                  ></div>
-                  <div>
-                    <p class="text-slate-900 text-base font-semibold leading-normal">未来のプログラムアイデア</p>
-                    <p class="text-slate-600 text-sm font-normal leading-normal">未来のテクノロジーを形成する革新的なプログラムアイデアを探索します.</p>
-                  </div>
+                <div class="stat-card">
+                  <dt>カテゴリ</dt>
+                  <dd>7テーマ</dd>
                 </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-2xl min-w-60 bg-white p-4 shadow-lg border border-slate-100">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZTK7rPrLAJ5JTyyHDhQiqM9Cup4Mq507U9-ZCtyQVjZWOlAsCm5hGAEaSf2hoqHXiZMEAcEfYKd_vOxecvKMsZ4Vxmx18B8cawZ-OIh7nVKiMfgjSBkGoQF-A6KHa-xEYK9y869h1k4hoY90ReRxfK48z0eWhNIBE9UTQev3fA0qWZLVjezIyIYA63C1ATObXWwmA58WJFFXvtKbEmzIjKQmz1KXzIseHWXigdr9rkdDgolGM5G-vdXGhoX2krzL2VlojA2HWzfVP");'
-                  ></div>
-                  <div>
-                    <p class="text-slate-900 text-base font-semibold leading-normal">他の人とは違う働き方の提案</p>
-                    <p class="text-slate-600 text-sm font-normal leading-normal">テクノロジー業界での新しい革新的な他の人とは違う働き方を発見します.</p>
-                  </div>
+                <div class="stat-card">
+                  <dt>アナリティクス</dt>
+                  <dd>GA4 / CF</dd>
                 </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-2xl min-w-60 bg-white p-4 shadow-lg border border-slate-100">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlrV_07SZEO19AL3hInMCAeGbwBqDOSrW65UIiu-j24VRC9pnNnAlUCM8iI-683GduytBjwkNZ_H59ZW1DWTZ2IAUvys4nPpWS5lo43WWVVzijdjHhnObQfiG1IRZITLmVR4JAXv_2dK-WHRxeDTUMyReCvD3027HjeqaayAjqScIcVyOD4nfWZKaEm6cAM5noyT5Sc69KD73DLPXjxsRA7PFlJdUGERCAh49vcpCb7EwTSnn8dH_H2RpW1Wu6oPQIAuywZNKT_TRI");'
-                  ></div>
-                  <div>
-                    <p class="text-slate-900 text-base font-semibold leading-normal">最新のテクノロジーイノベーションを解き放つ</p>
-                    <p class="text-slate-600 text-sm font-normal leading-normal">最新の技術的進歩とそれらが世界に及ぼす影響を深く探ります.</p>
-                  </div>
+                <div class="stat-card">
+                  <dt>バックアップ</dt>
+                  <dd>MD + HTML</dd>
                 </div>
+              </dl>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">① プロジェクトの目的</p>
+              <h2 class="section-heading">学習ログを資産化する構造</h2>
+              <p class="section-text">
+                毎日の記録を定期的に積み上げ、自分の考察と実装ログを公開できるようUIを最小限に整えています。公開/非公開をワンクリックで切り替え、仕事用の実績ページとプライベートなメモを同じ場所で管理できます。
+              </p>
+              <ul class="section-text list-disc pl-6">
+                <li>記事はドラフト→公開の2ステップ。非公開のままカテゴリ整理可能。</li>
+                <li>記事テンプレのショートカットで「今日学んだこと」を即入力。</li>
+                <li>カテゴリとタグの組合せで検索性と資産性を両立。</li>
+              </ul>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">② 必須の機能要件</p>
+              <h2 class="section-heading">学習ログ体験を支える7つのモジュール</h2>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>記事投稿機能</h3>
+                  <p>Markdown / 簡易リッチエディタに対応。画像・コードブロック、ドラフト保存、公開設定を同じフォームで行えます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>記事一覧とアーカイブ</h3>
+                  <p>月別、カテゴリ別、タグ検索がまとめて呼び出せるUI。時系列ログがひと目で追えます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>カテゴリ管理</h3>
+                  <p>AI/LLM・DX・プログラミング・UEFN・業務改善・英語学習・読書ログなど任意で追加/整理可能。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>テンプレ適用</h3>
+                  <p>「今日学んだこと」「背景」「学び」「気づき」「課題」をワンクリックで挿入。ルーチン化を支援します。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>固定ページ</h3>
+                  <p>Aboutページでプロフィールや学習テーマを公開し、ナレッジベースの文脈を整理します。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>SEO + アナリティクス</h3>
+                  <p>OGP、title/description編集、サイトマップ自動生成とGA/Cloudflare Analyticsの計測ラインを装備。</p>
+                </article>
               </div>
-            </div>
-            <h2 class="text-slate-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">カテゴリーから探索</h2>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4YgiGY8pm4rS-I_VJ9d7E2_lVFgY-AY1lg8aBSOqh0cMnGmf6nq2fb6LQFvogAZkqmkTs5desC9VLYHiUUhOxnuVBHNUHiKzu44UDzOXkTf434mQfPFYXEaLuydezuB2HJobpP9tj_U0NayLuoCT43X64knvACsn5fKFPPq8fW8vHngCel-LsQN7St6-bdGbESvqpkVl7MTW0Qtnih_vwNT0yH7282F-mpCyAUfYvolkF1oH_i8cmlpBaXsmRTg7RIFlbTebbwKx4");'
-                ></div>
-                <p class="text-slate-800 text-base font-semibold leading-normal">プログラミング</p>
+            </section>
+
+            <section class="split-panel">
+              <article class="surface-card section-stack">
+                <p class="section-eyebrow">③ デザイン要件</p>
+                <h2 class="section-heading">モノトーン + ワンポイント</h2>
+                <p class="section-text">
+                  余白を広く取り、コードや数式も読みやすいタイポグラフィに統一。トップページは記事一覧中心のブログ構造で、派手なLPではなく資産性を意識しました。
+                </p>
+                <ul class="section-text list-disc pl-6">
+                  <li>白背景 × ネイビー × アクセントブルー。</li>
+                  <li>モバイルファーストで、同じ体験を提供。</li>
+                  <li>ログ一覧・テンプレ一覧・Aboutすべてでトンマナ統一。</li>
+                </ul>
+              </article>
+              <article class="surface-card section-stack">
+                <p class="section-eyebrow">④ 運用要件</p>
+                <h2 class="section-heading">ノーコードで日次更新</h2>
+                <p class="section-text">
+                  投稿・編集・画像アップロードをGUIで完結。カテゴリやタグの追加もUI上で操作でき、バックアップ/エクスポートはMarkdownまたはHTMLでいつでも取得できます。
+                </p>
+                <ul class="section-text list-disc pl-6">
+                  <li>1ページで投稿→タグ付→公開が完了。</li>
+                  <li>画像アップロードをドラッグ&ドロップで対応。</li>
+                  <li>週次バックアップを自動実行しGitHubへ同期。</li>
+                </ul>
+              </article>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">⑤ 技術要件</p>
+              <h2 class="section-heading">3つの構成から選択</h2>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>WordPress</h3>
+                  <p>コスト最小・プラグイン豊富。ノーコード運用重視で、カスタム投稿 + ACFでテンプレートを再現可能。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>Next.js + Headless CMS</h3>
+                  <p>おしゃれでモダンなUIとAPI拡張性。長期的にAI連携したい場合におすすめ。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>Astro / Hugo + GitHub + Vercel</h3>
+                  <p>静的サイトで爆速。Gitベースで壊れず、将来の引っ越しも容易なため本依頼では最有力案です。</p>
+                </article>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0xV4zQ1Edtn8yE7nUObgTn3aN8jtnxLpKWgFd6X0LHX_-tflPKNSujHPEomqiG9d-y2Hkq_2wc7MYlfPsUt88U7nh21gTIaUpci_1JRZwasevyswO6gQgwy7NGJ4dmBLoDBO1m2PzHMsspuMXUhIeqxHj8dkAyQsF4NKK1GfQ_-6y81pX9wnDG2fXLPxd6B-6Fb28BiWXmXnXa0CxQmQBlU0n4x7sUSuPROn0tXkXKnpr_wbeJl2Rw57c5jhO3B4uTFhFM4Un4q2q");'
-                ></div>
-                <p class="text-slate-800 text-base font-semibold leading-normal">他の人とは違う働き方</p>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">⑥ 将来拡張</p>
+              <h2 class="section-heading">次のステップを見据えたロードマップ</h2>
+              <div class="timeline">
+                <article class="timeline-entry">
+                  <h3>全文検索と関連記事</h3>
+                  <p>ログを横断検索し、類似タグから関連記事を自動表示。知識構造化を推進します。</p>
+                </article>
+                <article class="timeline-entry">
+                  <h3>API + AI連携</h3>
+                  <p>ChatGPT等のエージェントと接続し、自動タグ抽出や要約生成を行います。</p>
+                </article>
+                <article class="timeline-entry">
+                  <h3>年次レポート自動作成</h3>
+                  <p>年間の学習テーマ・成果物をハイライト化して生成。副業や案件提案に流用できます。</p>
+                </article>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCcm7qS1OQ4q0unDzWmgzuNCXHOPpSXxhXdfR4gOhqT6Ttw3jRZYuOA-sAvWBhUMYDQgOFzdgYOrQnZ1jl60gOHNxqvAWmAW2_Va2LqZWiJp7MVLeM5UH5_LDzqc9-fIpb_419r0RTuZR5S-CM5VXurgGmPN-PLim1WgTD1IKdktJTIX_4GQ6IFivEI-fLmnhw6fdOZkjAdcenLgeTIyhvycnIn8h1nmzdzU7OH3uha0AXXVEQiZz3EpqWpWVqCGZGbdlKEE7f-Ht-");'
-                ></div>
-                <p class="text-slate-800 text-base font-semibold leading-normal">データサイエンス</p>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">さっそくナレッジベースを育てましょう</h2>
+              <p class="section-text">
+                依頼書をベースにUI/UX/運用ラインまで整えたので、あとは記録するだけです。テンプレートページから今日のログを複製して、カテゴリごとのアーカイブに紐づけていきましょう。
+              </p>
+              <div class="flex gap-3 flex-wrap">
+                <a class="button-primary" href="./signup.html">今すぐ記録を始める</a>
+                <a class="button-secondary" href="./explore.html">公開ログを確認</a>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7DY88fPIsXpbcAzeDH4YHPRAr3-2xmGVTueODk1_jQqdHgvHakyR1IytlOhtmKN10OMFVVO8HLiQpbem1ZIFKk0XF2fYWitHGs8ouC2Mlf2Yv8PghyRmR7yPgR51EOC4lp-CfHxBmLs1vjy0VQp2ygL_beecQ1agFAVPUzdZV3YBP9RpI-zL3yOO3gAoJVfHIIuvNyiyrY83f3mY_nehoZmAU6XTeRR3zciQMJynPa1BS-BJ2zw9znulhhq-4SJxMEX-TeOiwCJiV");'
-                ></div>
-                <p class="text-slate-800 text-base font-semibold leading-normal">新規テクノロジー</p>
-              </div>
-            </div>
-            <h2 class="text-slate-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">QWERテクノロジーコミュニティに参加</h2>
-            <p class="text-slate-600 text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
-              テクノロジーエンジニアと交流し、発見を共有し、常に進化するテクノロジーの世界を共に探求することを他の人にも勧めます。
-            </p>
-            <div class="flex px-4 py-3 justify-center">
-              <a
-                href="./signup.html"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[#2563eb] text-white text-sm font-semibold leading-normal tracking-[0.015em] shadow-md transition hover:bg-[#1d4ed8]"
-              >
-                <span class="truncate">サインアップ</span>
-              </a>
-            </div>
+            </section>
           </div>
-        </div>
+        </main>
         {% include footer.html %}
       </div>
     </div>

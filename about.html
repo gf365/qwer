@@ -10,7 +10,7 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>概要 - QWER</title>
+    <title>概要 - QWER Atlas</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -21,48 +21,70 @@
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
-            <section
-              class="hero-panel"
-              style='background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(247, 249, 252, 0.9)), url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"); background-size: cover; background-position: center;'
-            >
-              <h1>QWERについて</h1>
+            <section class="hero-panel">
+              <p class="section-eyebrow">About</p>
+              <h1>QWER Atlasについて</h1>
               <p>
-                QWERは未来のテクノロジーを探求し、エンジニアが交流・発見できるオープンコミュニティです。最先端の技術・新しい働き方・データサイエンス・新規テクノロジーの知見を共有し合い、
-                常にアップデートされる情報から次のアイデアを見つけられるように設計されています。
+                学習ログを蓄積し、副業や発信活動の実績として提示できるように設計した個人ナレッジベースです。日々のアウトプットを資産化するために、カテゴリ構造・テンプレ・SEOを依頼書通りに整えました。
               </p>
             </section>
 
-            <section class="surface-grid">
-              <div class="surface-card">
-                <h3>ミッション</h3>
-                <p>世界中のテクノロジーエンジニアが、インスピレーションと実用的なノウハウを同時に得られる場所をつくること。</p>
-                <p class="section-text">QWERは情報の発信とコミュニティのつながりを両立させることで、個人の挑戦を後押しします。</p>
-              </div>
-              <div class="surface-card">
-                <h3>フォーカスエリア</h3>
-                <p>加速する技術領域をわかりやすくトピック化し、日々のインスピレーションにつなげます。</p>
-                <div class="badge-list">
-                  <span class="badge">プログラミング</span>
-                  <span class="badge">他の人とは違う働き方</span>
-                  <span class="badge">データサイエンス</span>
-                  <span class="badge">新規テクノロジー</span>
-                </div>
-              </div>
-              <div class="surface-card">
-                <h3>プロダクトの形</h3>
-                <p>編集チームによるピックアップ記事と、メンバーからの投稿を組み合わせて最適なラーニング体験を届けます。</p>
-                <p class="section-text">情報は相互に関連付けられ、探索や検索で素早く到達できるよう整理されています。</p>
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">プロフィール / 学習テーマ</h2>
+              <p class="section-text">
+                エンジニアリング、DX伴走、UEFN開発、英語学習、読書ログを主軸に、プロジェクト単位で日次ログを運用しています。公開ログは案件提案や採用面談でも共有できるよう構成しています。
+              </p>
+              <div class="badge-list">
+                <span class="badge">AI / LLM</span>
+                <span class="badge">DX・業務改善</span>
+                <span class="badge">プログラミング</span>
+                <span class="badge">UEFN</span>
+                <span class="badge">英語学習</span>
+                <span class="badge">読書ログ</span>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">コミュニティの価値観</h2>
-              <p class="section-text">どのページでも同じトーン&マナーで体験できるよう、以下の価値観を大切にしています。</p>
+              <h2 class="section-heading">ミッション</h2>
+              <p class="section-text">
+                「毎日の学びを未来の実績に変換する」。アウトプットの骨組みをテンプレで先に用意し、定期的なアーカイブと公開を後押しします。モノトーンのUIは、文章・コード・図を邪魔せず集中できることを目的にしています。
+              </p>
               <ul class="section-text list-disc pl-6">
-                <li>オープンな知識共有と敬意あるフィードバック</li>
-                <li>実験と学びを歓迎する安全なスペース</li>
-                <li>多様なバックグラウンドを尊重するデザイン</li>
-                <li>誰でもすぐに参加できる軽やかなUI</li>
+                <li>自分自身の成長ログを可視化し、副業や案件の提案資料にも転用。</li>
+                <li>コミュニティのメンバー同士でテンプレやカテゴリ構造を共有。</li>
+                <li>API化を見据えて設計し、後からAI/自動タグ付けを追加できるようにする。</li>
+              </ul>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">ワークフロー</h2>
+              <p class="section-text">
+                早朝と夜の2回、テンプレートから新規ログを作成し、タグ整理→公開までを行います。週次でMarkdown + HTMLのバックアップをGitHubに同期し、GA/Cloudflare Analyticsで閲覧状況を確認します。
+              </p>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>朝：インプット整理</h3>
+                  <p>読書や英語学習ログをテンプレートで記録。公開範囲を限定しながらメモ感覚で蓄積。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>夜：実装ログ</h3>
+                  <p>UEFN / DX / プログラミングの進捗をコードスニペット付きで整理。必要に応じて公開へ。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>週次：アーカイブ</h3>
+                  <p>カテゴリ単位の振り返りとタグの棚卸し、エクスポート・バックアップを実施。</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">価値観</h2>
+              <p class="section-text">ナレッジベースを使う上で大切にしている価値観です。</p>
+              <ul class="section-text list-disc pl-6">
+                <li>敬意あるフィードバックと、仮説検証に対する安心感。</li>
+                <li>記録を止めないための軽量なUIとテンプレ設計。</li>
+                <li>多様なバックグラウンドのメンバーを歓迎する透明性。</li>
+                <li>すべてのログにタグ/カテゴリを必ず付ける運用徹底。</li>
               </ul>
             </section>
           </div>

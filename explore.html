@@ -10,7 +10,7 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>探索 - QWER</title>
+    <title>学習ログ - QWER Atlas</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
         <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -22,47 +22,86 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <h1>探索</h1>
+              <p class="section-eyebrow">Logbook</p>
+              <h1>学習ログ / アーカイブ</h1>
               <p>
-                最新のテクノロジーリソースや記事を横断的に見つけられるハブです。ニーズに合わせて検索したり、カテゴリからサクッとインスピレーションを得たり、
-                すべてのページで同じ白ベースの軽やかな体験を楽しめます。より厳選されたおすすめは
-                <a class="underline text-[#2563eb]" href="./discover.html">発見ページ</a>へどうぞ。
+                最新の学習記録を月別・カテゴリ別・タグ検索で横断できます。テンプレートで記録した5項目（今日学んだこと / 背景 / 学んだ内容 / 気づき / 今後の課題）をそのまま反映し、公開・非公開をシームレスに切り替えられます。
               </p>
-            </section>
-
-            <section class="surface-grid">
-              <article class="surface-card">
-                <div class="rounded-2xl overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=960&q=80" alt="クラウドコンピューティング入門" />
-                </div>
-                <h3>クラウドコンピューティング入門</h3>
-                <p>初心者向けにクラウドサービスの基礎と主要プロバイダーをまとめました。ハンズオンで学べるリンク付き。</p>
-              </article>
-              <article class="surface-card">
-                <div class="rounded-2xl overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=960&q=80" alt="AI 活用事例集" />
-                </div>
-                <h3>AI 活用事例集</h3>
-                <p>最新のAI技術を応用したプロジェクト例をまとめたカタログ。開発背景や使用したフレームワークも掲載しています。</p>
-              </article>
-              <article class="surface-card">
-                <div class="rounded-2xl overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=960&q=80" alt="Quantum API" />
-                </div>
-                <h3>Quantum APIスタートガイド</h3>
-                <p>量子コンピューティングのAPIを体験できるサンプルコードと、ハードウェア選定のポイントを整理しました。</p>
-              </article>
+              <div class="flex gap-3 justify-center flex-wrap">
+                <a class="button-primary" href="./signup.html">新規ログを書く</a>
+                <a class="button-secondary" href="./search.html">全文検索</a>
+              </div>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">カテゴリーから探索</h2>
-              <p class="section-text">気になるテーマを選ぶと、関連する記事・動画・テンプレートがまとまって表示されます。</p>
+              <h2 class="section-heading">フィルタと検索</h2>
+              <p class="section-text">
+                ログは標準で「最新」「カテゴリ」「タグ」「月別」の4軸で整理。さらにクエリ検索で本文中のキーワードにもヒットします。
+              </p>
               <div class="badge-list">
+                <span class="badge">AI / LLM</span>
+                <span class="badge">DX</span>
                 <span class="badge">プログラミング</span>
-                <span class="badge">他の人とは違う働き方</span>
-                <span class="badge">データサイエンス</span>
-                <span class="badge">新規テクノロジー</span>
-                <span class="badge">AI/ML</span>
+                <span class="badge">UEFN</span>
+                <span class="badge">業務改善</span>
+                <span class="badge">英語学習</span>
+                <span class="badge">読書ログ</span>
+              </div>
+              <dl class="stat-grid">
+                <div class="stat-card">
+                  <dt>月別アーカイブ</dt>
+                  <dd>2022〜2024</dd>
+                </div>
+                <div class="stat-card">
+                  <dt>タグ</dt>
+                  <dd>+120</dd>
+                </div>
+                <div class="stat-card">
+                  <dt>ドラフト</dt>
+                  <dd>8件</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">最新ログ</h2>
+              <div class="timeline">
+                <article class="timeline-entry">
+                  <h3>LLM による自動タグ生成ワークフロー</h3>
+                  <p>カテゴリ: AI / LLM・タグ: #prompt #workflow・状態: 公開</p>
+                  <p class="section-text">
+                    背景：タグ付けの手間を削減するためにOpenAIの関数呼び出しを採用。気づき：タグの粒度は3〜5件がちょうど良い。今後の課題：失敗例を学習データに追加する。
+                  </p>
+                </article>
+                <article class="timeline-entry">
+                  <h3>UEFN でのデバイス間同期メモ</h3>
+                  <p>カテゴリ: UEFN・タグ: #verse #multiplayer・状態: 非公開</p>
+                  <p class="section-text">
+                    背景：検証段階のため非公開。学んだ内容：Verseでの状態管理はContextシグナルで吸収。課題：動画キャプチャを追加してアウトプットを強化。
+                  </p>
+                </article>
+                <article class="timeline-entry">
+                  <h3>DX 伴走のふりかえり</h3>
+                  <p>カテゴリ: DX・タグ: #consulting #report・状態: 公開</p>
+                  <p class="section-text">
+                    気づき：ステークホルダーとのタスク共有を週次テンプレにするだけで成果が見えやすくなった。今後の課題：英語版テンプレも作成する。
+                  </p>
+                </article>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">月別アーカイブ</h2>
+              <p class="section-text">年次・月次でまとめて閲覧でき、公開設定やタグもそのまま変更できます。</p>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>2024年4月</h3>
+                  <p>15本の学習ログを作成。AI / DX タグが中心で、テンプレートの自動挿入を導入しました。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>2024年3月</h3>
+                  <p>UEFNと業務改善の2カテゴリに注力。非公開ログも同じリストで管理しています。</p>
+                </article>
               </div>
             </section>
           </div>

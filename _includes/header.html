@@ -1,24 +1,28 @@
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-10 py-3 shadow-sm" role="banner">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
   <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="{{ '/index.html' | relative_url }}" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER ホーム">
-      <div class="size-4" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+    <a href="{{ '/index.html' | relative_url }}" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
+      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
       </div>
-      <h2 class="text-[#111a22] text-lg font-bold leading-tight tracking-[-0.015em]">QWER</h2>
+      <div>
+        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
+        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Knowledge Base</p>
+      </div>
     </a>
   </div>
   <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="Main Navigation" class="flex items-center">
-      <ul class="flex items-center gap-9 m-0 p-0 list-none">
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="{{ '/index.html' | relative_url }}">ホーム</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="{{ '/explore.html' | relative_url }}">探索</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="{{ '/discover.html' | relative_url }}">発見</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="{{ '/about.html' | relative_url }}">概要</a></li>
+    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
+      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
+        <li><a class="hover:text-slate-900 transition" href="{{ '/index.html' | relative_url }}">ホーム</a></li>
+        <li><a class="hover:text-slate-900 transition" href="{{ '/explore.html' | relative_url }}">学習ログ</a></li>
+        <li><a class="hover:text-slate-900 transition" href="{{ '/discover.html' | relative_url }}">テンプレート</a></li>
+        <li><a class="hover:text-slate-900 transition" href="{{ '/about.html' | relative_url }}">プロフィール</a></li>
+        <li><a class="hover:text-slate-900 transition" href="{{ '/contact.html' | relative_url }}">運用/サポート</a></li>
       </ul>
     </nav>
-    <form role="search" action="{{ '/search.html' | relative_url }}" method="get" class="flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">検索</label>
-      <input id="search-q" name="q" type="search" placeholder="検索" class="hidden md:inline-block" />
+    <form role="search" action="{{ '/search.html' | relative_url }}" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
+      <label for="search-q" class="sr-only">ナレッジ検索</label>
+      <input id="search-q" name="q" type="search" placeholder="記事・タグを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
       <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
         <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
@@ -27,16 +31,16 @@
     </form>
     <div class="flex items-center gap-2 shrink-0">
       <a
-        class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[96px] text-center"
+        class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
         href="{{ '/signin.html' | relative_url }}"
       >
-        サインイン
+        ドラフトに入る
       </a>
       <a
-        class="rounded-full bg-[#111a22] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0b1320] transition min-w-[96px] text-center shadow-sm"
+        class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
         href="{{ '/signup.html' | relative_url }}"
       >
-        サインアップ
+        新規ログ作成
       </a>
     </div>
   </div>
