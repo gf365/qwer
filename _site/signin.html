@@ -68,7 +68,8 @@
               <p>アカウントにアクセスして、お気に入りの記事やブックマークを管理しましょう。ライトテーマに合わせてフォームも白背景にアップデートしました。</p>
             </section>
 
-            <form class="surface-card form-card">
+            <form id="signin-form" class="surface-card form-card">
+              <div id="form-message" class="hidden"></div>
               <div>
                 <label for="signin-email">メールアドレス</label>
                 <input id="signin-email" type="email" name="email" required />
@@ -127,5 +128,50 @@
 
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('signin-form');
+        const messageDiv = document.getElementById('form-message');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          // メッセージをリセット
+          messageDiv.textContent = '';
+          messageDiv.className = 'hidden';
+
+          try {
+            // ここではサーバー側のAPIエンドポイント `/api/signin` を呼び出すことを想定しています。
+            // 実際にはバックエンドの実装が必要です。
+            const response = await fetch('/api/signin', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+              messageDiv.textContent = 'サインインに成功しました。ホームページに移動します。';
+              messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
+              // 成功後、2秒待ってからホームページにリダイレクト
+              setTimeout(() => {
+                window.location.href = './index.html';
+              }, 2000);
+            } else {
+              const errorData = await response.json();
+              messageDiv.textContent = `エラー: ${errorData.message || 'メールアドレスまたはパスワードが正しくありません。'}`;
+              messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+            }
+          } catch (error) {
+            messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
+            messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+          }
+        });
+      });
+    </script>
   </body>
 </html>

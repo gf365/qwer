@@ -71,7 +71,8 @@
               </p>
             </section>
 
-            <form class="surface-card form-card">
+            <form id="join-form" class="surface-card form-card">
+              <div id="form-message" class="hidden"></div>
               <div>
                 <label for="join-name">お名前</label>
                 <input id="join-name" type="text" name="name" required />
@@ -95,7 +96,9 @@
         <footer class="flex justify-center">
   <div class="flex max-w-[960px] flex-1 flex-col">
     <div class="flex flex-col gap-6 px-5 py-10 text-center @container">
-      <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+      <div
+        class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around"
+      >
         <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./about.html">概要</a>
         <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./contact.html">お問い合わせ</a>
         <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./terms.html">サービス規約</a>
@@ -137,5 +140,108 @@
 
       </div>
     </div>
+    <!-- Firebase SDK -->
+    <script type="module">
+      import { db } from './firebase-config.js';
+      import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+      const form = document.getElementById('join-form');
+      const messageDiv = document.getElementById('form-message');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          interest: form.interest.value,
+          message: form.message.value,
+          createdAt: serverTimestamp() // 送信日時を記録
+        };
+
+        messageDiv.textContent = '';
+        messageDiv.className = 'hidden';
+
+        try {
+          // Firestoreの 'join_requests' コレクションにデータを追加
+          await addDoc(collection(db, "join_requests"), data);
+
+          messageDiv.textContent = 'リクエストありがとうございます。内容を確認のうえ、招待メールをお送りします。';
+          messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
+          form.reset();
+        } catch (error) {
+          console.error("Error adding document: ", error);
+          messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
+          messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+        }
+      });
+    </script>
+  </body>
+</html>
+    <!-- Firebase SDK -->
+    <script type="module">
+      import { db } from './firebase-config.js';
+      import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+      const form = document.getElementById('join-form');
+      const messageDiv = document.getElementById('form-message');
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          interest: form.interest.value,
+          message: form.message.value,
+          createdAt: serverTimestamp() // 送信日時を記録
+        };
+
+          // メッセージをリセット
+          messageDiv.textContent = '';
+          messageDiv.className = 'hidden';
+        messageDiv.textContent = '';
+        messageDiv.className = 'hidden';
+
+          try {
+            // ここではサーバー側のAPIエンドポイント `/api/join` を呼び出すことを想定しています。
+            // 実際にはバックエンドの実装が必要です。
+            const response = await fetch('/api/join', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+        try {
+          // Firestoreの 'join_requests' コレクションにデータを追加
+          await addDoc(collection(db, "join_requests"), data);
+
+            if (response.ok) {
+              messageDiv.textContent = 'リクエストありがとうございます。内容を確認のうえ、招待メールをお送りします。';
+              messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
+              form.reset();
+            } else {
+              const errorData = await response.json();
+              messageDiv.textContent = `エラー: ${errorData.message || 'リクエストの送信に失敗しました。'}`;
+              messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+            }
+          } catch (error) {
+            messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
+            messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+          }
+        });
+          messageDiv.textContent = 'リクエストありがとうございます。内容を確認のうえ、招待メールをお送りします。';
+          messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
+          form.reset();
+        } catch (error) {
+          console.error("Error adding document: ", error);
+          messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
+          messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+        }
+      });
+    </script>
   </body>
 </html>

@@ -72,7 +72,8 @@
             </section>
 
             <section class="two-column">
-              <form class="surface-card form-card">
+              <form id="contact-form" class="surface-card form-card">
+                <div id="form-message" class="hidden"></div>
                 <div>
                   <label for="contact-name">お名前</label>
                   <input id="contact-name" type="text" name="name" required />
@@ -111,7 +112,9 @@
         <footer class="flex justify-center">
   <div class="flex max-w-[960px] flex-1 flex-col">
     <div class="flex flex-col gap-6 px-5 py-10 text-center @container">
-      <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+      <div
+        class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around"
+      >
         <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./about.html">概要</a>
         <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./contact.html">お問い合わせ</a>
         <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./terms.html">サービス規約</a>
@@ -153,5 +156,47 @@
 
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contact-form');
+        const messageDiv = document.getElementById('form-message');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          // メッセージをリセット
+          messageDiv.textContent = '';
+          messageDiv.className = 'hidden';
+
+          try {
+            // ここではサーバー側のAPIエンドポイント `/api/contact` を呼び出すことを想定しています。
+            // 実際にはバックエンドの実装が必要です。
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+              messageDiv.textContent = 'お問い合わせありがとうございます。内容を確認のうえ、担当者よりご連絡いたします。';
+              messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
+              form.reset();
+            } else {
+              const errorData = await response.json();
+              messageDiv.textContent = `エラー: ${errorData.message || 'メッセージの送信に失敗しました。'}`;
+              messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+            }
+          } catch (error) {
+            messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
+            messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+          }
+        });
+      });
+    </script>
   </body>
 </html>

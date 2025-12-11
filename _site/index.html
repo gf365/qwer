@@ -47,7 +47,8 @@
         </div>
       </button>
     </form>
-    <div class="flex items-center gap-2 shrink-0">
+    <!-- ログアウト時 -->
+    <div id="auth-links-logged-out" class="flex items-center gap-2 shrink-0">
       <a
         class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[96px] text-center"
         href="./signin.html"
@@ -60,6 +61,13 @@
       >
         サインアップ
       </a>
+    </div>
+    <!-- ログイン時 -->
+    <div id="auth-links-logged-in" class="hidden items-center gap-4 shrink-0">
+      <span id="user-display-name" class="text-slate-700 text-sm font-medium"></span>
+      <button id="signout-button" class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[96px] text-center">
+        サインアウト
+      </button>
     </div>
   </div>
 </header>
@@ -217,5 +225,7 @@
 
       </div>
     </div>
+    <!-- 認証状態管理 -->
+    <script type="module" src="./auth-ui.js"></script>
   </body>
 </html>

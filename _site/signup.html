@@ -68,7 +68,8 @@
               <p>QWERコミュニティに参加して、お気に入りのトピックを保存したり、最新のインサイトを受け取りましょう。</p>
             </section>
 
-            <form class="surface-card form-card">
+            <form id="signup-form" class="surface-card form-card">
+              <div id="form-message" class="hidden"></div>
               <div>
                 <label for="signup-name">お名前</label>
                 <input id="signup-name" type="text" name="name" required />
@@ -131,5 +132,47 @@
 
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('signup-form');
+        const messageDiv = document.getElementById('form-message');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+          
+          // メッセージをリセット
+          messageDiv.textContent = '';
+          messageDiv.className = 'hidden';
+
+          try {
+            // ここではサーバー側のAPIエンドポイント `/api/signup` を呼び出すことを想定しています。
+            // 実際にはバックエンドの実装が必要です。
+            const response = await fetch('/api/signup', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+              messageDiv.textContent = 'サインアップありがとうございます！確認メールを送信しました。';
+              messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
+              form.reset();
+            } else {
+              const errorData = await response.json();
+              messageDiv.textContent = `エラー: ${errorData.message || 'サインアップに失敗しました。'}`;
+              messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+            }
+          } catch (error) {
+            messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
+            messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
