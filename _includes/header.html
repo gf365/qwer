@@ -1,6 +1,6 @@
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] px-10 py-3" role="banner">
   <div class="flex items-center gap-4 text-white">
-    <a href="./index.html" class="flex items-center gap-4 text-white" aria-label="QWER ホーム">
+    <a href="{{ '/index.html' | relative_url }}" class="flex items-center gap-4 text-white" aria-label="QWER ホーム">
       <div class="size-4" aria-hidden="true">
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
       </div>
@@ -10,16 +10,16 @@
   <div class="flex flex-1 justify-end gap-8">
     <nav aria-label="Main Navigation" class="flex items-center">
       <ul class="flex items-center gap-9 m-0 p-0 list-none">
-        <li><a class="text-white text-sm font-medium leading-normal" href="./index.html">ホーム</a></li>
-        <li><a class="text-white text-sm font-medium leading-normal" href="./explore.html">探索</a></li>
-        <li><a class="text-white text-sm font-medium leading-normal" href="./discover.html">発見</a></li>
-        <li><a class="text-white text-sm font-medium leading-normal" href="./about.html">概要</a></li>
-        <li><a class="text-white text-sm font-medium leading-normal" href="./signin.html">サインイン</a></li>
-        <li><a class="text-white text-sm font-medium leading-normal" href="./signup.html">サインアップ</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="{{ '/index.html' | relative_url }}">ホーム</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="{{ '/explore.html' | relative_url }}">探索</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="{{ '/discover.html' | relative_url }}">発見</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="{{ '/about.html' | relative_url }}">概要</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="{{ '/signin.html' | relative_url }}">サインイン</a></li>
+        <li><a class="text-white text-sm font-medium leading-normal" href="{{ '/signup.html' | relative_url }}">サインアップ</a></li>
       </ul>
     </nav>
     <div class="flex items-center gap-2">
-      <form role="search" action="./search.html" method="get" class="flex items-center gap-2" aria-label="サイト内検索">
+      <form role="search" action="{{ '/search.html' | relative_url }}" method="get" class="flex items-center gap-2" aria-label="サイト内検索">
         <label for="search-q" class="sr-only">検索</label>
         <input id="search-q" name="q" type="search" placeholder="検索" class="hidden md:inline-block" />
         <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5" aria-label="検索">
