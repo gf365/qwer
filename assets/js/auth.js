@@ -54,7 +54,7 @@ function initializeAuthUI() {
     logoutButton.addEventListener('click', () => {
       signOut(auth).then(() => {
         console.log('User signed out successfully.');
-        window.location.href = '{{ "/signin.html" | relative_url }}';
+        window.location.href = '/signin.html';
       }).catch((error) => {
         console.error('Sign out error', error);
       });
