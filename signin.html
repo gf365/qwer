@@ -23,26 +23,74 @@
           <div class="page-content">
             <section class="hero-panel">
               <p class="section-eyebrow">Sign in</p>
-              <h1>ドラフトを再開する</h1>
-              <p>保存した学習ログのドラフト、テンプレート、バックアップ設定にアクセスします。</p>
+              <h1>アカウントにサインイン</h1>
+              <p>QWERで未来のテクノロジーの探索を続けましょう。</p>
             </section>
 
-            <form class="surface-card form-card">
+            <form id="signin-form" class="surface-card form-card">
               <div>
                 <label for="signin-email">メールアドレス</label>
-                <input id="signin-email" type="email" name="email" required />
+                <input id="signin-email" type="email" name="email" required class="w-full" />
               </div>
               <div>
                 <label for="signin-password">パスワード</label>
-                <input id="signin-password" type="password" name="password" required />
+                <input id="signin-password" type="password" name="password" required class="w-full" />
               </div>
+              <div id="signin-error" class="text-red-500 text-sm my-2"></div>
               <button type="submit" class="button-primary">サインイン</button>
-              <p class="section-text">はじめての方は <a class="text-[#0f62fe] underline" href="./signup.html">サインアップ</a> してください。</p>
+              <p class="section-text">はじめての方は <a class="text-[#0f62fe] underline" href="{{ '/signup.html' | relative_url }}">サインアップ</a> してください。</p>
             </form>
           </div>
         </main>
         {% include footer.html %}
       </div>
     </div>
+    <script type="module">
+      // This script needs firebase to be initialized, which is done in the footer.
+      document.addEventListener('DOMContentLoaded', () => {
+        function setupForm() {
+          if (window.firebaseAuth) {
+            const signinForm = document.getElementById('signin-form');
+            const signinError = document.getElementById('signin-error');
+            const { signInWithEmailAndPassword, auth } = window.firebaseAuth;
+
+            signinForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+              signinError.textContent = ''; // Clear previous errors
+
+              const email = signinForm.email.value;
+              const password = signinForm.password.value;
+
+              signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                  console.log('User signed in:', userCredential.user);
+                  window.location.href = '{{ "/index.html" | relative_url }}';
+                })
+                .catch((error) => {
+                  console.error('Signin error:', error);
+                  let errorMessage = 'サインインに失敗しました。';
+                  switch (error.code) {
+                    case 'auth/invalid-email':
+                      errorMessage = '無効なメールアドレスです。';
+                      break;
+                    case 'auth/user-not-found':
+                    case 'auth/wrong-password':
+                    case 'auth/invalid-credential':
+                      errorMessage = 'メールアドレスまたはパスワードが正しくありません。';
+                      break;
+                    default:
+                      errorMessage = `エラー: ${error.message}`;
+                  }
+                  signinError.textContent = errorMessage;
+                });
+            });
+          } else {
+            console.log("Firebase not ready, retrying form setup...");
+            setTimeout(setupForm, 100);
+          }
+        }
+        setupForm();
+      });
+    </script>
   </body>
 </html>

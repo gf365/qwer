@@ -23,30 +23,78 @@
           <div class="page-content">
             <section class="hero-panel">
               <p class="section-eyebrow">Sign up</p>
-              <h1>ナレッジベースをはじめる</h1>
-              <p>テンプレート、カテゴリ、タグ、エクスポート設定をまとめて利用できるようになります。</p>
+              <h1>アカウントを作成</h1>
+              <p>QWERで未来のテクノロジーの探索を始めましょう。</p>
             </section>
 
-            <form class="surface-card form-card">
-              <div>
-                <label for="signup-name">お名前 / 表示名</label>
-                <input id="signup-name" type="text" name="name" required />
-              </div>
+            <form id="signup-form" class="surface-card form-card">
               <div>
                 <label for="signup-email">メールアドレス</label>
-                <input id="signup-email" type="email" name="email" required />
+                <input id="signup-email" type="email" name="email" required class="w-full" />
               </div>
               <div>
-                <label for="signup-password">パスワード</label>
-                <input id="signup-password" type="password" name="password" required />
+                <label for="signup-password">パスワード (6文字以上)</label>
+                <input id="signup-password" type="password" name="password" required class="w-full" />
               </div>
+              <div id="signup-error" class="text-red-500 text-sm my-2"></div>
               <button type="submit" class="button-primary">サインアップ</button>
-              <p class="section-text">すでにアカウントをお持ちの方は <a class="text-[#0f62fe] underline" href="./signin.html">サインイン</a> してください。</p>
+              <p class="section-text">すでにアカウントをお持ちの方は <a class="text-[#0f62fe] underline" href="{{ '/signin.html' | relative_url }}">サインイン</a> してください。</p>
             </form>
           </div>
         </main>
         {% include footer.html %}
       </div>
     </div>
+    <script type="module">
+      // This script needs firebase to be initialized, which is done in the footer.
+      document.addEventListener('DOMContentLoaded', () => {
+        // Since the main auth script is also listening for DOMContentLoaded,
+        // we might need to ensure firebaseAuth is available.
+        // A simple retry mechanism can work for this.
+        function setupForm() {
+          if (window.firebaseAuth) {
+            const signupForm = document.getElementById('signup-form');
+            const signupError = document.getElementById('signup-error');
+            const { createUserWithEmailAndPassword, auth } = window.firebaseAuth;
+
+            signupForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+              signupError.textContent = ''; // Clear previous errors
+
+              const email = signupForm.email.value;
+              const password = signupForm.password.value;
+
+              createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                  console.log('User signed up:', userCredential.user);
+                  window.location.href = '{{ "/index.html" | relative_url }}';
+                })
+                .catch((error) => {
+                  console.error('Signup error:', error);
+                  let errorMessage = 'サインアップに失敗しました。';
+                  switch (error.code) {
+                    case 'auth/email-already-in-use':
+                      errorMessage = 'このメールアドレスは既に使用されています。';
+                      break;
+                    case 'auth/invalid-email':
+                      errorMessage = '無効なメールアドレスです。';
+                      break;
+                    case 'auth/weak-password':
+                      errorMessage = 'パスワードは6文字以上で入力してください。';
+                      break;
+                    default:
+                      errorMessage = `エラー: ${error.message}`;
+                  }
+                  signupError.textContent = errorMessage;
+                });
+            });
+          } else {
+            console.log("Firebase not ready, retrying form setup...");
+            setTimeout(setupForm, 100);
+          }
+        }
+        setupForm();
+      });
+    </script>
   </body>
 </html>

@@ -29,19 +29,27 @@
         </div>
       </button>
     </form>
-    <div class="flex items-center gap-2 shrink-0">
-      <a
-        class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
-        href="{{ '/signin.html' | relative_url }}"
-      >
-        ドラフトに入る
-      </a>
-      <a
-        class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
-        href="{{ '/signup.html' | relative_url }}"
-      >
-        新規ログ作成
-      </a>
+    <div class="flex items-center gap-4 shrink-0">
+      <div class="logged-out flex items-center gap-2">
+        <a
+          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
+          href="{{ '/signin.html' | relative_url }}"
+        >
+          サインイン
+        </a>
+        <a
+          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
+          href="{{ '/signup.html' | relative_url }}"
+        >
+          サインアップ
+        </a>
+      </div>
+      <div class="logged-in items-center gap-4" style="display: none;">
+        <span class="user-details text-sm text-slate-600"></span>
+        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
+          ログアウト
+        </button>
+      </div>
     </div>
   </div>
 </header>
