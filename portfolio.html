@@ -1,0 +1,52 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+    <title>制作実績 - QWER</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Portfolio</p>
+              <h1>制作実績</h1>
+              <p>
+                これまでに取り組んできたプロジェクトや制作物を紹介します。
+              </p>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">プロジェクト一覧</h2>
+                                    <div class="surface-grid">
+                                      <!-- ここから個別の実績を追加していきます -->
+                                                              <article class="surface-card">
+                                                                <h3>PM1</h3>
+                                                                <p>プロジェクト管理ツールです</p>
+                                                              </article>
+                                                              <article class="surface-card">
+                                                                <h3>EPM</h3>
+                                                                <p>プロジェクトパフォーマンスを管理・可視化するツールです。</p>
+                                                              </article>
+                                                              <!-- 次のプロジェクトはここに追加 -->                                    </div>            </section>
+
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>
