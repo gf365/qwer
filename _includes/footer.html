@@ -1,46 +1,12 @@
-<footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
-  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
-        <p class="text-slate-600 text-base leading-relaxed">
-          学習ログ、テンプレート、アーカイブが一つの場所に集約された個人ナレッジベース。モバイルでも同じ体験で、日々の積み上げがそのまま実績になります。
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill">OGP自動出力</span>
-          <span class="pill">SiteMap.xml</span>
-          <span class="pill">Analytics</span>
-        </div>
-      </div>
-      <div>
-        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/index.html' | relative_url }}">ホーム</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/explore.html' | relative_url }}">学習ログ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/discover.html' | relative_url }}">テンプレート</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/join.html' | relative_url }}">実績アーカイブ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/search.html' | relative_url }}">検索</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/contact.html' | relative_url }}">運用相談</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/terms.html' | relative_url }}">利用規約</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/privacy.html' | relative_url }}">プライバシー</a></li>
-        </ul>
-        <p class="text-slate-500 text-xs mt-4">バックアップはMarkdown / HTMLで随時エクスポートできます。</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p class="m-0">@2024 QWER Atlas — personal knowledge base for learning logs.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
-      </div>
+<footer class="border-t border-slate-200">
+  <div class="w-full max-w-[1100px] mx-auto px-6 py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-slate-500 sm:text-center">&copy; 2025 QWER. All Rights Reserved.</span>
+      <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-slate-500 sm:mt-0 list-none p-0">
+        <li><a href="{{ '/about.html' | relative_url }}" class="hover:text-[#0f62fe] transition me-4 md:me-6">About</a></li>
+        <li><a href="{{ '/portfolio.html' | relative_url }}" class="hover:text-[#0f62fe] transition me-4 md:me-6">Portfolio</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}" class="hover:text-[#0f62fe] transition">Contact</a></li>
+      </ul>
     </div>
   </div>
-  {% include firebase_init.html %}
-  <script src="{{ '/assets/js/auth.js' | relative_url }}"></script>
 </footer>
