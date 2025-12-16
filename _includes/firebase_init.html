@@ -1,0 +1,46 @@
+<script type="module">
+  // Initialize Firebase for auth-aware pages. Uses site config values when present.
+  const firebaseConfig = {
+    apiKey: "{{ site.firebase.apiKey | default: '' }}",
+    authDomain: "{{ site.firebase.authDomain | default: '' }}",
+    projectId: "{{ site.firebase.projectId | default: '' }}",
+    storageBucket: "{{ site.firebase.storageBucket | default: '' }}",
+    messagingSenderId: "{{ site.firebase.messagingSenderId | default: '' }}",
+    appId: "{{ site.firebase.appId | default: '' }}"
+  };
+
+  const configMissing = Object.values(firebaseConfig).every((v) => !v);
+  if (configMissing) {
+    console.warn("Firebase config is not set; auth features are disabled.");
+    window.firebaseAuth = {
+      auth: {},
+      onAuthStateChanged: (_auth, cb) => {
+        console.warn("Skipping auth state changes because firebase is not configured.");
+        return () => {};
+      },
+      signOut: () => Promise.reject(new Error("Firebase config missing")),
+      signInWithEmailAndPassword: () => Promise.reject(new Error("Firebase config missing")),
+      createUserWithEmailAndPassword: () => Promise.reject(new Error("Firebase config missing"))
+    };
+    return;
+  }
+
+  (async () => {
+    const [{ initializeApp }, authModule] = await Promise.all([
+      import("https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"),
+      import("https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js")
+    ]);
+
+    const app = initializeApp(firebaseConfig);
+    const auth = authModule.getAuth(app);
+    const { onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } = authModule;
+
+    window.firebaseAuth = {
+      auth,
+      onAuthStateChanged,
+      signOut,
+      signInWithEmailAndPassword,
+      createUserWithEmailAndPassword
+    };
+  })();
+</script>

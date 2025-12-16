@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeAuthUI() {
+  if (!window.firebaseAuth) {
+    console.warn("Firebase not available; auth UI is disabled.");
+    return;
+  }
   if (document.querySelector('.auth-ui-initialized')) {
     return; // Already initialized
   }
