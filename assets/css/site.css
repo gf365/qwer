@@ -7,9 +7,9 @@
   --border-strong: #cbd5f5;
   --card-bg: #ffffff;
   --surface-muted: #f2f5ff;
-  --accent: #0f62fe;
-  --accent-dark: #0a46b5;
-  --accent-soft: #e3ebff;
+  --accent: #16a34a;
+  --accent-dark: #15803d;
+  --accent-soft: #dcfce7;
 }
 
 *,
@@ -179,7 +179,7 @@ a {
 .button-primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 15px 35px rgba(15, 98, 254, 0.25);
+  box-shadow: 0 15px 35px rgba(22, 163, 74, 0.25);
 }
 
 .button-primary:hover {
