@@ -41,8 +41,8 @@
       </div>
     </div>
   </div>
-  {% if site.firebase.apiKey %}
-  {% include firebase_init.html %}
-  <script src="{{ '/assets/js/auth.js' | relative_url }}"></script>
-  {% endif %}
+  {% comment %}
+  Firebase scripts are intentionally disabled. To enable, add your own
+  include and scripts here with site.firebase keys configured.
+  {% endcomment %}
 </footer>
