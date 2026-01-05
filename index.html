@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       rel="stylesheet"
@@ -25,153 +27,39 @@
           <div class="page-content">
             <section class="hero-panel">
               <p class="section-eyebrow">Personal Knowledge Base</p>
-              <h1>学習ログを未来の実績にするナレッジベース「QWER Atlas」</h1>
-              <p>
-                依頼書で定義した「①目的〜⑥将来拡張」までをそのまま体験に落とし込みました。日々の学習ログをMarkdownで残し、カテゴリとタグで整理し、公開/非公開を切り替えながらポートフォリオとして公開できます。
+              <h1>私はこうやってQWER Atlasを使っています</h1>
+              <p class="section-text">
+                このナレッジベースは、単なる学習メモではありません。実務・判断・失敗・学びを「あとから再利用できる形」にするための場所です。
               </p>
-              <div class="flex flex-wrap gap-3 justify-center">
-                <a class="button-primary" href="./signup.html">新規ログ作成</a>
-                <a class="button-secondary" href="./discover.html">テンプレートを見る</a>
-              </div>
-              <dl class="stat-grid">
-                <div class="stat-card">
-                  <dt>投稿フォーマット</dt>
-                  <dd>Markdown / リッチ</dd>
-                </div>
-                <div class="stat-card">
-                  <dt>カテゴリ</dt>
-                  <dd>7テーマ</dd>
-                </div>
-                <div class="stat-card">
-                  <dt>アナリティクス</dt>
-                  <dd>GA4 / CF</dd>
-                </div>
-                <div class="stat-card">
-                  <dt>バックアップ</dt>
-                  <dd>MD + HTML</dd>
-                </div>
-              </dl>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">① プロジェクトの目的</p>
-              <h2 class="section-heading">学習ログを資産化する構造</h2>
-              <p class="section-text">
-                毎日の記録を定期的に積み上げ、自分の考察と実装ログを公開できるようUIを最小限に整えています。公開/非公開をワンクリックで切り替え、仕事用の実績ページとプライベートなメモを同じ場所で管理できます。
-              </p>
+              <p class="section-eyebrow">ログの使い方</p>
+              <h2 class="section-heading">書いているログの種類</h2>
               <ul class="section-text list-disc pl-6">
-                <li>記事はドラフト→公開の2ステップ。非公開のままカテゴリ整理可能。</li>
-                <li>記事テンプレのショートカットで「今日学んだこと」を即入力。</li>
-                <li>カテゴリとタグの組合せで検索性と資産性を両立。</li>
+                <li>日次の学習ログ</li>
+                <li>DX施策の検討メモ</li>
+                <li>IT企画の判断理由</li>
+                <li>失敗したPoCの振り返り</li>
               </ul>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">② 必須の機能要件</p>
-              <h2 class="section-heading">学習ログ体験を支える7つのモジュール</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <h3>記事投稿機能</h3>
-                  <p>Markdown / 簡易リッチエディタに対応。画像・コードブロック、ドラフト保存、公開設定を同じフォームで行えます。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>記事一覧とアーカイブ</h3>
-                  <p>月別、カテゴリ別、タグ検索がまとめて呼び出せるUI。時系列ログがひと目で追えます。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>カテゴリ管理</h3>
-                  <p>AI/LLM・DX・プログラミング・UEFN・業務改善・英語学習・読書ログなど任意で追加/整理可能。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>テンプレ適用</h3>
-                  <p>「今日学んだこと」「背景」「学び」「気づき」「課題」をワンクリックで挿入。ルーチン化を支援します。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>固定ページ</h3>
-                  <p>Aboutページでプロフィールや学習テーマを公開し、ナレッジベースの文脈を整理します。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>SEO + アナリティクス</h3>
-                  <p>OGP、title/description編集、サイトマップ自動生成とGA/Cloudflare Analyticsの計測ラインを装備。</p>
-                </article>
-              </div>
-            </section>
-
-            <section class="split-panel">
-              <article class="surface-card section-stack">
-                <p class="section-eyebrow">③ デザイン要件</p>
-                <h2 class="section-heading">モノトーン + ワンポイント</h2>
-                <p class="section-text">
-                  余白を広く取り、コードや数式も読みやすいタイポグラフィに統一。トップページは記事一覧中心のブログ構造で、派手なLPではなく資産性を意識しました。
-                </p>
-                <ul class="section-text list-disc pl-6">
-                  <li>白背景 × ネイビー × アクセントブルー。</li>
-                  <li>モバイルファーストで、同じ体験を提供。</li>
-                  <li>ログ一覧・テンプレ一覧・Aboutすべてでトンマナ統一。</li>
-                </ul>
-              </article>
-              <article class="surface-card section-stack">
-                <p class="section-eyebrow">④ 運用要件</p>
-                <h2 class="section-heading">ノーコードで日次更新</h2>
-                <p class="section-text">
-                  投稿・編集・画像アップロードをGUIで完結。カテゴリやタグの追加もUI上で操作でき、バックアップ/エクスポートはMarkdownまたはHTMLでいつでも取得できます。
-                </p>
-                <ul class="section-text list-disc pl-6">
-                  <li>1ページで投稿→タグ付→公開が完了。</li>
-                  <li>画像アップロードをドラッグ&ドロップで対応。</li>
-                  <li>週次バックアップを自動実行しGitHubへ同期。</li>
-                </ul>
-              </article>
-            </section>
-
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">⑤ 技術要件</p>
-              <h2 class="section-heading">3つの構成から選択</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <h3>WordPress</h3>
-                  <p>コスト最小・プラグイン豊富。ノーコード運用重視で、カスタム投稿 + ACFでテンプレートを再現可能。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>Next.js + Headless CMS</h3>
-                  <p>おしゃれでモダンなUIとAPI拡張性。長期的にAI連携したい場合におすすめ。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>Astro / Hugo + GitHub + Vercel</h3>
-                  <p>静的サイトで爆速。Gitベースで壊れず、将来の引っ越しも容易なため本依頼では最有力案です。</p>
-                </article>
-              </div>
-            </section>
-
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">⑥ 将来拡張</p>
-              <h2 class="section-heading">次のステップを見据えたロードマップ</h2>
-              <div class="timeline">
-                <article class="timeline-entry">
-                  <h3>全文検索と関連記事</h3>
-                  <p>ログを横断検索し、類似タグから関連記事を自動表示。知識構造化を推進します。</p>
-                </article>
-                <article class="timeline-entry">
-                  <h3>API + AI連携</h3>
-                  <p>ChatGPT等のエージェントと接続し、自動タグ抽出や要約生成を行います。</p>
-                </article>
-                <article class="timeline-entry">
-                  <h3>年次レポート自動作成</h3>
-                  <p>年間の学習テーマ・成果物をハイライト化して生成。副業や案件提案に流用できます。</p>
-                </article>
-              </div>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">さっそくナレッジベースを育てましょう</h2>
+              <p class="section-eyebrow">テンプレートの役割</p>
+              <h2 class="section-heading">なぜテンプレートを使うのか</h2>
               <p class="section-text">
-                依頼書をベースにUI/UX/運用ラインまで整えたので、あとは記録するだけです。テンプレートページから今日のログを複製して、カテゴリごとのアーカイブに紐づけていきましょう。
+                考えは、そのままでは残りません。構造に落としたとき、初めて資産になります。そのために、毎回同じ問いを自分に投げるテンプレートを使っています。
               </p>
-              <div class="flex gap-3 flex-wrap">
-                <a class="button-primary" href="./signup.html">今すぐ記録を始める</a>
-                <a class="button-secondary" href="./explore.html">公開ログを確認</a>
-              </div>
             </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">思考の型</p>
+              <h2 class="section-heading">テンプレートは「思考の型」</h2>
+              <p class="section-text">
+                実務テンプレートは、書くためのものではなく <strong>考え漏れを防ぐためのもの</strong>です。この考え方をもとに、いくつかのテンプレートを公開・整理しています。
+              </p>
+            </section>
+
           </div>
         </main>
         {% include footer.html %}
