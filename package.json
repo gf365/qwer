@@ -1,0 +1,13 @@
+{
+  "name": "qwer-atlas-site",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "dev": "npm run build && http-server _site -p 4173 -c-1",
+    "preview": "http-server _site -p 4173 -c-1",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

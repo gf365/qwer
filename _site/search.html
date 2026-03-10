@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,214 +11,499 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
 
-    <title>検索結果 - QWER</title>
+    <title>検索 - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas の公開ログ、テンプレート、ポリシーを横断検索できます。カテゴリ、タグ、本文から過去ログを探せます。"
+    />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
         <link rel="stylesheet" href="./assets/css/site.css" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      .search-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .search-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .search-form__control {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .search-input {
+        border-radius: 999px;
+        border: 1px solid #cbd5f5;
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+        background: #fff;
+      }
+      .search-input:focus {
+        outline: 2px solid #0f62fe;
+        outline-offset: 2px;
+      }
+      .search-button {
+        border-radius: 999px;
+        border: none;
+        padding: 0.9rem 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(135deg, #0f62fe 0%, #5d42ff 100%);
+        cursor: pointer;
+      }
+      .search-button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      .search-hint {
+        font-size: 0.9rem;
+        color: #64748b;
+      }
+      .results-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .results-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        color: #475569;
+        font-size: 0.95rem;
+      }
+      .result-status {
+        font-weight: 600;
+        color: #0f172a;
+      }
+      .results-grid {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 768px) {
+        .results-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      .result-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .result-card:hover {
+        border-color: #0f62fe;
+        transform: translateY(-2px);
+      }
+      .result-link {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+      }
+      .result-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: #1e293b;
+      }
+      .result-badge {
+        padding: 0.1rem 0.6rem;
+        border-radius: 999px;
+        background: #edf2ff;
+        color: #4338ca;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .result-url {
+        color: #64748b;
+        font-size: 0.75rem;
+      }
+      .result-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 0;
+        color: #0f172a;
+      }
+      .result-snippet {
+        font-size: 0.95rem;
+        color: #475569;
+        line-height: 1.6;
+      }
+      .result-snippet mark {
+        background: #fff1a6;
+        color: #0f172a;
+        border-radius: 0.2rem;
+        padding: 0 0.15rem;
+      }
+      .result-footer {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+        color: #0f62fe;
+        font-weight: 600;
+      }
+      .empty-state {
+        text-align: center;
+        padding: 2rem;
+        color: #64748b;
+      }
+    </style>
   </head>
   <body>
     <div class="page-shell">
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-10 py-3 shadow-sm" role="banner">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
   <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER ホーム">
-      <div class="size-4" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
+      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
       </div>
-      <h2 class="text-[#111a22] text-lg font-bold leading-tight tracking-[-0.015em]">QWER</h2>
+      <div>
+        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
+        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Learning Log App</p>
+      </div>
     </a>
   </div>
   <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="Main Navigation" class="flex items-center">
-      <ul class="flex items-center gap-9 m-0 p-0 list-none">
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./explore.html">探索</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./discover.html">発見</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./about.html">概要</a></li>
+    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
+      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
+        <li><a class="hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
+        <li><a class="hover:text-slate-900 transition" href="./explore.html">公開ログ</a></li>
+        <li><a class="hover:text-slate-900 transition" href="./discover.html">テンプレート</a></li>
+        <li><a class="hover:text-slate-900 transition" href="./about.html">サービス概要</a></li>
       </ul>
     </nav>
-    <form role="search" action="./search.html" method="get" class="flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">検索</label>
-      <input id="search-q" name="q" type="search" placeholder="検索" class="hidden md:inline-block" />
+    <form role="search" action="./search.html" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
+      <label for="search-q" class="sr-only">ナレッジ検索</label>
+      <input id="search-q" name="q" type="search" placeholder="公開ログやテンプレを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
       <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
         <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
         </div>
       </button>
     </form>
-    <div class="flex items-center gap-2 shrink-0">
-      <a
-        class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[96px] text-center"
-        href="./signin.html"
-      >
-        サインイン
-      </a>
-      <a
-        class="rounded-full bg-[#111a22] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0b1320] transition min-w-[96px] text-center shadow-sm"
-        href="./signup.html"
-      >
-        サインアップ
-      </a>
+    <div class="flex items-center gap-4 shrink-0">
+      <div class="logged-out flex items-center gap-2">
+        <a
+          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
+          href="./signin.html"
+        >
+          ログイン
+        </a>
+        <a
+          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
+          href="./signup.html"
+        >
+          今すぐ始める
+        </a>
+      </div>
+      <div class="logged-in items-center gap-4" style="display: none;">
+        <span class="user-details text-sm text-slate-600"></span>
+        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
+          ログアウト
+        </button>
+      </div>
     </div>
   </div>
 </header>
 
         <main class="page-main">
           <div class="page-content">
-            <section class="hero-panel">
-              <h1 id="search-title">検索結果</h1>
-              <p>QWER全体からキーワードに紐づくページを横断検索できます。インデックス同様、白ベースのモダンなUIで読みやすく整えました。</p>
+            <section class="hero-panel search-hero">
+              <div>
+                <p class="section-eyebrow">Search</p>
+                <h1>全文検索</h1>
+                <p>
+                  QWER Atlas 内の公開ログ、テンプレート、利用規約、ポリシーなどを横断検索します。タグ、カテゴリ、本文の一部から、過去の記録へすぐにアクセスできます。
+                </p>
+              </div>
+              <form id="search-form" class="search-form" role="search">
+                <div class="search-form__control">
+                  <input
+                    type="search"
+                    id="search-input"
+                    name="q"
+                    class="search-input"
+                    placeholder="例：LLM、UEFN、プライバシー"
+                    aria-label="検索ワードを入力"
+                    autocomplete="off"
+                  />
+                  <button class="search-button" type="submit" id="search-submit">検索</button>
+                </div>
+                <p class="search-hint">タグ / カテゴリ / 本文をまとめて検索できます。スペース区切りで複数キーワード検索も可能です。</p>
+              </form>
             </section>
             <section class="surface-card section-stack">
-              <h2 class="section-heading">結果一覧</h2>
-              <div id="search-results" class="section-stack" aria-live="polite"></div>
+              <div class="results-header">
+                <h2 class="section-heading">結果一覧</h2>
+                <div class="results-meta">
+                  <span id="search-title" class="result-status">検索ワードを入力してください</span>
+                  <span id="search-status"></span>
+                </div>
+              </div>
+              <div id="search-results" class="results-grid" aria-live="polite"></div>
             </section>
           </div>
         </main>
-        <footer class="flex justify-center">
-  <div class="flex max-w-[960px] flex-1 flex-col">
-    <div class="flex flex-col gap-6 px-5 py-10 text-center @container">
-      <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./about.html">概要</a>
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./contact.html">お問い合わせ</a>
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./terms.html">サービス規約</a>
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./privacy.html">プライバシーポリシー</a>
+        <footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
+  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="flex flex-col gap-3">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
+        <p class="text-slate-600 text-base leading-relaxed">
+          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill">テンプレ挿入</span>
+          <span class="pill">公開/非公開</span>
+          <span class="pill">全文検索</span>
+        </div>
       </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#">
-          <div class="text-slate-400 hover:text-slate-600 transition" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-              ></path>
-            </svg>
-          </div>
-        </a>
-        <a href="#">
-          <div class="text-slate-400 hover:text-slate-600 transition" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-              ></path>
-            </svg>
-          </div>
-        </a>
-        <a href="#">
-          <div class="text-slate-400 hover:text-slate-600 transition" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-              ></path>
-            </svg>
-          </div>
-        </a>
+      <div>
+        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
+        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
+          <li><a class="hover:text-[#0f62fe] transition" href="./index.html">ホーム</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./explore.html">公開ログ</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./discover.html">テンプレート</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./about.html">サービス概要</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./join.html">活用事例掲載</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./search.html">検索</a></li>
+        </ul>
       </div>
-      <p class="text-slate-400 text-base font-normal leading-normal">@2024 QWER. 無断転載を禁ず。</p>
+      <div>
+        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
+        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
+          <li><a class="hover:text-[#0f62fe] transition" href="./contact.html">導入相談 / お問い合わせ</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./terms.html">利用規約</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./privacy.html">プライバシー</a></li>
+        </ul>
+        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
+        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
+        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
+      </div>
     </div>
   </div>
 </footer>
+<script src="./assets/js/auth.js" defer></script>
 
       </div>
     </div>
-    <!-- 認証状態管理 -->
-    <script type="module" src="./auth-ui.js"></script>
-    <!-- 検索スクリプト -->
-    <script type="module">
-      const searchTitleEl = document.getElementById('search-title');
-      const resultsContainer = document.getElementById('search-results');
-      const query = new URLSearchParams(window.location.search).get('q');
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('search-input');
+        const searchForm = document.getElementById('search-form');
+        const searchTitle = document.getElementById('search-title');
+        const searchStatus = document.getElementById('search-status');
+        const resultsContainer = document.getElementById('search-results');
+        const searchButton = document.getElementById('search-submit');
+        const params = new URLSearchParams(window.location.search);
+        const initialQuery = params.get('q')?.trim() || '';
 
-      // 検索対象のファイルリスト
-      const searchableFiles = [
-        { path: './index.html', title: 'ホーム' },
-        { path: './about.html', title: '概要' },
-        { path: './contact.html', title: 'お問い合わせ' },
-        { path: './discover.html', title: '発見' },
-        { path: './explore.html', title: '探索' },
-        { path: './join.html', title: 'コミュニティ参加リクエスト' },
-        { path: './privacy.html', title: 'プライバシーポリシー' },
-        { path: './terms.html', title: 'サービス規約' },
-      ];
+        const searchableFiles = [
+          './index.html',
+          './about.html',
+          './contact.html',
+          './discover.html',
+          './explore.html',
+          './join.html',
+          './privacy.html',
+          './signin.html',
+          './signup.html',
+          './terms.html'
+        ];
 
-      function createSnippet(text, query) {
-        const index = text.toLowerCase().indexOf(query.toLowerCase());
-        if (index === -1) return text.substring(0, 100) + '...';
-
-        const start = Math.max(0, index - 30);
-        const end = Math.min(text.length, index + query.length + 70);
-        let snippet = text.substring(start, end);
-
-        if (start > 0) snippet = '...' + snippet;
-        if (end < text.length) snippet = snippet + '...';
-
-        // キーワードをハイライト
-        const regex = new RegExp(`(${query})`, 'gi');
-        return snippet.replace(regex, '<mark class="bg-yellow-200 px-1 rounded">$1</mark>');
-      }
-
-      async function performSearch() {
-        if (!query || query.trim() === '') {
-          searchTitleEl.textContent = '検索キーワードを入力してください';
-          resultsContainer.innerHTML = '<p class="section-text">ヘッダーの検索バーからキーワードを入力して検索できます。</p>';
-          return;
+        if (initialQuery) {
+          searchInput.value = initialQuery;
+          runSearch(initialQuery);
+        } else {
+          resultsContainer.innerHTML =
+            '<div class="empty-state">検索バーにキーワードを入力すると結果が表示されます。</div>';
         }
 
-        searchTitleEl.textContent = `「${query}」の検索結果`;
-        resultsContainer.innerHTML = '<p class="section-text">検索中...</p>';
-
-        const searchPromises = searchableFiles.map(async (file) => {
-          try {
-            const response = await fetch(file.path);
-            if (!response.ok) return null;
-
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            // 検索対象の要素からテキストを抽出
-            const content = Array.from(doc.querySelectorAll('h1, h2, h3, p, li'))
-              .map(el => el.textContent.trim())
-              .join(' ');
-
-            if (content.toLowerCase().includes(query.toLowerCase())) {
-              return {
-                path: file.path,
-                title: doc.querySelector('title')?.textContent || file.title,
-                snippet: createSnippet(content, query),
-              };
-            }
-          } catch (error) {
-            console.error(`Error processing ${file.path}:`, error);
+        searchForm.addEventListener('submit', event => {
+          event.preventDefault();
+          const query = searchInput.value.trim();
+          if (!query) {
+            searchTitle.textContent = '検索ワードを入力してください';
+            searchStatus.textContent = '';
+            resultsContainer.innerHTML =
+              '<div class="empty-state">検索ワードを入力すると、全文検索が開始されます。</div>';
+            return;
           }
-          return null;
+          const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
+          window.history.replaceState({}, '', newUrl);
+          runSearch(query);
         });
 
-        const allResults = await Promise.all(searchPromises);
-        const results = allResults.filter(r => r !== null);
+        async function runSearch(query) {
+          searchTitle.textContent = `「${query}」の検索結果`;
+          searchStatus.textContent = '検索中...';
+          searchButton.disabled = true;
+          resultsContainer.innerHTML =
+            '<div class="empty-state">インデックスを走査しています...</div>';
 
-        displayResults(results);
-      }
-
-      function displayResults(results) {
-        resultsContainer.innerHTML = ''; // 結果をクリア
-        if (results.length === 0) {
-          resultsContainer.innerHTML = '<p class="section-text">キーワードに一致するページは見つかりませんでした。</p>';
-          return;
+          const results = await search(query, searchableFiles);
+          displayResults(results, query);
+          searchButton.disabled = false;
         }
 
-        results.forEach(result => {
-          const resultCard = `
-            <a href="${result.path}" class="block p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-slate-200">
-              <h3 class="text-lg font-bold text-slate-800">${result.title}</h3>
-              <p class="mt-2 text-sm text-slate-600">${result.snippet}</p>
-            </a>
-          `;
-          resultsContainer.insertAdjacentHTML('beforeend', resultCard);
-        });
-      }
+        async function search(query, files) {
+          const results = [];
+          const q = query.toLowerCase();
 
-      performSearch();
+          for (const file of files) {
+            try {
+              const response = await fetch(file);
+              if (!response.ok) {
+                console.error(`Error fetching ${file}: ${response.statusText}`);
+                continue;
+              }
+              const html = await response.text();
+              const plainHtml = html.toLowerCase();
+
+              if (!plainHtml.includes(q)) continue;
+
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              const title = doc.querySelector('title')?.textContent?.trim() || file;
+              const description =
+                doc.querySelector('meta[name="description"]')?.content?.trim() || '';
+              const snippet = createSnippet(doc.body?.textContent || '', query);
+              results.push({
+                file,
+                title,
+                description,
+                snippet,
+                badge: getBadge(file)
+              });
+            } catch (error) {
+              console.error(`Error processing ${file}:`, error);
+            }
+          }
+          return results;
+        }
+
+        function displayResults(results, query) {
+          resultsContainer.innerHTML = '';
+
+          if (results.length === 0) {
+            searchStatus.textContent = '一致したページはありませんでした。';
+            resultsContainer.innerHTML =
+              '<div class="empty-state">条件を変えて再度検索してみてください。</div>';
+            return;
+          }
+
+          searchStatus.textContent = `${results.length}件ヒット`;
+          const fragment = document.createDocumentFragment();
+
+          results.forEach(result => {
+            const card = document.createElement('article');
+            card.className = 'result-card';
+
+            const link = document.createElement('a');
+            link.href = result.file;
+            link.className = 'result-link';
+            link.setAttribute('aria-label', `${result.title}のページを開く`);
+
+            const meta = document.createElement('div');
+            meta.className = 'result-meta';
+
+            const badge = document.createElement('span');
+            badge.className = 'result-badge';
+            badge.textContent = result.badge;
+
+            const url = document.createElement('span');
+            url.className = 'result-url';
+            url.textContent = result.file.replace('./', '/');
+
+            meta.appendChild(badge);
+            meta.appendChild(url);
+
+            const title = document.createElement('h3');
+            title.className = 'result-title';
+            title.textContent = result.title;
+
+            const snippet = document.createElement('p');
+            snippet.className = 'result-snippet';
+            snippet.innerHTML = highlightQuery(result.snippet || result.description, query);
+
+            const footer = document.createElement('div');
+            footer.className = 'result-footer';
+            footer.innerHTML = '詳細を表示 <span aria-hidden="true">↗</span>';
+
+            link.appendChild(meta);
+            link.appendChild(title);
+            link.appendChild(snippet);
+            link.appendChild(footer);
+            card.appendChild(link);
+            fragment.appendChild(card);
+          });
+
+          resultsContainer.appendChild(fragment);
+        }
+
+        function createSnippet(text, query) {
+          const condensed = text.replace(/\s+/g, ' ').trim();
+          if (!condensed) return '';
+
+          const lowerText = condensed.toLowerCase();
+          const lowerQuery = query.toLowerCase();
+          const index = lowerText.indexOf(lowerQuery);
+
+          if (index === -1) return condensed.slice(0, 140) + (condensed.length > 140 ? '…' : '');
+
+          const start = Math.max(0, index - 70);
+          const end = Math.min(condensed.length, index + query.length + 70);
+          const prefix = start > 0 ? '…' : '';
+          const suffix = end < condensed.length ? '…' : '';
+          return `${prefix}${condensed.slice(start, end)}${suffix}`;
+        }
+
+        function highlightQuery(text, query) {
+          if (!text) return '';
+          const safeText = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const regex = new RegExp(`(${escaped})`, 'gi');
+          return safeText.replace(regex, '<mark>$1</mark>');
+        }
+
+        function getBadge(file) {
+          const map = {
+            './index.html': 'Home',
+            './explore.html': 'Log',
+            './discover.html': 'Template',
+            './join.html': 'Archive',
+            './about.html': 'About',
+            './contact.html': 'Contact',
+            './privacy.html': 'Policy',
+            './terms.html': 'Policy',
+            './signin.html': 'Auth',
+            './signup.html': 'Auth'
+          };
+          return map[file] || 'Page';
+        }
+      });
     </script>
   </body>
 </html>

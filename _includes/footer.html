@@ -4,36 +4,37 @@
       <div class="flex flex-col gap-3">
         <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
         <p class="text-slate-600 text-base leading-relaxed">
-          学習ログ、テンプレート、アーカイブが一つの場所に集約された個人ナレッジベース。モバイルでも同じ体験で、日々の積み上げがそのまま実績になります。
+          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
         </p>
         <div class="flex flex-wrap gap-2">
-          <span class="pill">OGP自動出力</span>
-          <span class="pill">SiteMap.xml</span>
-          <span class="pill">Analytics</span>
+          <span class="pill">テンプレ挿入</span>
+          <span class="pill">公開/非公開</span>
+          <span class="pill">全文検索</span>
         </div>
       </div>
       <div>
         <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
         <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
           <li><a class="hover:text-[#0f62fe] transition" href="{{ '/index.html' | relative_url }}">ホーム</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/explore.html' | relative_url }}">学習ログ</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/explore.html' | relative_url }}">公開ログ</a></li>
           <li><a class="hover:text-[#0f62fe] transition" href="{{ '/discover.html' | relative_url }}">テンプレート</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/join.html' | relative_url }}">実績アーカイブ</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/about.html' | relative_url }}">サービス概要</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/join.html' | relative_url }}">活用事例掲載</a></li>
           <li><a class="hover:text-[#0f62fe] transition" href="{{ '/search.html' | relative_url }}">検索</a></li>
         </ul>
       </div>
       <div>
         <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
         <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/contact.html' | relative_url }}">運用相談</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="{{ '/contact.html' | relative_url }}">導入相談 / お問い合わせ</a></li>
           <li><a class="hover:text-[#0f62fe] transition" href="{{ '/terms.html' | relative_url }}">利用規約</a></li>
           <li><a class="hover:text-[#0f62fe] transition" href="{{ '/privacy.html' | relative_url }}">プライバシー</a></li>
         </ul>
-        <p class="text-slate-500 text-xs mt-4">バックアップはMarkdown / HTMLで随時エクスポートできます。</p>
+        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
       </div>
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p class="m-0">@2024 QWER Atlas — personal knowledge base for learning logs.</p>
+      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
       <div class="flex items-center gap-4">
         <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
         <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
@@ -41,8 +42,5 @@
       </div>
     </div>
   </div>
-  {% comment %}
-  Firebase scripts are intentionally disabled. To enable, add your own
-  include and scripts here with site.firebase keys configured.
-  {% endcomment %}
 </footer>
+<script src="{{ '/assets/js/auth.js' | relative_url }}" defer></script>

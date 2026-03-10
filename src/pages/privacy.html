@@ -1,0 +1,63 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+    <title>プライバシーポリシー - QWER Atlas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Privacy</p>
+              <h1>プライバシーポリシー</h1>
+              <p>個人情報やログデータの扱い方針をまとめています。</p>
+            </section>
+
+            <article class="detail-article">
+              <h2>1. 収集する情報</h2>
+              <ul>
+                <li>アカウント情報（名前・メールアドレス・プロフィール）</li>
+                <li>学習ログの本文、添付画像、タグ/カテゴリなどのメタデータ</li>
+                <li>利用状況の統計情報（個人を特定しないアクセス解析）</li>
+              </ul>
+              <h2>2. 利用目的</h2>
+              <ul>
+                <li>学習ログの作成・公開・検索などサービス提供のため</li>
+                <li>バックアップ/エクスポート機能の提供・改良のため</li>
+                <li>サイト改善のためのアクセス解析（個人を特定しない形）</li>
+              </ul>
+              <h2>3. 公開 / 非公開の扱い</h2>
+              <p>各ログには公開/非公開設定があります。非公開ログは本人のみが閲覧でき、管理者が内容を参照することはありません。</p>
+              <h2>4. 第三者提供</h2>
+              <p>法令に基づく場合を除き、第三者に個人情報を提供することはありません。ユーザーが許可しない限り、自動で外部送信されることもありません。</p>
+              <h2>5. データ保護</h2>
+              <ul>
+                <li>バックアップは適切に保管し、アクセス権限を必要最小限に制限します。</li>
+                <li>権限の棚卸しや設定の見直しを定期的に行います。</li>
+              </ul>
+              <h2>6. 変更について</h2>
+              <p>本ポリシーは必要に応じて更新します。更新時はサイト上で案内します。</p>
+            </article>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

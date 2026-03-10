@@ -1,0 +1,106 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+    <title>サービス概要 - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas のコンセプト、対象ユーザー、設計方針を紹介します。学習ログを公開資産へ変えるための運用設計をまとめています。"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">About The Service</p>
+              <h1>QWER Atlas とは</h1>
+              <p>
+                QWER Atlas は、学習ログや検証メモを「続けやすく、あとで見せやすい形」で蓄積するためのアプリです。毎日の記録を、検索できる実績アーカイブへ変えることを目的に設計しています。
+              </p>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">解決したい課題</h2>
+              <p class="section-text">
+                学びは積み上がっていても、あとで見返せず、外に見せる形にもなっていないことが多くあります。QWER Atlas は、記録のハードルを下げつつ、公開できる状態まで運びやすくするための土台です。
+              </p>
+              <div class="badge-list">
+                <span class="badge">AI / LLM</span>
+                <span class="badge">DX・業務改善</span>
+                <span class="badge">プログラミング</span>
+                <span class="badge">UEFN</span>
+                <span class="badge">英語学習</span>
+                <span class="badge">読書ログ</span>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">このサービスが向いている人</h2>
+              <p class="section-text">
+                学習ログや調査メモを、単なる個人メモではなく公開可能な成果物として育てたい人に向いています。特に、複数テーマを横断して整理したい人との相性が良いです。
+              </p>
+              <ul class="section-text list-disc pl-6">
+                <li>副業や案件提案に使える形で、日々の成長ログを残したい人。</li>
+                <li>公開/非公開を切り替えながら、安心して下書きを育てたい人。</li>
+                <li>カテゴリ、タグ、全文検索で後から使い回せる知識ベースを持ちたい人。</li>
+              </ul>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">設計方針</h2>
+              <p class="section-text">
+                記録を止めないこと、あとから探せること、外部共有しやすいことを優先しています。派手な演出よりも、技術ログや学習メモを継続しやすい運用のしやすさを前面に置いています。
+              </p>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>テンプレート先行</h3>
+                  <p>書き出し時点で骨組みを入れ、考え漏れと書き始めの負荷を減らします。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>公開/非公開の両立</h3>
+                  <p>作業中は非公開で持ち、共有できる粒度になったら公開へ切り替えます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>移行しやすい構造</h3>
+                  <p>Markdown / HTML エクスポート前提で、将来の移行や再利用にも備えます。</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">価値観</h2>
+              <p class="section-text">QWER Atlas が大切にしている運用原則です。</p>
+              <ul class="section-text list-disc pl-6">
+                <li>記録の継続を優先し、UI とテンプレートは軽く保つこと。</li>
+                <li>公開できる成果と、公開前の下書きを同じ流れで扱えること。</li>
+                <li>カテゴリやタグを通じて、あとで再利用しやすい構造にすること。</li>
+                <li>学びを閉じたメモで終わらせず、外部共有できる資産に変えること。</li>
+              </ul>
+              <div class="flex gap-3 flex-wrap">
+                <a class="button-primary" href="./signup.html">今すぐ始める</a>
+                <a class="button-secondary" href="./explore.html">公開ログを見る</a>
+              </div>
+            </section>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

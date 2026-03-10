@@ -1,0 +1,61 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+    <title>サービス規約 - QWER Atlas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Terms</p>
+              <h1>サービス規約</h1>
+              <p>当サービスを安全にご利用いただくための基本事項です。</p>
+            </section>
+
+            <article class="detail-article">
+              <h2>1. 利用目的</h2>
+              <p>本サービスは、学習ログ・研究ログの作成、管理、公開を支援するために提供されます。営利/非営利を問わず、利用者が自身の成果を整理することを目的とします。</p>
+              <h2>2. アカウント</h2>
+              <ul>
+                <li>登録情報は正確かつ最新の内容を維持してください。</li>
+                <li>アカウントは個人利用です。共有やなりすましはできません。</li>
+              </ul>
+              <h2>3. 禁止事項</h2>
+              <ul>
+                <li>他者の権利を侵害する内容を投稿すること。</li>
+                <li>スパム行為や不正アクセスを試みること。</li>
+                <li>サービスの動作を妨げるプログラムやボットを実行すること。</li>
+              </ul>
+              <h2>4. コンテンツの取り扱い</h2>
+              <p>投稿の著作権はユーザーに帰属します。公開設定のコンテンツは、ポートフォリオとして閲覧できる状態になります。</p>
+              <h2>5. サービスの変更</h2>
+              <p>機能の追加や停止などを行う場合があります。重要な変更は事前に通知します。</p>
+              <h2>6. 免責事項</h2>
+              <p>サービスの利用により生じたいかなる損害についても、当方は責任を負いません。ただし故意または重過失がある場合を除きます。</p>
+              <h2>7. 規約の更新</h2>
+              <p>本規約は必要に応じて改訂します。最新版は本ページで案内します。</p>
+            </article>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

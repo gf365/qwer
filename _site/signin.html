@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,7 +10,11 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>サインイン - QWER</title>
+    <title>ログイン - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas のログインページです。過去の学習ログ、テンプレート、公開設定を管理するアカウントにアクセスします。"
+    />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
         <link rel="stylesheet" href="./assets/css/site.css" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -19,46 +22,57 @@
   <body>
     <div class="page-shell">
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-10 py-3 shadow-sm" role="banner">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
   <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER ホーム">
-      <div class="size-4" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
+      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
       </div>
-      <h2 class="text-[#111a22] text-lg font-bold leading-tight tracking-[-0.015em]">QWER</h2>
+      <div>
+        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
+        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Learning Log App</p>
+      </div>
     </a>
   </div>
   <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="Main Navigation" class="flex items-center">
-      <ul class="flex items-center gap-9 m-0 p-0 list-none">
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./explore.html">探索</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./discover.html">発見</a></li>
-        <li><a class="text-slate-700 text-sm font-medium leading-normal hover:text-slate-900 transition" href="./about.html">概要</a></li>
+    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
+      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
+        <li><a class="hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
+        <li><a class="hover:text-slate-900 transition" href="./explore.html">公開ログ</a></li>
+        <li><a class="hover:text-slate-900 transition" href="./discover.html">テンプレート</a></li>
+        <li><a class="hover:text-slate-900 transition" href="./about.html">サービス概要</a></li>
       </ul>
     </nav>
-    <form role="search" action="./search.html" method="get" class="flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">検索</label>
-      <input id="search-q" name="q" type="search" placeholder="検索" class="hidden md:inline-block" />
+    <form role="search" action="./search.html" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
+      <label for="search-q" class="sr-only">ナレッジ検索</label>
+      <input id="search-q" name="q" type="search" placeholder="公開ログやテンプレを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
       <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
         <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
         </div>
       </button>
     </form>
-    <div class="flex items-center gap-2 shrink-0">
-      <a
-        class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[96px] text-center"
-        href="./signin.html"
-      >
-        サインイン
-      </a>
-      <a
-        class="rounded-full bg-[#111a22] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0b1320] transition min-w-[96px] text-center shadow-sm"
-        href="./signup.html"
-      >
-        サインアップ
-      </a>
+    <div class="flex items-center gap-4 shrink-0">
+      <div class="logged-out flex items-center gap-2">
+        <a
+          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
+          href="./signin.html"
+        >
+          ログイン
+        </a>
+        <a
+          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
+          href="./signup.html"
+        >
+          今すぐ始める
+        </a>
+      </div>
+      <div class="logged-in items-center gap-4" style="display: none;">
+        <span class="user-details text-sm text-slate-600"></span>
+        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
+          ログアウト
+        </button>
+      </div>
     </div>
   </div>
 </header>
@@ -66,111 +80,104 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <h1>サインイン</h1>
-              <p>アカウントにアクセスして、お気に入りの記事やブックマークを管理しましょう。ライトテーマに合わせてフォームも白背景にアップデートしました。</p>
+              <p class="section-eyebrow">Sign In</p>
+              <h1>アカウントにログイン</h1>
+              <p>保存済みの学習ログ、テンプレート、公開設定にアクセスして、記録の続きから再開できます。</p>
             </section>
 
             <form id="signin-form" class="surface-card form-card">
-              <div id="form-message" class="hidden"></div>
               <div>
                 <label for="signin-email">メールアドレス</label>
-                <input id="signin-email" type="email" name="email" required />
+                <input id="signin-email" type="email" name="email" required class="w-full" />
               </div>
               <div>
                 <label for="signin-password">パスワード</label>
-                <input id="signin-password" type="password" name="password" required />
+                <input id="signin-password" type="password" name="password" required class="w-full" />
               </div>
-              <button type="submit" class="button-primary">サインイン</button>
-              <p class="section-text">アカウントをお持ちでない場合は <a class="text-[#2563eb] underline" href="./signup.html">サインアップ</a> してください。</p>
+              <div id="signin-error" class="text-slate-500 text-sm my-2 min-h-[1.5rem]" role="status" aria-live="polite"></div>
+              <button type="submit" class="button-primary">ログイン</button>
+              <p class="section-text">はじめての方は <a class="text-[#0f62fe] underline" href="./signup.html">今すぐ始める</a> からアカウントを作成してください。</p>
             </form>
           </div>
         </main>
-        <footer class="flex justify-center">
-  <div class="flex max-w-[960px] flex-1 flex-col">
-    <div class="flex flex-col gap-6 px-5 py-10 text-center @container">
-      <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./about.html">概要</a>
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./contact.html">お問い合わせ</a>
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./terms.html">サービス規約</a>
-        <a class="text-slate-500 text-base font-medium leading-normal min-w-40 hover:text-slate-800 transition" href="./privacy.html">プライバシーポリシー</a>
+        <footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
+  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="flex flex-col gap-3">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
+        <p class="text-slate-600 text-base leading-relaxed">
+          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill">テンプレ挿入</span>
+          <span class="pill">公開/非公開</span>
+          <span class="pill">全文検索</span>
+        </div>
       </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#">
-          <div class="text-slate-400 hover:text-slate-600 transition" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-              ></path>
-            </svg>
-          </div>
-        </a>
-        <a href="#">
-          <div class="text-slate-400 hover:text-slate-600 transition" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-              ></path>
-            </svg>
-          </div>
-        </a>
-        <a href="#">
-          <div class="text-slate-400 hover:text-slate-600 transition" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-              ></path>
-            </svg>
-          </div>
-        </a>
+      <div>
+        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
+        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
+          <li><a class="hover:text-[#0f62fe] transition" href="./index.html">ホーム</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./explore.html">公開ログ</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./discover.html">テンプレート</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./about.html">サービス概要</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./join.html">活用事例掲載</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./search.html">検索</a></li>
+        </ul>
       </div>
-      <p class="text-slate-400 text-base font-normal leading-normal">@2024 QWER. 無断転載を禁ず。</p>
+      <div>
+        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
+        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
+          <li><a class="hover:text-[#0f62fe] transition" href="./contact.html">導入相談 / お問い合わせ</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./terms.html">利用規約</a></li>
+          <li><a class="hover:text-[#0f62fe] transition" href="./privacy.html">プライバシー</a></li>
+        </ul>
+        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
+        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
+        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
+      </div>
     </div>
   </div>
 </footer>
+<script src="./assets/js/auth.js" defer></script>
 
       </div>
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('signin-form');
-        const messageDiv = document.getElementById('form-message');
+        const signinForm = document.getElementById('signin-form');
+        const signinError = document.getElementById('signin-error');
+        const submitButton = signinForm.querySelector('button[type="submit"]');
+        if (!window.qwerAuth) {
+          submitButton.disabled = true;
+          signinError.textContent = '認証機能を読み込めませんでした。ページを再読み込みしてください。';
+          return;
+        }
 
-        form.addEventListener('submit', async (event) => {
+        submitButton.disabled = false;
+        signinError.textContent = '';
+
+        signinForm.addEventListener('submit', async event => {
           event.preventDefault();
-
-          const formData = new FormData(form);
-          const data = Object.fromEntries(formData.entries());
-
-          // メッセージをリセット
-          messageDiv.textContent = '';
-          messageDiv.className = 'hidden';
+          signinError.textContent = '';
+          submitButton.disabled = true;
 
           try {
-            // ここではサーバー側のAPIエンドポイント `/api/signin` を呼び出すことを想定しています。
-            // 実際にはバックエンドの実装が必要です。
-            const response = await fetch('/api/signin', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(data),
+            await window.qwerAuth.signIn({
+              email: signinForm.email.value,
+              password: signinForm.password.value
             });
-
-            if (response.ok) {
-              messageDiv.textContent = 'サインインに成功しました。ホームページに移動します。';
-              messageDiv.className = 'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50';
-              // 成功後、2秒待ってからホームページにリダイレクト
-              setTimeout(() => {
-                window.location.href = './index.html';
-              }, 2000);
-            } else {
-              const errorData = await response.json();
-              messageDiv.textContent = `エラー: ${errorData.message || 'メールアドレスまたはパスワードが正しくありません。'}`;
-              messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
-            }
+            window.location.href = './index.html';
           } catch (error) {
-            messageDiv.textContent = 'エラーが発生しました。しばらくしてからもう一度お試しください。';
-            messageDiv.className = 'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50';
+            signinError.textContent = error.message || 'ログインに失敗しました。';
+          } finally {
+            submitButton.disabled = false;
           }
         });
       });

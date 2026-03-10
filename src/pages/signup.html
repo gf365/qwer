@@ -1,0 +1,93 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+    <title>今すぐ始める - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas のアカウント作成ページです。学習ログをテンプレートで記録し、公開/非公開を切り替えながら資産化できます。"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Get Started</p>
+              <h1>今すぐ始める</h1>
+              <p>メールアドレスを登録すると、テンプレート付きで学習ログを作成し、公開/非公開を切り替えながら蓄積できます。</p>
+            </section>
+
+            <form id="signup-form" class="surface-card form-card">
+              <div>
+                <label for="signup-name">表示名</label>
+                <input id="signup-name" type="text" name="name" required class="w-full" />
+              </div>
+              <div>
+                <label for="signup-email">メールアドレス</label>
+                <input id="signup-email" type="email" name="email" required class="w-full" />
+              </div>
+              <div>
+                <label for="signup-password">パスワード (6文字以上)</label>
+                <input id="signup-password" type="password" name="password" required class="w-full" />
+              </div>
+              <div id="signup-error" class="text-slate-500 text-sm my-2 min-h-[1.5rem]" role="status" aria-live="polite"></div>
+              <button type="submit" class="button-primary">アカウントを作成する</button>
+              <p class="section-text">すでにアカウントをお持ちの方は <a class="text-[#0f62fe] underline" href="{{ '/signin.html' | relative_url }}">ログイン</a> してください。</p>
+            </form>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const signupForm = document.getElementById('signup-form');
+        const signupError = document.getElementById('signup-error');
+        const submitButton = signupForm.querySelector('button[type="submit"]');
+        if (!window.qwerAuth) {
+          submitButton.disabled = true;
+          signupError.textContent = '認証機能を読み込めませんでした。ページを再読み込みしてください。';
+          return;
+        }
+
+        submitButton.disabled = false;
+        signupError.textContent = '';
+
+        signupForm.addEventListener('submit', async event => {
+          event.preventDefault();
+          signupError.textContent = '';
+          submitButton.disabled = true;
+
+          try {
+            await window.qwerAuth.signUp({
+              displayName: signupForm.name.value,
+              email: signupForm.email.value,
+              password: signupForm.password.value
+            });
+            window.location.href = '{{ "/index.html" | relative_url }}';
+          } catch (error) {
+            signupError.textContent = error.message || 'アカウント作成に失敗しました。';
+          } finally {
+            submitButton.disabled = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+    <title>学びを公開資産に変える - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas は、学習ログをテンプレート・公開/非公開管理・全文検索で整理し、あとから使える実績に変えるためのアプリです。"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Learning Log App</p>
+              <h1>学習ログを、あとで使える実績に変える</h1>
+              <p class="section-text">
+                QWER Atlas は、日々の学びや検証メモをテンプレートで整え、公開/非公開を切り替えながら蓄積できるアプリです。記録を残すだけでなく、案件提案や発信に再利用しやすい形まで一気に整えます。
+              </p>
+              <div class="flex gap-3 justify-center flex-wrap">
+                <a class="button-primary" href="./signup.html">今すぐ始める</a>
+                <a class="button-secondary" href="./explore.html">公開ログを見る</a>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">For Who</p>
+              <h2 class="section-heading">こんな人に向いています</h2>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>毎日の学びを記録したい人</h3>
+                  <p>思考の流れを崩さず、同じ型で記録を積み上げたい人向けです。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>あとで実績として見せたい人</h3>
+                  <p>公開ログをそのままポートフォリオや提案資料の土台にしたい人に向いています。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>カテゴリやタグで整理したい人</h3>
+                  <p>AI、DX、開発、英語学習など複数テーマの記録を横断検索できます。</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">Core Value</p>
+              <h2 class="section-heading">記録が続くように、構造を先に用意しています</h2>
+              <p class="section-text">
+                書き始めるたびに構成を考える必要はありません。QWER Atlas では、毎回同じ問いをテンプレートで差し込み、考え漏れを防ぎながらログを資産の形へ寄せます。
+              </p>
+              <dl class="stat-grid">
+                <div class="stat-card">
+                  <dt>テンプレ挿入</dt>
+                  <dd>1クリック</dd>
+                </div>
+                <div class="stat-card">
+                  <dt>公開設定</dt>
+                  <dd>公開 / 非公開</dd>
+                </div>
+                <div class="stat-card">
+                  <dt>検索導線</dt>
+                  <dd>カテゴリ / タグ / 全文</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">How It Works</p>
+              <h2 class="section-heading">使い始め方はシンプルです</h2>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>1. テンプレートを選ぶ</h3>
+                  <p>学習ログ、検証ログ、実装メモなど、目的に合う型から書き始めます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>2. 公開範囲を決める</h3>
+                  <p>作業中は非公開、見せられる状態になったら公開に切り替えられます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>3. 検索できる資産にする</h3>
+                  <p>カテゴリ、タグ、全文検索であとから辿れる状態に保てます。</p>
+                </article>
+              </div>
+              <div class="flex gap-3 flex-wrap">
+                <a class="button-primary" href="./signup.html">今すぐ始める</a>
+                <a class="button-secondary" href="./discover.html">テンプレートを見る</a>
+              </div>
+            </section>
+
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

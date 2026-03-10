@@ -1,0 +1,85 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+    <title>サポート / 導入相談 - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas の導入相談、運用質問、不具合報告はこちらから。ログ設計、テンプレート運用、エクスポート方針の相談を受け付けています。"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Support</p>
+              <h1>導入相談 / お問い合わせ</h1>
+              <p>
+                QWER Atlas の使い始め方、テンプレート運用、カテゴリ整理、バックアップ方針などの相談窓口です。利用前の確認、不具合報告、公開設計の相談にも対応します。
+              </p>
+            </section>
+
+            <section class="two-column">
+              <form class="surface-card form-card">
+                <div>
+                  <label for="contact-name">お名前</label>
+                  <input id="contact-name" type="text" name="name" required />
+                </div>
+                <div>
+                  <label for="contact-email">メールアドレス</label>
+                  <input id="contact-email" type="email" name="email" required />
+                </div>
+                <div>
+                  <label for="contact-topic">相談したい内容</label>
+                  <select id="contact-topic" name="topic">
+                    <option>使い始め方 / 初期設定</option>
+                    <option>カテゴリ / タグ整理</option>
+                    <option>バックアップ / エクスポート</option>
+                    <option>不具合 / 改善要望</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="contact-message">詳細</label>
+                  <textarea id="contact-message" name="message" placeholder="現状の課題や希望するサポート内容をご記入ください。" required></textarea>
+                </div>
+                <button type="submit" class="button-primary">送信する</button>
+              </form>
+
+              <div class="surface-card section-stack">
+                <h2 class="section-heading">運用チェックリスト</h2>
+                <ul class="section-text list-disc pl-6">
+                  <li>最初のログを迷わず書き始められるか。</li>
+                  <li>公開/非公開の運用ルールが決まっているか。</li>
+                  <li>カテゴリ / タグ構造が利用目的に合っているか。</li>
+                  <li>Markdown / HTML エクスポート方針が整理されているか。</li>
+                </ul>
+                <div class="section-stack">
+                  <p class="section-text"><strong>サポート時間:</strong> 平日10:00〜18:00（JST）</p>
+                  <p class="section-text"><strong>メール:</strong> support@qwer.dev</p>
+                  <p class="section-text"><strong>Slack / Discord:</strong> アカウント作成後に案内します。</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

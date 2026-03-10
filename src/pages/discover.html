@@ -1,0 +1,127 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>テンプレート - QWER Atlas</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+    <meta
+      name="description"
+      content="QWER Atlas のテンプレート一覧です。学習ログ、検証ログ、実装メモを同じ型で蓄積し、公開資産に変えやすくします。"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Template Studio</p>
+              <h1>テンプレートから最短で書き始める</h1>
+              <p>
+                「今日学んだこと」「背景」「学んだ内容」「気づき」「今後の課題」の5ブロックを基礎に、カテゴリ別テンプレートを用意しています。書き始めの負荷を下げながら、あとで公開しやすい粒度へ寄せるための設計です。
+              </p>
+              <div class="flex gap-3 justify-center flex-wrap">
+                <a class="button-primary" href="./signup.html">今すぐ始める</a>
+                <a class="button-secondary" href="./explore.html">公開ログを見る</a>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">ベーステンプレ</h2>
+              <p class="section-text">
+                まずは全カテゴリ共通の骨組みを使います。最低限の問いが固定されるだけで、あとから読み返せる質が安定します。
+              </p>
+              <pre class="detail-article" style="background:#0b1221;color:#f8fbff;border-radius:24px;overflow:auto;"><code># 今日学んだこと
+- LLMのAPIを使ったタグ自動生成の最適化を試した
+
+## 背景 / きっかけ
+最小限の人手でタグ運用を回す必要があったため調査。
+
+## 学んだ内容
+- OpenAI Functionsでのスキーマ定義
+- タグの信頼度スコアリング
+
+## 気づき
+スキーマの粒度を3~5個に絞ると迷いが減った。
+
+## 今後の課題
+英語ログのタグも自動生成できるようにする。</code></pre>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">カテゴリ別テンプレート</h2>
+              <div class="template-list">
+                <article class="template-card">
+                  <span class="pill">AI / LLM</span>
+                  <h3>検証ログテンプレ</h3>
+                  <ul>
+                    <li>モデル / トークン / コスト欄を事前に用意。</li>
+                    <li>「失敗例」ブロックを標準装備し再現性を担保。</li>
+                    <li>タグ候補：#prompt, #evaluation, #agent。</li>
+                  </ul>
+                </article>
+                <article class="template-card">
+                  <span class="pill">DX</span>
+                  <h3>伴走レポートテンプレ</h3>
+                  <ul>
+                    <li>「現状」「介入」「成果」「次の打ち手」を段階管理。</li>
+                    <li>週次報告PDFにそのまま転用できます。</li>
+                    <li>タグ候補：#kpi #workflow #consulting。</li>
+                  </ul>
+                </article>
+                <article class="template-card">
+                  <span class="pill">UEFN / プログラミング</span>
+                  <h3>実装メモテンプレ</h3>
+                  <ul>
+                    <li>コードブロックとスクリーンショット欄をセット。</li>
+                    <li>「再現ステップ」ブロックで将来の自分に指示。</li>
+                    <li>タグ候補：#verse #blueprint #performance。</li>
+                  </ul>
+                </article>
+                <article class="template-card">
+                  <span class="pill">英語学習 / 読書ログ</span>
+                  <h3>インプット記録テンプレ</h3>
+                  <ul>
+                    <li>単語・フレーズ・気づきメモ欄を分離。</li>
+                    <li>公開/非公開の切り替えを簡単にするチェック付き。</li>
+                    <li>タグ候補：#reading #speaking #vocabulary。</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <h2 class="section-heading">記録を止めないための仕組み</h2>
+              <p class="section-text">
+                投稿画面の「テンプレ挿入」からすぐに呼び出せる想定です。テンプレートは書きやすさのためだけでなく、公開ログとして見せるときの読みやすさも揃えます。
+              </p>
+              <ul class="section-text list-disc pl-6">
+                <li>テンプレ修正はバージョン管理され、過去ログを壊さず改良可能。</li>
+                <li>テンプレごとに公開/非公開の初期値を設定できます。</li>
+                <li>タグ/カテゴリのデフォルトもテンプレ上で定義できます。</li>
+              </ul>
+              <div class="flex gap-3 flex-wrap">
+                <a class="button-primary" href="./signup.html">今すぐ始める</a>
+                <a class="button-secondary" href="./search.html">検索導線を見る</a>
+              </div>
+            </section>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+    <title>活用事例掲載 - QWER Atlas</title>
+    <meta
+      name="description"
+      content="QWER Atlas の活用事例掲載フォームです。公開ログをサービス内の活用事例として紹介したい利用者向けの申請窓口です。"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container flex h-full grow flex-col">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">Case Showcase</p>
+              <h1>活用事例の掲載申請</h1>
+              <p>
+                QWER Atlas で公開しているログの中から、特に見せたい活用事例を掲載するためのフォームです。案件提案や発信に使いたい公開ログを、カテゴリやタグ付きで整理して紹介できます。
+              </p>
+            </section>
+
+            <form class="surface-card form-card">
+              <div>
+                <label for="join-name">お名前 / 表示名</label>
+                <input id="join-name" type="text" name="name" required />
+              </div>
+              <div>
+                <label for="join-email">メールアドレス</label>
+                <input id="join-email" type="email" name="email" required />
+              </div>
+              <div>
+                <label for="join-interest">掲載したいカテゴリ</label>
+                <input id="join-interest" type="text" name="interest" placeholder="例: AI / LLM, DX, 英語学習" />
+              </div>
+              <div>
+                <label for="join-message">ピックアップしたいログURL / 補足</label>
+                <textarea id="join-message" name="message" placeholder="公開ログのURL、見せたい成果、活用シーンを記入してください。"></textarea>
+              </div>
+              <button type="submit" class="button-primary">掲載を申請</button>
+            </form>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>
