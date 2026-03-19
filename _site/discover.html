@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>テンプレート - QWER Atlas</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       rel="stylesheet"
@@ -11,68 +10,40 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
+    <title>制作プロセス - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas のテンプレート一覧です。学習ログ、検証ログ、実装メモを同じ型で蓄積し、公開資産に変えやすくします。"
+      content="QWER TOKYO の制作プロセスを紹介します。課題整理、体験設計、UI、実装、公開時の見せ方まで、一連の流れをまとめています。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-        <link rel="stylesheet" href="./assets/css/site.css" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
-  <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
-      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
-      </div>
-      <div>
-        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
-        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Learning Log App</p>
-      </div>
+      <div class="layout-container">
+        <header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="./index.html" class="brand-link" aria-label="QWER TOKYO ホーム">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span class="brand-copy">
+        <span class="brand-name">QWER TOKYO</span>
+        <span class="brand-tag">App Showcase Studio</span>
+      </span>
     </a>
-  </div>
-  <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
-      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
-        <li><a class="hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./explore.html">公開ログ</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./discover.html">テンプレート</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./about.html">サービス概要</a></li>
-      </ul>
+
+    <nav aria-label="メインメニュー" class="site-nav">
+      <a href="./explore.html">アプリ一覧</a>
+      <a href="./discover.html">制作プロセス</a>
+      <a href="./about.html">プロフィール</a>
+      <a href="./contact.html">お問い合わせ</a>
     </nav>
-    <form role="search" action="./search.html" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">ナレッジ検索</label>
-      <input id="search-q" name="q" type="search" placeholder="公開ログやテンプレを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
-      <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
-        <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
-        </div>
-      </button>
-    </form>
-    <div class="flex items-center gap-4 shrink-0">
-      <div class="logged-out flex items-center gap-2">
-        <a
-          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
-          href="./signin.html"
-        >
-          ログイン
-        </a>
-        <a
-          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
-          href="./signup.html"
-        >
-          今すぐ始める
-        </a>
-      </div>
-      <div class="logged-in items-center gap-4" style="display: none;">
-        <span class="user-details text-sm text-slate-600"></span>
-        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
-          ログアウト
-        </button>
-      </div>
+
+    <div class="site-header__actions">
+      <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
+        <label for="search-q" class="sr-only">サイト内検索</label>
+        <input id="search-q" name="q" type="search" placeholder="アプリ・領域・制作方針を検索" />
+      </form>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
     </div>
   </div>
 </header>
@@ -80,144 +51,133 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Template Studio</p>
-              <h1>テンプレートから最短で書き始める</h1>
+              <p class="section-eyebrow">Process</p>
+              <h1>アプリを魅力的に見せるために、作り方から整える。</h1>
               <p>
-                「今日学んだこと」「背景」「学んだ内容」「気づき」「今後の課題」の5ブロックを基礎に、カテゴリ別テンプレートを用意しています。書き始めの負荷を下げながら、あとで公開しやすい粒度へ寄せるための設計です。
+                良いアプリでも、見せ方が弱いと価値は伝わりません。QWER TOKYO では、課題整理からUI、実装、公開時のコピーまでを一つの流れとして設計し、作品として成立するところまで持っていきます。
               </p>
-              <div class="flex gap-3 justify-center flex-wrap">
-                <a class="button-primary" href="./signup.html">今すぐ始める</a>
-                <a class="button-secondary" href="./explore.html">公開ログを見る</a>
+              <div class="button-row">
+                <a class="button-primary" href="./join.html">この進め方で相談する</a>
+                <a class="button-secondary" href="./explore.html">アプリ一覧を見る</a>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">ベーステンプレ</h2>
-              <p class="section-text">
-                まずは全カテゴリ共通の骨組みを使います。最低限の問いが固定されるだけで、あとから読み返せる質が安定します。
-              </p>
-              <pre class="detail-article" style="background:#0b1221;color:#f8fbff;border-radius:24px;overflow:auto;"><code># 今日学んだこと
-- LLMのAPIを使ったタグ自動生成の最適化を試した
-
-## 背景 / きっかけ
-最小限の人手でタグ運用を回す必要があったため調査。
-
-## 学んだ内容
-- OpenAI Functionsでのスキーマ定義
-- タグの信頼度スコアリング
-
-## 気づき
-スキーマの粒度を3~5個に絞ると迷いが減った。
-
-## 今後の課題
-英語ログのタグも自動生成できるようにする。</code></pre>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">カテゴリ別テンプレート</h2>
-              <div class="template-list">
-                <article class="template-card">
-                  <span class="pill">AI / LLM</span>
-                  <h3>検証ログテンプレ</h3>
-                  <ul>
-                    <li>モデル / トークン / コスト欄を事前に用意。</li>
-                    <li>「失敗例」ブロックを標準装備し再現性を担保。</li>
-                    <li>タグ候補：#prompt, #evaluation, #agent。</li>
-                  </ul>
+              <p class="section-eyebrow">Flow</p>
+              <h2 class="section-heading">制作は4つの段階で進めます</h2>
+              <div class="timeline">
+                <article class="timeline-entry section-stack">
+                  <p class="eyebrow-number">01</p>
+                  <h3>課題の輪郭を決める</h3>
+                  <p class="section-text">誰のどの作業をどう変えるのか、導入前後で何が違うのかを言葉で固定します。</p>
                 </article>
-                <article class="template-card">
-                  <span class="pill">DX</span>
-                  <h3>伴走レポートテンプレ</h3>
-                  <ul>
-                    <li>「現状」「介入」「成果」「次の打ち手」を段階管理。</li>
-                    <li>週次報告PDFにそのまま転用できます。</li>
-                    <li>タグ候補：#kpi #workflow #consulting。</li>
-                  </ul>
+                <article class="timeline-entry section-stack">
+                  <p class="eyebrow-number">02</p>
+                  <h3>触って理解できる骨格を作る</h3>
+                  <p class="section-text">必要な画面、入力、フィードバックの流れを先に組み、使い始めの迷いを減らします。</p>
                 </article>
-                <article class="template-card">
-                  <span class="pill">UEFN / プログラミング</span>
-                  <h3>実装メモテンプレ</h3>
-                  <ul>
-                    <li>コードブロックとスクリーンショット欄をセット。</li>
-                    <li>「再現ステップ」ブロックで将来の自分に指示。</li>
-                    <li>タグ候補：#verse #blueprint #performance。</li>
-                  </ul>
+                <article class="timeline-entry section-stack">
+                  <p class="eyebrow-number">03</p>
+                  <h3>見た瞬間の印象を整える</h3>
+                  <p class="section-text">配色、見出し、構図、CTA を含めて、何のアプリかが一目で伝わる状態にします。</p>
                 </article>
-                <article class="template-card">
-                  <span class="pill">英語学習 / 読書ログ</span>
-                  <h3>インプット記録テンプレ</h3>
-                  <ul>
-                    <li>単語・フレーズ・気づきメモ欄を分離。</li>
-                    <li>公開/非公開の切り替えを簡単にするチェック付き。</li>
-                    <li>タグ候補：#reading #speaking #vocabulary。</li>
-                  </ul>
+                <article class="timeline-entry section-stack">
+                  <p class="eyebrow-number">04</p>
+                  <h3>公開時の見せ方まで仕上げる</h3>
+                  <p class="section-text">スクリーンショット、導入文、説明順、問い合わせ導線まで含めて公開できる形にします。</p>
                 </article>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">記録を止めないための仕組み</h2>
-              <p class="section-text">
-                投稿画面の「テンプレ挿入」からすぐに呼び出せる想定です。テンプレートは書きやすさのためだけでなく、公開ログとして見せるときの読みやすさも揃えます。
-              </p>
-              <ul class="section-text list-disc pl-6">
-                <li>テンプレ修正はバージョン管理され、過去ログを壊さず改良可能。</li>
-                <li>テンプレごとに公開/非公開の初期値を設定できます。</li>
-                <li>タグ/カテゴリのデフォルトもテンプレ上で定義できます。</li>
-              </ul>
-              <div class="flex gap-3 flex-wrap">
-                <a class="button-primary" href="./signup.html">今すぐ始める</a>
-                <a class="button-secondary" href="./search.html">検索導線を見る</a>
+              <p class="section-eyebrow">Output</p>
+              <h2 class="section-heading">制作物は、実装物だけで終わらせません</h2>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>コンセプト文</h3>
+                  <p>最初の一文で伝えるべき価値を定義し、サイトや提案資料でも使い回せる形にします。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>UI と導線</h3>
+                  <p>初見のユーザーが迷わない画面構成と、次の行動を促すCTAまで含めて整えます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>公開素材</h3>
+                  <p>スクリーンショット、紹介文、検索や一覧で見つけやすいタイトル設計まで扱います。</p>
+                </article>
               </div>
+            </section>
+
+            <section class="split-panel">
+              <article class="quote-panel section-stack">
+                <p class="section-eyebrow">Design Principle</p>
+                <h2 class="section-heading">小さく作り、早く見せ、必要なところだけ深くする。</h2>
+                <p>
+                  最初から全部入りにはせず、使う理由が強いコア体験を先に作ります。そのうえで、反応を見ながら改善し、最終的にアプリの魅力が最短で伝わる形へ調整します。
+                </p>
+              </article>
+              <article class="cta-band section-stack">
+                <p class="section-eyebrow">Next</p>
+                <h2 class="section-heading">進め方が合いそうなら、相談内容を整理して送れます。</h2>
+                <p class="section-text">
+                  要件が固まっていなくても大丈夫です。新規アプリ、既存プロダクト改善、AI導入のどれでも、相談ページから方向性をまとめられます。
+                </p>
+                <div class="button-row">
+                  <a class="button-primary" href="./join.html">プロジェクト相談へ</a>
+                  <a class="button-secondary" href="./contact.html">お問い合わせ</a>
+                </div>
+              </article>
             </section>
           </div>
         </main>
-        <footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
-  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
-        <p class="text-slate-600 text-base leading-relaxed">
-          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill">テンプレ挿入</span>
-          <span class="pill">公開/非公開</span>
-          <span class="pill">全文検索</span>
-        </div>
-      </div>
+        <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__lead">
+      <p class="section-eyebrow">QWER TOKYO</p>
+      <h2 class="section-heading">作るだけで終わらせず、伝わる見せ方まで設計する。</h2>
+      <p class="section-text">
+        AI支援ツール、業務改善アプリ、体験プロトタイプまで。QWER TOKYO は、企画の骨格づくりからUI、デモ、公開時の見せ方まで一気通貫で整えるためのショーケースサイトです。
+      </p>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
+    </div>
+
+    <div class="site-footer__grid">
       <div>
-        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./index.html">ホーム</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./explore.html">公開ログ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./discover.html">テンプレート</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./about.html">サービス概要</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./join.html">活用事例掲載</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./search.html">検索</a></li>
+        <p class="site-footer__label">Pages</p>
+        <ul class="site-footer__list">
+          <li><a href="./index.html">ホーム</a></li>
+          <li><a href="./explore.html">アプリ一覧</a></li>
+          <li><a href="./discover.html">制作プロセス</a></li>
+          <li><a href="./about.html">プロフィール</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
-        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./contact.html">導入相談 / お問い合わせ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./terms.html">利用規約</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./privacy.html">プライバシー</a></li>
+        <p class="site-footer__label">Focus</p>
+        <ul class="site-footer__list">
+          <li>AIアプリケーション</li>
+          <li>業務改善ツール</li>
+          <li>プロトタイピング</li>
+          <li>体験設計 / UI</li>
         </ul>
-        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
+      </div>
+      <div>
+        <p class="site-footer__label">Info</p>
+        <ul class="site-footer__list">
+          <li><a href="./search.html">検索</a></li>
+          <li><a href="./privacy.html">プライバシー</a></li>
+          <li><a href="./terms.html">利用規約</a></li>
+          <li><a href="https://qwer.tokyo">qwer.tokyo</a></li>
+        </ul>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
-      </div>
+
+    <div class="site-footer__meta">
+      <p>@2026 QWER TOKYO</p>
+      <p>App showcase, concept design, prototype delivery.</p>
     </div>
   </div>
 </footer>
-<script src="./assets/js/auth.js" defer></script>
 
       </div>
     </div>

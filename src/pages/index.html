@@ -12,98 +12,88 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>学びを公開資産に変える - QWER Atlas</title>
+    <title>アプリケーションを、構想から魅力まで設計する - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas は、学習ログをテンプレート・公開/非公開管理・全文検索で整理し、あとから使える実績に変えるためのアプリです。"
+      content="QWER TOKYO は、私が企画・設計・実装するアプリケーションを紹介するショーケースサイトです。AI支援ツール、業務改善アプリ、体験プロトタイプの魅力を、課題と体験の両面から伝えます。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
+      <div class="layout-container">
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Learning Log App</p>
-              <h1>学習ログを、あとで使える実績に変える</h1>
-              <p class="section-text">
-                QWER Atlas は、日々の学びや検証メモをテンプレートで整え、公開/非公開を切り替えながら蓄積できるアプリです。記録を残すだけでなく、案件提案や発信に再利用しやすい形まで一気に整えます。
+              <p class="section-eyebrow">App Showcase</p>
+              <h1>使われるアプリを、構想から公開体験まで設計する。</h1>
+              <p>
+                QWER TOKYO は、私が企画・設計・実装するアプリケーションを紹介するショーケースサイトです。現在 {{ app_count }} 件のショーケースを、カテゴリ、ビジュアル、利用シーンまで含めて更新できる構成にしています。
               </p>
-              <div class="flex gap-3 justify-center flex-wrap">
-                <a class="button-primary" href="./signup.html">今すぐ始める</a>
-                <a class="button-secondary" href="./explore.html">公開ログを見る</a>
+              <div class="button-row">
+                <a class="button-primary" href="./explore.html">アプリ一覧を見る</a>
+                <a class="button-secondary" href="./join.html">プロジェクトを相談する</a>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">For Who</p>
-              <h2 class="section-heading">こんな人に向いています</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <h3>毎日の学びを記録したい人</h3>
-                  <p>思考の流れを崩さず、同じ型で記録を積み上げたい人向けです。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>あとで実績として見せたい人</h3>
-                  <p>公開ログをそのままポートフォリオや提案資料の土台にしたい人に向いています。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>カテゴリやタグで整理したい人</h3>
-                  <p>AI、DX、開発、英語学習など複数テーマの記録を横断検索できます。</p>
-                </article>
+              <p class="section-eyebrow">Featured Works</p>
+              <h2 class="section-heading">公開中の注目アプリ</h2>
+              <p class="section-text">
+                更新のたびにトップへ並ぶ注目作品です。画像、要点、利用シーンをまとめて見せることで、何を作っているかが最初の数秒で伝わるようにしています。
+              </p>
+              <div class="app-grid">
+                {{ featured_apps_grid }}
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Core Value</p>
-              <h2 class="section-heading">記録が続くように、構造を先に用意しています</h2>
+              <p class="section-eyebrow">Catalog Design</p>
+              <h2 class="section-heading">ショーケースはカテゴリとビジュアルで管理する。</h2>
               <p class="section-text">
-                書き始めるたびに構成を考える必要はありません。QWER Atlas では、毎回同じ問いをテンプレートで差し込み、考え漏れを防ぎながらログを資産の形へ寄せます。
+                アプリはタイトルだけでなく、カテゴリ、用途、要点、画像で管理しています。新しい作品を追加すると、一覧、詳細、検索までまとめて反映される前提の構造です。
               </p>
+              <div class="badge-list">
+                {{ app_category_badges }}
+              </div>
               <dl class="stat-grid">
                 <div class="stat-card">
-                  <dt>テンプレ挿入</dt>
-                  <dd>1クリック</dd>
+                  <dt>Showcases</dt>
+                  <dd>{{ app_count }}</dd>
                 </div>
                 <div class="stat-card">
-                  <dt>公開設定</dt>
-                  <dd>公開 / 非公開</dd>
+                  <dt>Themes</dt>
+                  <dd>{{ app_category_count }}</dd>
                 </div>
                 <div class="stat-card">
-                  <dt>検索導線</dt>
-                  <dd>カテゴリ / タグ / 全文</dd>
+                  <dt>Update Format</dt>
+                  <dd>Data + Images</dd>
                 </div>
               </dl>
             </section>
 
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">How It Works</p>
-              <h2 class="section-heading">使い始め方はシンプルです</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <h3>1. テンプレートを選ぶ</h3>
-                  <p>学習ログ、検証ログ、実装メモなど、目的に合う型から書き始めます。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>2. 公開範囲を決める</h3>
-                  <p>作業中は非公開、見せられる状態になったら公開に切り替えられます。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>3. 検索できる資産にする</h3>
-                  <p>カテゴリ、タグ、全文検索であとから辿れる状態に保てます。</p>
-                </article>
-              </div>
-              <div class="flex gap-3 flex-wrap">
-                <a class="button-primary" href="./signup.html">今すぐ始める</a>
-                <a class="button-secondary" href="./discover.html">テンプレートを見る</a>
-              </div>
+            <section class="split-panel">
+              <article class="quote-panel section-stack">
+                <p class="section-eyebrow">What This Site Shows</p>
+                <h2 class="section-heading">アプリそのものだけでなく、魅力の伝え方まで見せる。</h2>
+                <p>
+                  課題の輪郭、対象ユーザー、画面、利用シーンまでを一つの流れで見せることで、作っているものの価値が短時間で伝わるように設計しています。
+                </p>
+              </article>
+              <article class="cta-band section-stack">
+                <p class="section-eyebrow">Next Step</p>
+                <h2 class="section-heading">公開中のテーマ、制作意図、相談導線を分かりやすく整理しました。</h2>
+                <p class="section-text">
+                  実際の制作テーマはアプリ一覧へ、作り方の考え方は制作プロセスへ。新規相談やコラボの連絡は専用ページからまとめられます。
+                </p>
+                <div class="button-row">
+                  <a class="button-primary" href="./explore.html">アプリ一覧へ</a>
+                  <a class="button-secondary" href="./discover.html">制作プロセスを見る</a>
+                </div>
+              </article>
             </section>
-
           </div>
         </main>
         {% include footer.html %}

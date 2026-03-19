@@ -10,65 +10,36 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>プライバシーポリシー - QWER Atlas</title>
+    <title>プライバシーポリシー - QWER TOKYO</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-        <link rel="stylesheet" href="./assets/css/site.css" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
-  <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
-      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
-      </div>
-      <div>
-        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
-        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Learning Log App</p>
-      </div>
+      <div class="layout-container">
+        <header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="./index.html" class="brand-link" aria-label="QWER TOKYO ホーム">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span class="brand-copy">
+        <span class="brand-name">QWER TOKYO</span>
+        <span class="brand-tag">App Showcase Studio</span>
+      </span>
     </a>
-  </div>
-  <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
-      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
-        <li><a class="hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./explore.html">公開ログ</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./discover.html">テンプレート</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./about.html">サービス概要</a></li>
-      </ul>
+
+    <nav aria-label="メインメニュー" class="site-nav">
+      <a href="./explore.html">アプリ一覧</a>
+      <a href="./discover.html">制作プロセス</a>
+      <a href="./about.html">プロフィール</a>
+      <a href="./contact.html">お問い合わせ</a>
     </nav>
-    <form role="search" action="./search.html" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">ナレッジ検索</label>
-      <input id="search-q" name="q" type="search" placeholder="公開ログやテンプレを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
-      <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
-        <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
-        </div>
-      </button>
-    </form>
-    <div class="flex items-center gap-4 shrink-0">
-      <div class="logged-out flex items-center gap-2">
-        <a
-          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
-          href="./signin.html"
-        >
-          ログイン
-        </a>
-        <a
-          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
-          href="./signup.html"
-        >
-          今すぐ始める
-        </a>
-      </div>
-      <div class="logged-in items-center gap-4" style="display: none;">
-        <span class="user-details text-sm text-slate-600"></span>
-        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
-          ログアウト
-        </button>
-      </div>
+
+    <div class="site-header__actions">
+      <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
+        <label for="search-q" class="sr-only">サイト内検索</label>
+        <input id="search-q" name="q" type="search" placeholder="アプリ・領域・制作方針を検索" />
+      </form>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
     </div>
   </div>
 </header>
@@ -78,82 +49,82 @@
             <section class="hero-panel">
               <p class="section-eyebrow">Privacy</p>
               <h1>プライバシーポリシー</h1>
-              <p>個人情報やログデータの扱い方針をまとめています。</p>
+              <p>QWER TOKYO のサイト運営とお問い合わせ対応に関する個人情報の取り扱い方針です。</p>
             </section>
 
-            <article class="detail-article">
-              <h2>1. 収集する情報</h2>
-              <ul>
-                <li>アカウント情報（名前・メールアドレス・プロフィール）</li>
-                <li>学習ログの本文、添付画像、タグ/カテゴリなどのメタデータ</li>
-                <li>利用状況の統計情報（個人を特定しないアクセス解析）</li>
-              </ul>
+            <article class="detail-article section-stack">
+              <h2>1. 取得する情報</h2>
+              <p>本サイトでは、お問い合わせやプロジェクト相談時に、氏名、メールアドレス、相談内容などの情報を取得することがあります。</p>
+
               <h2>2. 利用目的</h2>
               <ul>
-                <li>学習ログの作成・公開・検索などサービス提供のため</li>
-                <li>バックアップ/エクスポート機能の提供・改良のため</li>
-                <li>サイト改善のためのアクセス解析（個人を特定しない形）</li>
+                <li>お問い合わせへの返信や連絡のため。</li>
+                <li>制作相談、コラボレーション相談への対応のため。</li>
+                <li>サイト改善や掲載内容の見直しの参考とするため。</li>
               </ul>
-              <h2>3. 公開 / 非公開の扱い</h2>
-              <p>各ログには公開/非公開設定があります。非公開ログは本人のみが閲覧でき、管理者が内容を参照することはありません。</p>
-              <h2>4. 第三者提供</h2>
-              <p>法令に基づく場合を除き、第三者に個人情報を提供することはありません。ユーザーが許可しない限り、自動で外部送信されることもありません。</p>
-              <h2>5. データ保護</h2>
-              <ul>
-                <li>バックアップは適切に保管し、アクセス権限を必要最小限に制限します。</li>
-                <li>権限の棚卸しや設定の見直しを定期的に行います。</li>
-              </ul>
-              <h2>6. 変更について</h2>
-              <p>本ポリシーは必要に応じて更新します。更新時はサイト上で案内します。</p>
+
+              <h2>3. 第三者提供について</h2>
+              <p>法令に基づく場合を除き、本人の同意なく第三者へ個人情報を提供することはありません。</p>
+
+              <h2>4. 保管と管理</h2>
+              <p>取得した情報は、目的の範囲内で適切に管理し、不正アクセスや漏えいの防止に努めます。</p>
+
+              <h2>5. 外部サービスについて</h2>
+              <p>本サイトまたは関連連絡先として <a href="https://qwer.tokyo">qwer.tokyo</a> を案内する場合があります。外部サイトの利用時は、各サービス側のポリシーもあわせて確認してください。</p>
+
+              <h2>6. 改定について</h2>
+              <p>本ポリシーは必要に応じて更新することがあります。変更後は本ページに最新版を掲載します。</p>
             </article>
           </div>
         </main>
-        <footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
-  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
-        <p class="text-slate-600 text-base leading-relaxed">
-          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill">テンプレ挿入</span>
-          <span class="pill">公開/非公開</span>
-          <span class="pill">全文検索</span>
-        </div>
-      </div>
+        <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__lead">
+      <p class="section-eyebrow">QWER TOKYO</p>
+      <h2 class="section-heading">作るだけで終わらせず、伝わる見せ方まで設計する。</h2>
+      <p class="section-text">
+        AI支援ツール、業務改善アプリ、体験プロトタイプまで。QWER TOKYO は、企画の骨格づくりからUI、デモ、公開時の見せ方まで一気通貫で整えるためのショーケースサイトです。
+      </p>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
+    </div>
+
+    <div class="site-footer__grid">
       <div>
-        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./index.html">ホーム</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./explore.html">公開ログ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./discover.html">テンプレート</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./about.html">サービス概要</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./join.html">活用事例掲載</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./search.html">検索</a></li>
+        <p class="site-footer__label">Pages</p>
+        <ul class="site-footer__list">
+          <li><a href="./index.html">ホーム</a></li>
+          <li><a href="./explore.html">アプリ一覧</a></li>
+          <li><a href="./discover.html">制作プロセス</a></li>
+          <li><a href="./about.html">プロフィール</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
-        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./contact.html">導入相談 / お問い合わせ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./terms.html">利用規約</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./privacy.html">プライバシー</a></li>
+        <p class="site-footer__label">Focus</p>
+        <ul class="site-footer__list">
+          <li>AIアプリケーション</li>
+          <li>業務改善ツール</li>
+          <li>プロトタイピング</li>
+          <li>体験設計 / UI</li>
         </ul>
-        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
+      </div>
+      <div>
+        <p class="site-footer__label">Info</p>
+        <ul class="site-footer__list">
+          <li><a href="./search.html">検索</a></li>
+          <li><a href="./privacy.html">プライバシー</a></li>
+          <li><a href="./terms.html">利用規約</a></li>
+          <li><a href="https://qwer.tokyo">qwer.tokyo</a></li>
+        </ul>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
-      </div>
+
+    <div class="site-footer__meta">
+      <p>@2026 QWER TOKYO</p>
+      <p>App showcase, concept design, prototype delivery.</p>
     </div>
   </div>
 </footer>
-<script src="./assets/js/auth.js" defer></script>
 
       </div>
     </div>

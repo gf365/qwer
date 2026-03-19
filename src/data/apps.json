@@ -1,0 +1,188 @@
+[
+  {
+    "slug": "research-desk",
+    "title": "Research Desk",
+    "category": "AI Support",
+    "status": "公開中",
+    "year": "2026",
+    "featured": true,
+    "tagline": "市場調査と競合比較を、ひとつのボードで進めるAIリサーチ支援アプリ。",
+    "summary": "情報収集、要点抽出、比較メモ作成までの流れを短くし、企画の初速を上げるためのショーケースアプリです。",
+    "problem": "資料、URL、メモが散らばり、比較検討に入る前に時間を使ってしまう状態を減らしたい。",
+    "audience": "事業開発、企画担当、提案前の下調べを行う小規模チーム。",
+    "outcome": "論点ごとに情報を集約し、次の打ち手を決めるためのメモまで一気通貫で残せます。",
+    "highlights": [
+      "ソース横断の要点整理",
+      "比較メモのドラフト生成",
+      "共有しやすい調査ボード"
+    ],
+    "stack": [
+      "OpenAI",
+      "Node.js",
+      "Search",
+      "Dashboard UI"
+    ],
+    "useCases": [
+      {
+        "title": "市場調査の初期整理",
+        "description": "複数の資料を集めながら、比較したい論点を同時に並べて整理します。"
+      },
+      {
+        "title": "競合比較の要点把握",
+        "description": "似たサービスの違いを短時間で把握し、企画メモへ落とし込みます。"
+      },
+      {
+        "title": "提案前の論点メモ",
+        "description": "調査の結果をそのまま提案の下書きに転用しやすい構造で残します。"
+      }
+    ],
+    "cover": "/assets/images/apps/research-desk/cover.svg",
+    "coverAlt": "Research Desk cover image",
+    "gallery": [
+      {
+        "src": "/assets/images/apps/research-desk/screen-01.svg",
+        "alt": "Research Desk dashboard view",
+        "caption": "調査テーマ、ソース、要点を1画面で比較するメインビュー。"
+      },
+      {
+        "src": "/assets/images/apps/research-desk/screen-02.svg",
+        "alt": "Research Desk summary workspace",
+        "caption": "比較結果から次の打ち手を整理するサマリー作成ビュー。"
+      }
+    ],
+    "links": [
+      {
+        "label": "プロジェクト相談へ",
+        "href": "/join.html"
+      },
+      {
+        "label": "お問い合わせ",
+        "href": "/contact.html"
+      }
+    ]
+  },
+  {
+    "slug": "ops-pilot",
+    "title": "Ops Pilot",
+    "category": "Operations",
+    "status": "導入提案中",
+    "year": "2026",
+    "featured": true,
+    "tagline": "進捗、担当、確認漏れを一画面で把握できる業務進行ダッシュボード。",
+    "summary": "現場で散らばりやすい進捗情報をまとめ、更新確認や引き継ぎの手間を減らすための運用アプリです。",
+    "problem": "担当者ごとに管理方法がばらつき、どの案件が止まっているのか見えにくい状態を解消したい。",
+    "audience": "小規模チーム、制作進行、バックオフィス、社内オペレーション担当。",
+    "outcome": "案件の状態と次アクションを一目で把握でき、確認漏れや認識ずれを減らせます。",
+    "highlights": [
+      "担当と期限の見える化",
+      "確認漏れを減らす一覧設計",
+      "更新状況を追いやすいダッシュボード"
+    ],
+    "stack": [
+      "Workflow Design",
+      "Internal Tool",
+      "Status Tracking",
+      "Responsive UI"
+    ],
+    "useCases": [
+      {
+        "title": "案件進行の可視化",
+        "description": "案件ごとの状況とボトルネックを一覧で把握して、停滞を防ぎます。"
+      },
+      {
+        "title": "引き継ぎの簡素化",
+        "description": "担当変更時でも、次のアクションと履歴をすぐ確認できる構造です。"
+      },
+      {
+        "title": "週次レビューの短縮",
+        "description": "会議前に必要な情報が揃っているため、共有より判断に時間を使えます。"
+      }
+    ],
+    "cover": "/assets/images/apps/ops-pilot/cover.svg",
+    "coverAlt": "Ops Pilot cover image",
+    "gallery": [
+      {
+        "src": "/assets/images/apps/ops-pilot/screen-01.svg",
+        "alt": "Ops Pilot board view",
+        "caption": "案件全体の進行状況を色と優先度で見分けるボード画面。"
+      },
+      {
+        "src": "/assets/images/apps/ops-pilot/screen-02.svg",
+        "alt": "Ops Pilot task detail",
+        "caption": "担当、期限、次アクションを整理した詳細ビュー。"
+      }
+    ],
+    "links": [
+      {
+        "label": "プロジェクト相談へ",
+        "href": "/join.html"
+      },
+      {
+        "label": "お問い合わせ",
+        "href": "/contact.html"
+      }
+    ]
+  },
+  {
+    "slug": "launch-preview",
+    "title": "Launch Preview",
+    "category": "Prototype",
+    "status": "プロトタイプ",
+    "year": "2026",
+    "featured": true,
+    "tagline": "企画提案を、静的な資料ではなく触れるデモで伝える体験プロトタイプ。",
+    "summary": "新しいサービスや導線のアイデアを、第一印象と利用フローごと体験できる形で示すためのショーケースです。",
+    "problem": "企画書だけでは完成イメージが共有しづらく、初期提案で魅力が十分に伝わらない。",
+    "audience": "新規事業、サービス企画、社内提案、プレゼン前のコンセプト検証。",
+    "outcome": "説明資料より先に体験を見せることで、議論を抽象論から具体的な改善に進めやすくします。",
+    "highlights": [
+      "第一印象を作るヒーロー設計",
+      "利用開始までの導線試作",
+      "提案用デモとしての見せ方"
+    ],
+    "stack": [
+      "Prototype",
+      "UX Copy",
+      "Landing Design",
+      "Motion Planning"
+    ],
+    "useCases": [
+      {
+        "title": "新サービスの初期提案",
+        "description": "説明資料の代わりに、実際に触れるデモで企画意図を伝えます。"
+      },
+      {
+        "title": "社内合意形成",
+        "description": "抽象的な議論を避け、画面ベースで改善点を洗い出せます。"
+      },
+      {
+        "title": "公開前の印象確認",
+        "description": "カバー画像や導線の印象を実際の画面として早い段階で検証します。"
+      }
+    ],
+    "cover": "/assets/images/apps/launch-preview/cover.svg",
+    "coverAlt": "Launch Preview cover image",
+    "gallery": [
+      {
+        "src": "/assets/images/apps/launch-preview/screen-01.svg",
+        "alt": "Launch Preview landing screen",
+        "caption": "サービスの印象と価値を最初に伝えるランディングビュー。"
+      },
+      {
+        "src": "/assets/images/apps/launch-preview/screen-02.svg",
+        "alt": "Launch Preview onboarding flow",
+        "caption": "体験の流れと初回導線を整理したオンボーディング画面。"
+      }
+    ],
+    "links": [
+      {
+        "label": "プロジェクト相談へ",
+        "href": "/join.html"
+      },
+      {
+        "label": "お問い合わせ",
+        "href": "/contact.html"
+      }
+    ]
+  }
+]

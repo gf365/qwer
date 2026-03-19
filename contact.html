@@ -10,69 +10,40 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>サポート / 導入相談 - QWER Atlas</title>
+    <title>お問い合わせ - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas の導入相談、運用質問、不具合報告はこちらから。ログ設計、テンプレート運用、エクスポート方針の相談を受け付けています。"
+      content="QWER TOKYO へのお問い合わせページです。アプリの感想、制作相談、コラボ、デモ希望などの連絡内容を整理できます。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-        <link rel="stylesheet" href="./assets/css/site.css" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
-  <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
-      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
-      </div>
-      <div>
-        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
-        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Learning Log App</p>
-      </div>
+      <div class="layout-container">
+        <header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="./index.html" class="brand-link" aria-label="QWER TOKYO ホーム">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span class="brand-copy">
+        <span class="brand-name">QWER TOKYO</span>
+        <span class="brand-tag">App Showcase Studio</span>
+      </span>
     </a>
-  </div>
-  <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
-      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
-        <li><a class="hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./explore.html">公開ログ</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./discover.html">テンプレート</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./about.html">サービス概要</a></li>
-      </ul>
+
+    <nav aria-label="メインメニュー" class="site-nav">
+      <a href="./explore.html">アプリ一覧</a>
+      <a href="./discover.html">制作プロセス</a>
+      <a href="./about.html">プロフィール</a>
+      <a href="./contact.html">お問い合わせ</a>
     </nav>
-    <form role="search" action="./search.html" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">ナレッジ検索</label>
-      <input id="search-q" name="q" type="search" placeholder="公開ログやテンプレを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
-      <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
-        <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
-        </div>
-      </button>
-    </form>
-    <div class="flex items-center gap-4 shrink-0">
-      <div class="logged-out flex items-center gap-2">
-        <a
-          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
-          href="./signin.html"
-        >
-          ログイン
-        </a>
-        <a
-          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
-          href="./signup.html"
-        >
-          今すぐ始める
-        </a>
-      </div>
-      <div class="logged-in items-center gap-4" style="display: none;">
-        <span class="user-details text-sm text-slate-600"></span>
-        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
-          ログアウト
-        </button>
-      </div>
+
+    <div class="site-header__actions">
+      <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
+        <label for="search-q" class="sr-only">サイト内検索</label>
+        <input id="search-q" name="q" type="search" placeholder="アプリ・領域・制作方針を検索" />
+      </form>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
     </div>
   </div>
 </header>
@@ -80,15 +51,15 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Support</p>
-              <h1>導入相談 / お問い合わせ</h1>
+              <p class="section-eyebrow">Contact</p>
+              <h1>アプリの感想、制作相談、コラボの連絡はこちらから。</h1>
               <p>
-                QWER Atlas の使い始め方、テンプレート運用、カテゴリ整理、バックアップ方針などの相談窓口です。利用前の確認、不具合報告、公開設計の相談にも対応します。
+                このページでは、お問い合わせ内容を整理してコピーできます。入力した内容をまとめたうえで、<a class="inline-link" href="https://qwer.tokyo">qwer.tokyo</a> 側の連絡導線へ貼り付けて使える構成にしています。
               </p>
             </section>
 
             <section class="two-column">
-              <form class="surface-card form-card">
+              <form id="contact-form" class="surface-card form-card">
                 <div>
                   <label for="contact-name">お名前</label>
                   <input id="contact-name" type="text" name="name" required />
@@ -100,84 +71,112 @@
                 <div>
                   <label for="contact-topic">相談したい内容</label>
                   <select id="contact-topic" name="topic">
-                    <option>使い始め方 / 初期設定</option>
-                    <option>カテゴリ / タグ整理</option>
-                    <option>バックアップ / エクスポート</option>
-                    <option>不具合 / 改善要望</option>
+                    <option>アプリの感想</option>
+                    <option>制作相談</option>
+                    <option>コラボレーション</option>
+                    <option>デモ / 掲載依頼</option>
                   </select>
                 </div>
                 <div>
                   <label for="contact-message">詳細</label>
-                  <textarea id="contact-message" name="message" placeholder="現状の課題や希望するサポート内容をご記入ください。" required></textarea>
+                  <textarea id="contact-message" name="message" placeholder="背景、相談したいこと、見てほしいアプリやページなどを記入してください。" required></textarea>
                 </div>
-                <button type="submit" class="button-primary">送信する</button>
+                <button type="submit" class="button-primary">お問い合わせ内容をコピーする</button>
+                <p id="contact-result" class="section-text" role="status" aria-live="polite"></p>
               </form>
 
               <div class="surface-card section-stack">
-                <h2 class="section-heading">運用チェックリスト</h2>
-                <ul class="section-text list-disc pl-6">
-                  <li>最初のログを迷わず書き始められるか。</li>
-                  <li>公開/非公開の運用ルールが決まっているか。</li>
-                  <li>カテゴリ / タグ構造が利用目的に合っているか。</li>
-                  <li>Markdown / HTML エクスポート方針が整理されているか。</li>
+                <h2 class="section-heading">連絡するときにあると早い情報</h2>
+                <ul class="section-text">
+                  <li>どのアプリ、またはどのページについての連絡か。</li>
+                  <li>いま困っていること、改善したいこと。</li>
+                  <li>公開前提なのか、社内利用前提なのか。</li>
+                  <li>参考にしたい既存サービスやイメージ。</li>
                 </ul>
                 <div class="section-stack">
-                  <p class="section-text"><strong>サポート時間:</strong> 平日10:00〜18:00（JST）</p>
-                  <p class="section-text"><strong>URL:</strong> <a class="text-[#0f62fe] underline" href="https://qwer.tokyo">qwer.tokyo</a></p>
-                  <p class="section-text"><strong>Slack / Discord:</strong> アカウント作成後に案内します。</p>
+                  <p class="section-text"><strong>連絡先URL:</strong> <a class="inline-link" href="https://qwer.tokyo">qwer.tokyo</a></p>
+                  <p class="section-text"><strong>対象:</strong> アプリの感想、制作相談、掲載やコラボの相談。</p>
+                  <p class="section-text"><strong>用途:</strong> 上のフォームで内容をまとめると、そのまま貼り付けやすくなります。</p>
                 </div>
               </div>
             </section>
           </div>
         </main>
-        <footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
-  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
-        <p class="text-slate-600 text-base leading-relaxed">
-          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill">テンプレ挿入</span>
-          <span class="pill">公開/非公開</span>
-          <span class="pill">全文検索</span>
-        </div>
-      </div>
+        <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__lead">
+      <p class="section-eyebrow">QWER TOKYO</p>
+      <h2 class="section-heading">作るだけで終わらせず、伝わる見せ方まで設計する。</h2>
+      <p class="section-text">
+        AI支援ツール、業務改善アプリ、体験プロトタイプまで。QWER TOKYO は、企画の骨格づくりからUI、デモ、公開時の見せ方まで一気通貫で整えるためのショーケースサイトです。
+      </p>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
+    </div>
+
+    <div class="site-footer__grid">
       <div>
-        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./index.html">ホーム</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./explore.html">公開ログ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./discover.html">テンプレート</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./about.html">サービス概要</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./join.html">活用事例掲載</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./search.html">検索</a></li>
+        <p class="site-footer__label">Pages</p>
+        <ul class="site-footer__list">
+          <li><a href="./index.html">ホーム</a></li>
+          <li><a href="./explore.html">アプリ一覧</a></li>
+          <li><a href="./discover.html">制作プロセス</a></li>
+          <li><a href="./about.html">プロフィール</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
-        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./contact.html">導入相談 / お問い合わせ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./terms.html">利用規約</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./privacy.html">プライバシー</a></li>
+        <p class="site-footer__label">Focus</p>
+        <ul class="site-footer__list">
+          <li>AIアプリケーション</li>
+          <li>業務改善ツール</li>
+          <li>プロトタイピング</li>
+          <li>体験設計 / UI</li>
         </ul>
-        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
+      </div>
+      <div>
+        <p class="site-footer__label">Info</p>
+        <ul class="site-footer__list">
+          <li><a href="./search.html">検索</a></li>
+          <li><a href="./privacy.html">プライバシー</a></li>
+          <li><a href="./terms.html">利用規約</a></li>
+          <li><a href="https://qwer.tokyo">qwer.tokyo</a></li>
+        </ul>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
-      </div>
+
+    <div class="site-footer__meta">
+      <p>@2026 QWER TOKYO</p>
+      <p>App showcase, concept design, prototype delivery.</p>
     </div>
   </div>
 </footer>
-<script src="./assets/js/auth.js" defer></script>
 
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('contact-result');
+
+        form.addEventListener('submit', async event => {
+          event.preventDefault();
+          const summary = [
+            '【お問い合わせ】',
+            `お名前: ${form.name.value.trim()}`,
+            `メールアドレス: ${form.email.value.trim()}`,
+            `内容: ${form.topic.value}`,
+            '',
+            form.message.value.trim()
+          ].join('\n');
+
+          try {
+            await navigator.clipboard.writeText(summary);
+            result.textContent = '入力内容をコピーしました。qwer.tokyo の連絡導線へ貼り付けて使えます。';
+          } catch (error) {
+            result.textContent = 'コピーに失敗しました。内容を選択して手動でコピーしてください。';
+          }
+        });
+      });
+    </script>
   </body>
 </html>

@@ -12,52 +12,110 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>活用事例掲載 - QWER Atlas</title>
+    <title>プロジェクト相談 - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas の活用事例掲載フォームです。公開ログをサービス内の活用事例として紹介したい利用者向けの申請窓口です。"
+      content="QWER TOKYO のプロジェクト相談ページです。新規アプリ、既存プロダクト改善、AI導入、プロトタイプ制作などの相談内容を整理できます。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
+      <div class="layout-container">
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Case Showcase</p>
-              <h1>活用事例の掲載申請</h1>
+              <p class="section-eyebrow">Project Brief</p>
+              <h1>新規アプリ、改善提案、プロトタイプ相談の入口。</h1>
               <p>
-                QWER Atlas で公開しているログの中から、特に見せたい活用事例を掲載するためのフォームです。案件提案や発信に使いたい公開ログを、カテゴリやタグ付きで整理して紹介できます。
+                相談内容を最小限の項目で整理して、連絡時にそのまま使える形へまとめます。まだ要件が固まっていない段階でも、現状の課題と目指したい体験がわかれば十分です。
               </p>
             </section>
 
-            <form class="surface-card form-card">
-              <div>
-                <label for="join-name">お名前 / 表示名</label>
-                <input id="join-name" type="text" name="name" required />
+            <section class="two-column">
+              <form id="join-form" class="surface-card form-card">
+                <div>
+                  <label for="join-name">お名前 / チーム名</label>
+                  <input id="join-name" type="text" name="name" required />
+                </div>
+                <div>
+                  <label for="join-email">メールアドレス</label>
+                  <input id="join-email" type="email" name="email" required />
+                </div>
+                <div>
+                  <label for="join-type">相談したい内容</label>
+                  <select id="join-type" name="type">
+                    <option>新規アプリの立ち上げ</option>
+                    <option>既存サービスの見せ方改善</option>
+                    <option>AI 機能の導入</option>
+                    <option>デモ / プロトタイプ制作</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="join-goal">目指したい状態</label>
+                  <input id="join-goal" type="text" name="goal" placeholder="例: 問い合わせ導線を改善したい、情報整理を自動化したい" />
+                </div>
+                <div>
+                  <label for="join-state">現在の状況</label>
+                  <textarea id="join-state" name="state" placeholder="いまの課題、既存運用、参考にしたいサービスなどを記入してください。"></textarea>
+                </div>
+                <div>
+                  <label for="join-schedule">希望時期</label>
+                  <input id="join-schedule" type="text" name="schedule" placeholder="例: 今月中に相談開始、来月中に試作を見たい" />
+                </div>
+                <button type="submit" class="button-primary">相談メモをコピーする</button>
+                <p id="join-result" class="section-text" role="status" aria-live="polite"></p>
+              </form>
+
+              <div class="surface-card section-stack">
+                <h2 class="section-heading">こんな相談に向いています</h2>
+                <ul class="section-text">
+                  <li>アプリの方向性はあるが、見せ方がまだ弱い。</li>
+                  <li>業務改善ツールを作りたいが、何から切り出すか迷っている。</li>
+                  <li>AI を使いたいが、実運用でどこに組み込むべきか整理したい。</li>
+                  <li>企画提案のために、短期間で触れるデモを作りたい。</li>
+                </ul>
+                <div class="section-stack">
+                  <p class="section-text"><strong>連絡先URL:</strong> <a class="inline-link" href="https://qwer.tokyo">qwer.tokyo</a></p>
+                  <p class="section-text"><strong>進め方:</strong> 相談内容の整理 → 方向性確認 → 必要なら試作へ。</p>
+                  <p class="section-text"><strong>補足:</strong> 上の内容はコピーして、そのまま初回連絡に使えます。</p>
+                </div>
               </div>
-              <div>
-                <label for="join-email">メールアドレス</label>
-                <input id="join-email" type="email" name="email" required />
-              </div>
-              <div>
-                <label for="join-interest">掲載したいカテゴリ</label>
-                <input id="join-interest" type="text" name="interest" placeholder="例: AI / LLM, DX, 英語学習" />
-              </div>
-              <div>
-                <label for="join-message">ピックアップしたいログURL / 補足</label>
-                <textarea id="join-message" name="message" placeholder="公開ログのURL、見せたい成果、活用シーンを記入してください。"></textarea>
-              </div>
-              <button type="submit" class="button-primary">掲載を申請</button>
-            </form>
+            </section>
           </div>
         </main>
         {% include footer.html %}
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('join-form');
+        const result = document.getElementById('join-result');
+
+        form.addEventListener('submit', async event => {
+          event.preventDefault();
+          const summary = [
+            '【プロジェクト相談】',
+            `お名前 / チーム名: ${form.name.value.trim()}`,
+            `メールアドレス: ${form.email.value.trim()}`,
+            `相談内容: ${form.type.value}`,
+            `目指したい状態: ${form.goal.value.trim()}`,
+            `希望時期: ${form.schedule.value.trim()}`,
+            '',
+            '現在の状況',
+            form.state.value.trim()
+          ].join('\n');
+
+          try {
+            await navigator.clipboard.writeText(summary);
+            result.textContent = '相談メモをコピーしました。qwer.tokyo の連絡導線へ貼り付けて送れます。';
+          } catch (error) {
+            result.textContent = 'コピーに失敗しました。内容を選択して手動でコピーしてください。';
+          }
+        });
+      });
+    </script>
   </body>
 </html>

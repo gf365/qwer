@@ -10,69 +10,40 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>サービス概要 - QWER Atlas</title>
+    <title>プロフィール - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas のコンセプト、対象ユーザー、設計方針を紹介します。学習ログを公開資産へ変えるための運用設計をまとめています。"
+      content="QWER TOKYO のプロフィールページです。個人で企画・設計・実装まで横断して進めるアプリケーション制作の方針を紹介します。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-        <link rel="stylesheet" href="./assets/css/site.css" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e2e8f0] bg-white/95 backdrop-blur px-6 md:px-10 py-3 shadow-sm" role="banner">
-  <div class="flex items-center gap-4 text-[#111a22]">
-    <a href="./index.html" class="flex items-center gap-4 text-[#111a22]" aria-label="QWER Atlas ホーム">
-      <div class="size-9 rounded-2xl bg-[#0f62fe] text-white flex items-center justify-center shadow-sm" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="size-5"><path d="M8 8H40L34 24L40 40H8L14 24L8 8Z"></path></svg>
-      </div>
-      <div>
-        <p class="text-[#0f172a] text-base font-semibold leading-tight tracking-[-0.015em] m-0">QWER Atlas</p>
-        <p class="text-slate-500 text-xs font-medium leading-snug uppercase tracking-[0.25em] m-0">Learning Log App</p>
-      </div>
+      <div class="layout-container">
+        <header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="./index.html" class="brand-link" aria-label="QWER TOKYO ホーム">
+      <span class="brand-mark" aria-hidden="true">Q</span>
+      <span class="brand-copy">
+        <span class="brand-name">QWER TOKYO</span>
+        <span class="brand-tag">App Showcase Studio</span>
+      </span>
     </a>
-  </div>
-  <div class="flex flex-1 items-center gap-6 justify-end">
-    <nav aria-label="メインメニュー" class="hidden lg:flex items-center">
-      <ul class="flex items-center gap-8 m-0 p-0 list-none text-sm font-medium text-slate-600">
-        <li><a class="hover:text-slate-900 transition" href="./index.html">ホーム</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./explore.html">公開ログ</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./discover.html">テンプレート</a></li>
-        <li><a class="hover:text-slate-900 transition" href="./about.html">サービス概要</a></li>
-      </ul>
+
+    <nav aria-label="メインメニュー" class="site-nav">
+      <a href="./explore.html">アプリ一覧</a>
+      <a href="./discover.html">制作プロセス</a>
+      <a href="./about.html">プロフィール</a>
+      <a href="./contact.html">お問い合わせ</a>
     </nav>
-    <form role="search" action="./search.html" method="get" class="hidden md:flex items-center gap-2 shrink-0" aria-label="サイト内検索">
-      <label for="search-q" class="sr-only">ナレッジ検索</label>
-      <input id="search-q" name="q" type="search" placeholder="公開ログやテンプレを検索" class="rounded-full border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:border-[#0f62fe]" />
-      <button type="submit" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e2e8f0] text-[#111a22] gap-2 text-sm font-semibold leading-normal tracking-[0.015em] min-w-0 px-3" aria-label="検索">
-        <div class="text-[#111a22]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
-        </div>
-      </button>
-    </form>
-    <div class="flex items-center gap-4 shrink-0">
-      <div class="logged-out flex items-center gap-2">
-        <a
-          class="rounded-full border border-slate-300 px-4 py-2 text-slate-700 text-sm font-medium leading-normal tracking-[0.01em] hover:bg-slate-50 transition min-w-[108px] text-center"
-          href="./signin.html"
-        >
-          ログイン
-        </a>
-        <a
-          class="rounded-full bg-[#0f62fe] text-white px-5 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-[#0a46b5] transition min-w-[120px] text-center shadow-sm"
-          href="./signup.html"
-        >
-          今すぐ始める
-        </a>
-      </div>
-      <div class="logged-in items-center gap-4" style="display: none;">
-        <span class="user-details text-sm text-slate-600"></span>
-        <button id="logout-button" class="rounded-full bg-slate-200 text-slate-700 px-4 py-2 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-slate-300 transition">
-          ログアウト
-        </button>
-      </div>
+
+    <div class="site-header__actions">
+      <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
+        <label for="search-q" class="sr-only">サイト内検索</label>
+        <input id="search-q" name="q" type="search" placeholder="アプリ・領域・制作方針を検索" />
+      </form>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
     </div>
   </div>
 </header>
@@ -80,123 +51,121 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">About The Service</p>
-              <h1>QWER Atlas とは</h1>
+              <p class="section-eyebrow">Profile</p>
+              <h1>QWER TOKYO は、アプリと見せ方を一体で考える個人スタジオです。</h1>
               <p>
-                QWER Atlas は、学習ログや検証メモを「続けやすく、あとで見せやすい形」で蓄積するためのアプリです。毎日の記録を、検索できる実績アーカイブへ変えることを目的に設計しています。
+                企画、情報設計、UI、実装、公開時のコピーまでを一人で横断しながら、アプリケーションを作品として成立させることを目指しています。作ることと伝えることを分けず、同じ設計の中で扱うのが基本姿勢です。
               </p>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">解決したい課題</h2>
-              <p class="section-text">
-                学びは積み上がっていても、あとで見返せず、外に見せる形にもなっていないことが多くあります。QWER Atlas は、記録のハードルを下げつつ、公開できる状態まで運びやすくするための土台です。
-              </p>
-              <div class="badge-list">
-                <span class="badge">AI / LLM</span>
-                <span class="badge">DX・業務改善</span>
-                <span class="badge">プログラミング</span>
-                <span class="badge">UEFN</span>
-                <span class="badge">英語学習</span>
-                <span class="badge">読書ログ</span>
-              </div>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">このサービスが向いている人</h2>
-              <p class="section-text">
-                学習ログや調査メモを、単なる個人メモではなく公開可能な成果物として育てたい人に向いています。特に、複数テーマを横断して整理したい人との相性が良いです。
-              </p>
-              <ul class="section-text list-disc pl-6">
-                <li>副業や案件提案に使える形で、日々の成長ログを残したい人。</li>
-                <li>公開/非公開を切り替えながら、安心して下書きを育てたい人。</li>
-                <li>カテゴリ、タグ、全文検索で後から使い回せる知識ベースを持ちたい人。</li>
-              </ul>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">設計方針</h2>
-              <p class="section-text">
-                記録を止めないこと、あとから探せること、外部共有しやすいことを優先しています。派手な演出よりも、技術ログや学習メモを継続しやすい運用のしやすさを前面に置いています。
-              </p>
+              <p class="section-eyebrow">Strength</p>
+              <h2 class="section-heading">得意なのは、異なる文脈を一つの体験にまとめること。</h2>
               <div class="surface-grid">
                 <article class="surface-card">
-                  <h3>テンプレート先行</h3>
-                  <p>書き出し時点で骨組みを入れ、考え漏れと書き始めの負荷を減らします。</p>
+                  <h3>AI と業務の接続</h3>
+                  <p>AIの面白さだけで終わらせず、現場の作業に落とし込める粒度まで設計します。</p>
                 </article>
                 <article class="surface-card">
-                  <h3>公開/非公開の両立</h3>
-                  <p>作業中は非公開で持ち、共有できる粒度になったら公開へ切り替えます。</p>
+                  <h3>複雑さの整理</h3>
+                  <p>入力項目、情報量、ステータスを減らし、使い始めやすい画面へ整理します。</p>
                 </article>
                 <article class="surface-card">
-                  <h3>移行しやすい構造</h3>
-                  <p>Markdown / HTML エクスポート前提で、将来の移行や再利用にも備えます。</p>
+                  <h3>公開時の表現</h3>
+                  <p>アプリの説明文、構成、CTAまで含めて、魅力が伝わる状態へ整えます。</p>
                 </article>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">価値観</h2>
-              <p class="section-text">QWER Atlas が大切にしている運用原則です。</p>
-              <ul class="section-text list-disc pl-6">
-                <li>記録の継続を優先し、UI とテンプレートは軽く保つこと。</li>
-                <li>公開できる成果と、公開前の下書きを同じ流れで扱えること。</li>
-                <li>カテゴリやタグを通じて、あとで再利用しやすい構造にすること。</li>
-                <li>学びを閉じたメモで終わらせず、外部共有できる資産に変えること。</li>
+              <p class="section-eyebrow">Working Style</p>
+              <h2 class="section-heading">進め方は、速く作って、早く判断する。</h2>
+              <p class="section-text">
+                最初から重い構成にせず、まずは核になる体験を見える形にします。そのうえで、反応や課題を見ながら削るべきものと伸ばすべきものを判断します。速さを優先しますが、雑に作るという意味ではありません。
+              </p>
+              <div class="badge-list">
+                <span class="badge">Concept First</span>
+                <span class="badge">Fast Prototype</span>
+                <span class="badge">Clear UI</span>
+                <span class="badge">Public Demo Ready</span>
+              </div>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">Values</p>
+              <h2 class="section-heading">制作で大事にしていること</h2>
+              <p class="section-text">
+                技術的な新しさよりも、実際に使いたくなる理由を優先します。小さな改善でも、日常の面倒を確実に減らすなら十分に価値があると考えています。
+              </p>
+              <ul class="section-text">
+                <li>目的が曖昧なまま機能を増やさないこと。</li>
+                <li>第一印象で価値が伝わるコピーと構成にすること。</li>
+                <li>公開後の改善を前提に、動く最小単位を早く出すこと。</li>
+                <li>見た目だけでなく、運用まで回る現実的な設計にすること。</li>
               </ul>
-              <div class="flex gap-3 flex-wrap">
-                <a class="button-primary" href="./signup.html">今すぐ始める</a>
-                <a class="button-secondary" href="./explore.html">公開ログを見る</a>
+            </section>
+
+            <section class="cta-band section-stack">
+              <p class="section-eyebrow">Contact</p>
+              <h2 class="section-heading">制作相談、コラボ、アプリの感想はここから受け付けています。</h2>
+              <p class="section-text">
+                具体的な相談だけでなく、公開中の見せ方へのフィードバックや、こういうツールがほしいという相談も歓迎です。
+              </p>
+              <div class="button-row">
+                <a class="button-primary" href="./contact.html">お問い合わせ</a>
+                <a class="button-secondary" href="./join.html">プロジェクト相談へ</a>
               </div>
             </section>
           </div>
         </main>
-        <footer class="border-t border-[#e2e8f0] bg-white/90 backdrop-blur">
-  <div class="w-full max-w-[1100px] mx-auto px-6 py-10 flex flex-col gap-8">
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">QWER Atlas</p>
-        <p class="text-slate-600 text-base leading-relaxed">
-          学習ログを最短で公開資産に変えるためのアプリです。テンプレート、公開/非公開管理、検索を一つにまとめ、毎日の記録をあとで使える実績に変えます。
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill">テンプレ挿入</span>
-          <span class="pill">公開/非公開</span>
-          <span class="pill">全文検索</span>
-        </div>
-      </div>
+        <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__lead">
+      <p class="section-eyebrow">QWER TOKYO</p>
+      <h2 class="section-heading">作るだけで終わらせず、伝わる見せ方まで設計する。</h2>
+      <p class="section-text">
+        AI支援ツール、業務改善アプリ、体験プロトタイプまで。QWER TOKYO は、企画の骨格づくりからUI、デモ、公開時の見せ方まで一気通貫で整えるためのショーケースサイトです。
+      </p>
+      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
+    </div>
+
+    <div class="site-footer__grid">
       <div>
-        <p class="text-slate-900 font-semibold mb-3">サイトマップ</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./index.html">ホーム</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./explore.html">公開ログ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./discover.html">テンプレート</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./about.html">サービス概要</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./join.html">活用事例掲載</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./search.html">検索</a></li>
+        <p class="site-footer__label">Pages</p>
+        <ul class="site-footer__list">
+          <li><a href="./index.html">ホーム</a></li>
+          <li><a href="./explore.html">アプリ一覧</a></li>
+          <li><a href="./discover.html">制作プロセス</a></li>
+          <li><a href="./about.html">プロフィール</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
-        <p class="text-slate-900 font-semibold mb-3">ポリシー / サポート</p>
-        <ul class="space-y-2 text-slate-600 text-sm leading-relaxed">
-          <li><a class="hover:text-[#0f62fe] transition" href="./contact.html">導入相談 / お問い合わせ</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./terms.html">利用規約</a></li>
-          <li><a class="hover:text-[#0f62fe] transition" href="./privacy.html">プライバシー</a></li>
+        <p class="site-footer__label">Focus</p>
+        <ul class="site-footer__list">
+          <li>AIアプリケーション</li>
+          <li>業務改善ツール</li>
+          <li>プロトタイピング</li>
+          <li>体験設計 / UI</li>
         </ul>
-        <p class="text-slate-500 text-xs mt-4">記録の整理や移行を見据え、Markdown / HTMLエクスポート前提で設計しています。</p>
+      </div>
+      <div>
+        <p class="site-footer__label">Info</p>
+        <ul class="site-footer__list">
+          <li><a href="./search.html">検索</a></li>
+          <li><a href="./privacy.html">プライバシー</a></li>
+          <li><a href="./terms.html">利用規約</a></li>
+          <li><a href="https://qwer.tokyo">qwer.tokyo</a></li>
+        </ul>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p class="m-0">@2024 QWER Atlas — turn daily learning logs into reusable proof of work.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-[#0f62fe] transition" href="#">GitHub</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Discord</a>
-        <a class="hover:text-[#0f62fe] transition" href="#">Newsletter</a>
-      </div>
+
+    <div class="site-footer__meta">
+      <p>@2026 QWER TOKYO</p>
+      <p>App showcase, concept design, prototype delivery.</p>
     </div>
   </div>
 </footer>
-<script src="./assets/js/auth.js" defer></script>
 
       </div>
     </div>

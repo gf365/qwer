@@ -1,4 +1,5 @@
-
+---
+---
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,172 +12,188 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-
-    <title>検索 - QWER Atlas</title>
+    <title>検索 - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas の公開ログ、テンプレート、ポリシーを横断検索できます。カテゴリ、タグ、本文から過去ログを探せます。"
+      content="QWER TOKYO のアプリ一覧、アプリ詳細、制作プロセス、プロフィール、問い合わせページを横断検索できます。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
     <style>
       .search-hero {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+        display: grid;
+        gap: 18px;
       }
+
       .search-form {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
+        display: grid;
+        gap: 12px;
       }
+
       .search-form__control {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
-        gap: 0.5rem;
+        gap: 10px;
         align-items: center;
       }
+
       .search-input {
         border-radius: 999px;
-        border: 1px solid #cbd5f5;
-        padding: 0.9rem 1.2rem;
-        font-size: 1rem;
-        background: #fff;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.84);
+        padding: 14px 18px;
+        font-size: 15px;
+        color: var(--text-body);
+        outline: none;
       }
+
       .search-input:focus {
-        outline: 2px solid #0f62fe;
-        outline-offset: 2px;
+        border-color: var(--accent);
       }
+
       .search-button {
-        border-radius: 999px;
         border: none;
-        padding: 0.9rem 1.5rem;
-        font-weight: 600;
+        border-radius: 999px;
+        padding: 14px 22px;
+        font-size: 15px;
+        font-weight: 700;
         color: #fff;
-        background: linear-gradient(135deg, #0f62fe 0%, #5d42ff 100%);
+        background: linear-gradient(135deg, var(--accent), #ff8d54);
+        box-shadow: 0 20px 36px rgba(232, 95, 61, 0.22);
         cursor: pointer;
       }
+
       .search-button:disabled {
-        opacity: 0.4;
+        opacity: 0.5;
         cursor: not-allowed;
       }
+
       .search-hint {
-        font-size: 0.9rem;
-        color: #64748b;
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 14px;
       }
+
       .results-header {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
+        display: grid;
+        gap: 6px;
       }
+
       .results-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
-        color: #475569;
-        font-size: 0.95rem;
+        gap: 12px;
+        color: var(--text-muted);
+        font-size: 14px;
       }
+
       .result-status {
-        font-weight: 600;
-        color: #0f172a;
+        font-weight: 700;
+        color: var(--text-strong);
       }
+
       .results-grid {
         display: grid;
-        gap: 1rem;
+        gap: 16px;
       }
+
+      .result-card {
+        border-radius: 24px;
+        padding: 22px;
+        border: 1px solid rgba(197, 177, 159, 0.72);
+        background: rgba(255, 251, 245, 0.92);
+        box-shadow: var(--shadow-card);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .result-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+      }
+
+      .result-link {
+        display: grid;
+        gap: 12px;
+        height: 100%;
+      }
+
+      .result-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-size: 13px;
+      }
+
+      .result-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent-dark);
+        font-weight: 700;
+      }
+
+      .result-url {
+        color: var(--text-muted);
+      }
+
+      .result-title {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.15;
+        color: var(--text-strong);
+      }
+
+      .result-snippet {
+        margin: 0;
+        color: var(--text-muted);
+      }
+
+      .result-snippet mark {
+        background: #ffe0a6;
+        color: var(--text-strong);
+        border-radius: 4px;
+        padding: 0 2px;
+      }
+
+      .result-footer {
+        color: var(--accent-dark);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .empty-state {
+        padding: 18px 0;
+        color: var(--text-muted);
+      }
+
       @media (min-width: 768px) {
         .results-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
-      .result-card {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 1rem;
-        padding: 1.5rem;
-        transition: border-color 0.2s ease, transform 0.2s ease;
-      }
-      .result-card:hover {
-        border-color: #0f62fe;
-        transform: translateY(-2px);
-      }
-      .result-link {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        text-decoration: none;
-        color: inherit;
-        height: 100%;
-      }
-      .result-meta {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        color: #1e293b;
-      }
-      .result-badge {
-        padding: 0.1rem 0.6rem;
-        border-radius: 999px;
-        background: #edf2ff;
-        color: #4338ca;
-        font-weight: 600;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-      .result-url {
-        color: #64748b;
-        font-size: 0.75rem;
-      }
-      .result-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        margin: 0;
-        color: #0f172a;
-      }
-      .result-snippet {
-        font-size: 0.95rem;
-        color: #475569;
-        line-height: 1.6;
-      }
-      .result-snippet mark {
-        background: #fff1a6;
-        color: #0f172a;
-        border-radius: 0.2rem;
-        padding: 0 0.15rem;
-      }
-      .result-footer {
-        display: flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.9rem;
-        color: #0f62fe;
-        font-weight: 600;
-      }
-      .empty-state {
-        text-align: center;
-        padding: 2rem;
-        color: #64748b;
+
+      @media (max-width: 720px) {
+        .search-form__control {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
+      <div class="layout-container">
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel search-hero">
               <div>
                 <p class="section-eyebrow">Search</p>
-                <h1>全文検索</h1>
+                <h1>アプリ、制作方針、公開ページを横断検索。</h1>
                 <p>
-                  QWER Atlas 内の公開ログ、テンプレート、利用規約、ポリシーなどを横断検索します。タグ、カテゴリ、本文の一部から、過去の記録へすぐにアクセスできます。
+                  QWER TOKYO 内のアプリ一覧、各アプリの詳細ページ、制作プロセス、プロフィール、問い合わせ導線、ポリシー類をまとめて検索できます。
                 </p>
               </div>
               <form id="search-form" class="search-form" role="search">
@@ -186,18 +203,19 @@
                     id="search-input"
                     name="q"
                     class="search-input"
-                    placeholder="例：LLM、UEFN、プライバシー"
+                    placeholder="例: AI Support、画面、プロトタイプ"
                     aria-label="検索ワードを入力"
                     autocomplete="off"
                   />
-                  <button class="search-button" type="submit" id="search-submit">検索</button>
+                  <button class="search-button" type="submit" id="search-submit">検索する</button>
                 </div>
-                <p class="search-hint">タグ / カテゴリ / 本文をまとめて検索できます。スペース区切りで複数キーワード検索も可能です。</p>
+                <p class="search-hint">キーワードがページ本文か説明文に含まれていればヒットします。</p>
               </form>
             </section>
+
             <section class="surface-card section-stack">
               <div class="results-header">
-                <h2 class="section-heading">結果一覧</h2>
+                <h2 class="section-heading">検索結果</h2>
                 <div class="results-meta">
                   <span id="search-title" class="result-status">検索ワードを入力してください</span>
                   <span id="search-status"></span>
@@ -221,19 +239,7 @@
         const params = new URLSearchParams(window.location.search);
         const initialQuery = params.get('q')?.trim() || '';
 
-        const searchableFiles = [
-          './index.html',
-          './about.html',
-          './contact.html',
-          './discover.html',
-          './explore.html',
-          './join.html',
-          './privacy.html',
-          './reset-password.html',
-          './signin.html',
-          './signup.html',
-          './terms.html'
-        ];
+        const searchableFiles = {{ searchable_files }};
 
         if (initialQuery) {
           searchInput.value = initialQuery;
@@ -250,9 +256,10 @@
             searchTitle.textContent = '検索ワードを入力してください';
             searchStatus.textContent = '';
             resultsContainer.innerHTML =
-              '<div class="empty-state">検索ワードを入力すると、全文検索が開始されます。</div>';
+              '<div class="empty-state">検索ワードを入力すると、結果が表示されます。</div>';
             return;
           }
+
           const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
           window.history.replaceState({}, '', newUrl);
           runSearch(query);
@@ -263,7 +270,7 @@
           searchStatus.textContent = '検索中...';
           searchButton.disabled = true;
           resultsContainer.innerHTML =
-            '<div class="empty-state">インデックスを走査しています...</div>';
+            '<div class="empty-state">サイト内のページを走査しています...</div>';
 
           const results = await search(query, searchableFiles);
           displayResults(results, query);
@@ -277,13 +284,9 @@
           for (const file of files) {
             try {
               const response = await fetch(file);
-              if (!response.ok) {
-                console.error(`Error fetching ${file}: ${response.statusText}`);
-                continue;
-              }
+              if (!response.ok) continue;
               const html = await response.text();
               const plainHtml = html.toLowerCase();
-
               if (!plainHtml.includes(q)) continue;
 
               const parser = new DOMParser();
@@ -292,6 +295,7 @@
               const description =
                 doc.querySelector('meta[name="description"]')?.content?.trim() || '';
               const snippet = createSnippet(doc.body?.textContent || '', query);
+
               results.push({
                 file,
                 title,
@@ -303,6 +307,7 @@
               console.error(`Error processing ${file}:`, error);
             }
           }
+
           return results;
         }
 
@@ -352,7 +357,7 @@
 
             const footer = document.createElement('div');
             footer.className = 'result-footer';
-            footer.innerHTML = '詳細を表示 <span aria-hidden="true">↗</span>';
+            footer.innerHTML = 'ページを開く <span aria-hidden="true">↗</span>';
 
             link.appendChild(meta);
             link.appendChild(title);
@@ -373,10 +378,12 @@
           const lowerQuery = query.toLowerCase();
           const index = lowerText.indexOf(lowerQuery);
 
-          if (index === -1) return condensed.slice(0, 140) + (condensed.length > 140 ? '…' : '');
+          if (index === -1) {
+            return condensed.slice(0, 160) + (condensed.length > 160 ? '…' : '');
+          }
 
-          const start = Math.max(0, index - 70);
-          const end = Math.min(condensed.length, index + query.length + 70);
+          const start = Math.max(0, index - 72);
+          const end = Math.min(condensed.length, index + query.length + 72);
           const prefix = start > 0 ? '…' : '';
           const suffix = end < condensed.length ? '…' : '';
           return `${prefix}${condensed.slice(start, end)}${suffix}`;
@@ -391,19 +398,19 @@
         }
 
         function getBadge(file) {
+          if (file.startsWith('./apps/')) return 'App';
+
           const map = {
             './index.html': 'Home',
-            './explore.html': 'Log',
-            './discover.html': 'Template',
-            './join.html': 'Archive',
-            './about.html': 'About',
+            './explore.html': 'Apps',
+            './discover.html': 'Process',
+            './about.html': 'Profile',
             './contact.html': 'Contact',
+            './join.html': 'Brief',
             './privacy.html': 'Policy',
-            './reset-password.html': 'Auth',
-            './terms.html': 'Policy',
-            './signin.html': 'Auth',
-            './signup.html': 'Auth'
+            './terms.html': 'Policy'
           };
+
           return map[file] || 'Page';
         }
       });

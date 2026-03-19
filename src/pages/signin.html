@@ -12,81 +12,35 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>ログイン - QWER Atlas</title>
+    <title>ページを移動しました - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER Atlas のログインページです。過去の学習ログ、テンプレート、公開設定を管理するアカウントにアクセスします。"
+      content="旧ログインページは終了しました。QWER TOKYO はアプリケーションを紹介するショーケースサイトへ移行しています。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-        <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="layout-container flex h-full grow flex-col">
+      <div class="layout-container">
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Sign In</p>
-              <h1>アカウントにログイン</h1>
-              <p>保存済みの学習ログ、テンプレート、公開設定にアクセスして、記録の続きから再開できます。</p>
+              <p class="section-eyebrow">Updated</p>
+              <h1>旧ログインページは終了しました。</h1>
+              <p>
+                認証ベースのツール構成は終了し、現在はアプリケーション紹介と制作相談を中心にしたサイトへ再設計しています。必要な情報はトップ、アプリ一覧、問い合わせページから確認できます。
+              </p>
+              <div class="button-row">
+                <a class="button-primary" href="./index.html">ホームへ</a>
+                <a class="button-secondary" href="./contact.html">お問い合わせ</a>
+              </div>
             </section>
-
-            <form id="signin-form" class="surface-card form-card">
-              <div>
-                <label for="signin-email">メールアドレス</label>
-                <input id="signin-email" type="email" name="email" required class="w-full" />
-              </div>
-              <div>
-                <label for="signin-password">パスワード</label>
-                <input id="signin-password" type="password" name="password" required class="w-full" />
-              </div>
-              <div id="signin-error" class="text-slate-500 text-sm my-2 min-h-[1.5rem]" role="status" aria-live="polite"></div>
-              <button type="submit" class="button-primary">ログイン</button>
-              <p class="section-text"><a class="text-[#0f62fe] underline" href="{{ '/reset-password.html' | relative_url }}">パスワードを忘れた方はこちら</a></p>
-              <p class="section-text">はじめての方は <a class="text-[#0f62fe] underline" href="{{ '/signup.html' | relative_url }}">今すぐ始める</a> からアカウントを作成してください。</p>
-            </form>
           </div>
         </main>
         {% include footer.html %}
       </div>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const signinForm = document.getElementById('signin-form');
-        const signinError = document.getElementById('signin-error');
-        const submitButton = signinForm.querySelector('button[type="submit"]');
-        const params = new URLSearchParams(window.location.search);
-        if (!window.qwerAuth) {
-          submitButton.disabled = true;
-          signinError.textContent = '認証機能を読み込めませんでした。ページを再読み込みしてください。';
-          return;
-        }
-
-        submitButton.disabled = false;
-        signinError.textContent = params.get('reset') === '1'
-          ? 'パスワードを更新しました。新しいパスワードでログインしてください。'
-          : '';
-
-        signinForm.addEventListener('submit', async event => {
-          event.preventDefault();
-          signinError.textContent = '';
-          submitButton.disabled = true;
-
-          try {
-            await window.qwerAuth.signIn({
-              email: signinForm.email.value,
-              password: signinForm.password.value
-            });
-            window.location.href = '{{ "/index.html" | relative_url }}';
-          } catch (error) {
-            signinError.textContent = error.message || 'ログインに失敗しました。';
-          } finally {
-            submitButton.disabled = false;
-          }
-        });
-      });
-    </script>
   </body>
 </html>

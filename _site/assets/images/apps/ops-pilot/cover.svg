@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="110" x2="1480" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+  <circle cx="1260" cy="160" r="160" fill="#FFFFFF" fill-opacity="0.07"/>
+  <circle cx="320" cy="760" r="250" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="120" y="120" width="1100" height="640" rx="36" fill="#FFF8F1" fill-opacity="0.96"/>
+  <rect x="170" y="180" width="360" height="30" rx="15" fill="#FCE7F3"/>
+  <rect x="170" y="236" width="240" height="18" rx="9" fill="#E7E0ED"/>
+  <rect x="170" y="292" width="990" height="420" rx="30" fill="#FFFFFF"/>
+  <rect x="230" y="350" width="240" height="300" rx="24" fill="#FFF1E7"/>
+  <rect x="500" y="350" width="240" height="300" rx="24" fill="#F3E8FF"/>
+  <rect x="770" y="350" width="240" height="300" rx="24" fill="#E0F2FE"/>
+  <rect x="1040" y="350" width="80" height="300" rx="24" fill="#F7F2EC"/>
+  <text x="170" y="816" fill="#FFF8F1" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700">OPS PILOT</text>
+  <text x="172" y="860" fill="#FFF8F1" font-family="Arial, Helvetica, sans-serif" font-size="28">Operations dashboard for status, owners, and follow-ups</text>
+</svg>

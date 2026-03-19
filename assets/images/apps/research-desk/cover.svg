@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="100" x2="1450" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+  <circle cx="1360" cy="180" r="180" fill="#FFFFFF" fill-opacity="0.08"/>
+  <circle cx="250" cy="760" r="240" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="130" y="130" width="1080" height="620" rx="34" fill="#FFF8F1" fill-opacity="0.96"/>
+  <rect x="180" y="190" width="320" height="34" rx="17" fill="#D1FAE5"/>
+  <rect x="180" y="256" width="410" height="18" rx="9" fill="#D9E6E3"/>
+  <rect x="180" y="304" width="470" height="18" rx="9" fill="#D9E6E3"/>
+  <rect x="180" y="372" width="280" height="250" rx="26" fill="#FFFFFF"/>
+  <rect x="486" y="372" width="280" height="250" rx="26" fill="#FFFFFF"/>
+  <rect x="792" y="372" width="320" height="250" rx="26" fill="#FFFFFF"/>
+  <rect x="1250" y="210" width="210" height="210" rx="40" fill="#FFF8F1" fill-opacity="0.18"/>
+  <text x="180" y="815" fill="#FFF8F1" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700">RESEARCH DESK</text>
+  <text x="182" y="860" fill="#FFF8F1" font-family="Arial, Helvetica, sans-serif" font-size="28">AI research board and summary workspace</text>
+</svg>
