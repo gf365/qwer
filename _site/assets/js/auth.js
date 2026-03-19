@@ -110,6 +110,32 @@ async function signIn({ email, password }) {
   return buildUserPayload(user);
 }
 
+async function resetPassword({ email, password }) {
+  const normalizedEmail = email.trim().toLowerCase();
+  if (!normalizedEmail) {
+    throw new Error('メールアドレスを入力してください。');
+  }
+  if (password.length < 6) {
+    throw new Error('パスワードは6文字以上で入力してください。');
+  }
+
+  const users = readUsers();
+  const userIndex = users.findIndex(entry => entry.email === normalizedEmail);
+  if (userIndex === -1) {
+    throw new Error('登録済みのメールアドレスが見つかりません。');
+  }
+
+  users[userIndex] = {
+    ...users[userIndex],
+    passwordHash: await hashPassword(password)
+  };
+  writeUsers(users);
+  writeSession(null);
+  emitAuthChange();
+
+  return buildUserPayload(users[userIndex]);
+}
+
 function signOut() {
   writeSession(null);
   emitAuthChange();
@@ -144,6 +170,7 @@ function updateAuthUI() {
 
 window.qwerAuth = {
   getCurrentUser,
+  resetPassword,
   signIn,
   signOut,
   signUp

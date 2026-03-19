@@ -96,6 +96,7 @@
               </div>
               <div id="signin-error" class="text-slate-500 text-sm my-2 min-h-[1.5rem]" role="status" aria-live="polite"></div>
               <button type="submit" class="button-primary">ログイン</button>
+              <p class="section-text"><a class="text-[#0f62fe] underline" href="./reset-password.html">パスワードを忘れた方はこちら</a></p>
               <p class="section-text">はじめての方は <a class="text-[#0f62fe] underline" href="./signup.html">今すぐ始める</a> からアカウントを作成してください。</p>
             </form>
           </div>
@@ -154,6 +155,7 @@
         const signinForm = document.getElementById('signin-form');
         const signinError = document.getElementById('signin-error');
         const submitButton = signinForm.querySelector('button[type="submit"]');
+        const params = new URLSearchParams(window.location.search);
         if (!window.qwerAuth) {
           submitButton.disabled = true;
           signinError.textContent = '認証機能を読み込めませんでした。ページを再読み込みしてください。';
@@ -161,7 +163,9 @@
         }
 
         submitButton.disabled = false;
-        signinError.textContent = '';
+        signinError.textContent = params.get('reset') === '1'
+          ? 'パスワードを更新しました。新しいパスワードでログインしてください。'
+          : '';
 
         signinForm.addEventListener('submit', async event => {
           event.preventDefault();
