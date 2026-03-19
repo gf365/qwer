@@ -12,10 +12,10 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>アプリケーションを、構想から魅力まで設計する - QWER TOKYO</title>
+    <title>{{ primary_app_title }} を公開中 - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER TOKYO は、私が企画・設計・実装するアプリケーションを紹介するショーケースサイトです。AI支援ツール、業務改善アプリ、体験プロトタイプの魅力を、課題と体験の両面から伝えます。"
+      content="{{ primary_app_title }} は、PDFに印・サイン・文字を配置して保存できる公開中の電子捺印アプリです。QWER TOKYO のサイトでは、実画面と利用フローをまとめて紹介しています。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
@@ -26,73 +26,114 @@
         {% include header.html %}
         <main class="page-main">
           <div class="page-content">
-            <section class="hero-panel">
-              <p class="section-eyebrow">App Showcase</p>
-              <h1>使われるアプリを、構想から公開体験まで設計する。</h1>
-              <p>
-                QWER TOKYO は、私が企画・設計・実装するアプリケーションを紹介するショーケースサイトです。現在 {{ app_count }} 件のショーケースを、カテゴリ、ビジュアル、利用シーンまで含めて更新できる構成にしています。
-              </p>
-              <div class="button-row">
-                <a class="button-primary" href="./explore.html">アプリ一覧を見る</a>
-                <a class="button-secondary" href="./join.html">プロジェクトを相談する</a>
-              </div>
+            <section class="split-panel hero-stage">
+              <article class="hero-panel">
+                <p class="section-eyebrow">Featured App</p>
+                <h1>PDFへの捺印作業を、{{ primary_app_title }} でひとつの画面にまとめる。</h1>
+                <p>
+                  {{ primary_app_title }} は、PDF読込、印・手書きサイン・文字入力の準備、位置調整、保存までをブラウザ上で進められる実アプリです。テンプレート説明ではなく、公開中の画面と導線をそのまま見せるサイトに更新しました。
+                </p>
+                <div class="button-row">
+                  <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
+                  <a class="button-secondary" href="{{ primary_app_detail_href }}">詳細ページを見る</a>
+                </div>
+                <div class="badge-list">
+                  <span class="badge">{{ primary_app_category }}</span>
+                  <span class="badge">簡易モード / プロモード</span>
+                  <span class="badge">印・サイン・文字入力</span>
+                  <span class="badge">PDF保存</span>
+                </div>
+              </article>
+
+              <article class="surface-card section-stack hero-preview">
+                <p class="section-eyebrow">Live Screen</p>
+                <h2 class="section-heading">最初に見るのは、作業の流れが整理された左カラムです。</h2>
+                <img
+                  class="hero-preview__image"
+                  src="{{ '/assets/images/apps/autohanko/screen-01.png' | relative_url }}"
+                  alt="AutoHanko の簡易モード画面"
+                  loading="eager"
+                />
+                <p class="section-text">
+                  初回ガイド、表示モード切替、PDF読込から保存までの手順が一画面にまとまっているので、初見でも次に何をすればよいかが分かりやすくなっています。
+                </p>
+              </article>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Featured Works</p>
-              <h2 class="section-heading">公開中の注目アプリ</h2>
+              <p class="section-eyebrow">Workflow</p>
+              <h2 class="section-heading">画面からそのまま伝わる利用フロー</h2>
+              <div class="surface-grid">
+                <article class="surface-card">
+                  <h3>1. PDFを読み込む</h3>
+                  <p>左カラムの最初のステップからPDFをアップロードし、右側のプレビュー領域で確認しながら作業を始めます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>2. 配置内容を準備する</h3>
+                  <p>印、手書きサイン、文字入力をひとつの流れで準備できるので、別々のツールへ移動せずに済みます。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>3. 位置を調整して配置する</h3>
+                  <p>PDFプレビューを見ながら配置位置を調整し、必要な要素を実際の文書へ反映します。</p>
+                </article>
+                <article class="surface-card">
+                  <h3>4. 反映済みPDFを保存する</h3>
+                  <p>配置が完了すると保存操作へ進めるため、作業の終点が明確で、毎回の捺印手順を短くまとめられます。</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="split-panel">
+              <article class="surface-card section-stack">
+                <p class="section-eyebrow">Modes</p>
+                <h2 class="section-heading">簡易モードで始めて、必要ならプロモードへ広げられる。</h2>
+                <p class="section-text">
+                  まずは簡易モードでPDF作業の基本だけを見せ、より細かい運用ではプロモードに切り替える設計です。画面を見た限りでも、証明書や設定プロフィール管理の導線が追加され、単発利用と継続利用の両方を意識した構成になっています。
+                </p>
+                <div class="badge-list">
+                  <span class="badge">はじめての方向けガイド</span>
+                  <span class="badge">署名用証明書</span>
+                  <span class="badge">設定プロフィール管理</span>
+                  <span class="badge">ワークフロー表示</span>
+                </div>
+              </article>
+
+              <article class="surface-card section-stack hero-preview">
+                <p class="section-eyebrow">Pro Mode</p>
+                <h2 class="section-heading">詳細運用向けのUIも公開中です。</h2>
+                <img
+                  class="hero-preview__image"
+                  src="{{ '/assets/images/apps/autohanko/screen-02.png' | relative_url }}"
+                  alt="AutoHanko のプロモード画面"
+                  loading="lazy"
+                />
+                <p class="section-text">
+                  プロモードでは、設定保存、署名証明書、状態確認が追加されます。必要なユーザーだけに情報を広げる形なので、複雑さを抑えながら機能を増やせます。
+                </p>
+              </article>
+            </section>
+
+            <section class="surface-card section-stack">
+              <p class="section-eyebrow">Published App</p>
+              <h2 class="section-heading">現在このサイトで紹介している実アプリ</h2>
               <p class="section-text">
-                更新のたびにトップへ並ぶ注目作品です。画像、要点、利用シーンをまとめて見せることで、何を作っているかが最初の数秒で伝わるようにしています。
+                いま公開しているアプリは {{ app_count }} 件です。実際に動く {{ primary_app_title }} を起点に、画面、要点、詳細ページ、公開リンクまでまとめて確認できます。
               </p>
               <div class="app-grid">
                 {{ featured_apps_grid }}
               </div>
             </section>
 
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">Catalog Design</p>
-              <h2 class="section-heading">ショーケースはカテゴリとビジュアルで管理する。</h2>
+            <section class="cta-band section-stack">
+              <p class="section-eyebrow">Try It</p>
+              <h2 class="section-heading">{{ primary_app_title }} をそのまま開いて試せます。</h2>
               <p class="section-text">
-                アプリはタイトルだけでなく、カテゴリ、用途、要点、画像で管理しています。新しい作品を追加すると、一覧、詳細、検索までまとめて反映される前提の構造です。
+                まずは公開中のアプリを確認し、使いどころや改善相談があればお問い合わせください。サイト上の説明だけでなく、実画面へ直接移動できます。
               </p>
-              <div class="badge-list">
-                {{ app_category_badges }}
+              <div class="button-row">
+                <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
+                <a class="button-secondary" href="./contact.html">お問い合わせ</a>
               </div>
-              <dl class="stat-grid">
-                <div class="stat-card">
-                  <dt>Showcases</dt>
-                  <dd>{{ app_count }}</dd>
-                </div>
-                <div class="stat-card">
-                  <dt>Themes</dt>
-                  <dd>{{ app_category_count }}</dd>
-                </div>
-                <div class="stat-card">
-                  <dt>Update Format</dt>
-                  <dd>Data + Images</dd>
-                </div>
-              </dl>
-            </section>
-
-            <section class="split-panel">
-              <article class="quote-panel section-stack">
-                <p class="section-eyebrow">What This Site Shows</p>
-                <h2 class="section-heading">アプリそのものだけでなく、魅力の伝え方まで見せる。</h2>
-                <p>
-                  課題の輪郭、対象ユーザー、画面、利用シーンまでを一つの流れで見せることで、作っているものの価値が短時間で伝わるように設計しています。
-                </p>
-              </article>
-              <article class="cta-band section-stack">
-                <p class="section-eyebrow">Next Step</p>
-                <h2 class="section-heading">公開中のテーマ、制作意図、相談導線を分かりやすく整理しました。</h2>
-                <p class="section-text">
-                  実際の制作テーマはアプリ一覧へ、作り方の考え方は制作プロセスへ。新規相談やコラボの連絡は専用ページからまとめられます。
-                </p>
-                <div class="button-row">
-                  <a class="button-primary" href="./explore.html">アプリ一覧へ</a>
-                  <a class="button-secondary" href="./discover.html">制作プロセスを見る</a>
-                </div>
-              </article>
             </section>
           </div>
         </main>

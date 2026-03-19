@@ -12,10 +12,10 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
     />
-    <title>制作プロセス - QWER TOKYO</title>
+    <title>特徴と使い方 - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER TOKYO の制作プロセスを紹介します。課題整理、体験設計、UI、実装、公開時の見せ方まで、一連の流れをまとめています。"
+      content="AutoHanko の特徴と使い方を紹介します。PDF読込から配置、保存までの流れと、簡易モード / プロモードの設計意図をまとめています。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
@@ -27,79 +27,79 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Process</p>
-              <h1>アプリを魅力的に見せるために、作り方から整える。</h1>
+              <p class="section-eyebrow">How It Works</p>
+              <h1>{{ primary_app_title }} は、PDF作業を4段階で完了させる設計です。</h1>
               <p>
-                良いアプリでも、見せ方が弱いと価値は伝わりません。QWER TOKYO では、課題整理からUI、実装、公開時のコピーまでを一つの流れとして設計し、作品として成立するところまで持っていきます。
+                実際の画面を見ると、PDF読込、配置内容の準備、配置、保存までが明確な順序で並んでいます。複数ツールを渡り歩くのではなく、ひとつの画面内で作業の終点まで辿れる構成です。
               </p>
               <div class="button-row">
-                <a class="button-primary" href="./join.html">この進め方で相談する</a>
-                <a class="button-secondary" href="./explore.html">アプリ一覧を見る</a>
+                <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
+                <a class="button-secondary" href="{{ primary_app_detail_href }}">詳細ページを見る</a>
               </div>
             </section>
 
             <section class="surface-card section-stack">
               <p class="section-eyebrow">Flow</p>
-              <h2 class="section-heading">制作は4つの段階で進めます</h2>
+              <h2 class="section-heading">画面上の手順はこの順番です</h2>
               <div class="timeline">
                 <article class="timeline-entry section-stack">
                   <p class="eyebrow-number">01</p>
-                  <h3>課題の輪郭を決める</h3>
-                  <p class="section-text">誰のどの作業をどう変えるのか、導入前後で何が違うのかを言葉で固定します。</p>
+                  <h3>PDFを読み込む</h3>
+                  <p class="section-text">作業の入口が固定されているので、まず何をすべきかで迷いません。右側のプレビュー領域もこの段階から意識できます。</p>
                 </article>
                 <article class="timeline-entry section-stack">
                   <p class="eyebrow-number">02</p>
-                  <h3>触って理解できる骨格を作る</h3>
-                  <p class="section-text">必要な画面、入力、フィードバックの流れを先に組み、使い始めの迷いを減らします。</p>
+                  <h3>印・サイン・文字を準備する</h3>
+                  <p class="section-text">配置前に必要な要素をまとめて準備できるため、文書上での調整に集中しやすくなります。</p>
                 </article>
                 <article class="timeline-entry section-stack">
                   <p class="eyebrow-number">03</p>
-                  <h3>見た瞬間の印象を整える</h3>
-                  <p class="section-text">配色、見出し、構図、CTA を含めて、何のアプリかが一目で伝わる状態にします。</p>
+                  <h3>PDFに配置する</h3>
+                  <p class="section-text">位置調整を前提にしたステップが分かれており、準備と配置の責務が混ざらない構成です。</p>
                 </article>
                 <article class="timeline-entry section-stack">
                   <p class="eyebrow-number">04</p>
-                  <h3>公開時の見せ方まで仕上げる</h3>
-                  <p class="section-text">スクリーンショット、導入文、説明順、問い合わせ導線まで含めて公開できる形にします。</p>
+                  <h3>反映済みPDFを保存する</h3>
+                  <p class="section-text">配置が完了したら保存へ進む流れが明示され、作業の終了条件がはっきりしています。</p>
                 </article>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Output</p>
-              <h2 class="section-heading">制作物は、実装物だけで終わらせません</h2>
+              <p class="section-eyebrow">Modes</p>
+              <h2 class="section-heading">簡易モードとプロモードの役割分担</h2>
               <div class="surface-grid">
                 <article class="surface-card">
-                  <h3>コンセプト文</h3>
-                  <p>最初の一文で伝えるべき価値を定義し、サイトや提案資料でも使い回せる形にします。</p>
+                  <h3>簡易モード</h3>
+                  <p>初回ガイドと基本ステップを中心に見せることで、必要な操作だけを先に理解できる入口になっています。</p>
                 </article>
                 <article class="surface-card">
-                  <h3>UI と導線</h3>
-                  <p>初見のユーザーが迷わない画面構成と、次の行動を促すCTAまで含めて整えます。</p>
+                  <h3>プロモード</h3>
+                  <p>設定プロフィール管理、署名用証明書、状態確認など、繰り返し利用や詳細運用に必要な導線を追加します。</p>
                 </article>
                 <article class="surface-card">
-                  <h3>公開素材</h3>
-                  <p>スクリーンショット、紹介文、検索や一覧で見つけやすいタイトル設計まで扱います。</p>
+                  <h3>切替の意味</h3>
+                  <p>機能を増やしながらも常に全情報を見せないので、単発利用者と継続利用者の両方に対応しやすくなります。</p>
                 </article>
               </div>
             </section>
 
             <section class="split-panel">
               <article class="quote-panel section-stack">
-                <p class="section-eyebrow">Design Principle</p>
-                <h2 class="section-heading">小さく作り、早く見せ、必要なところだけ深くする。</h2>
+                <p class="section-eyebrow">Design Note</p>
+                <h2 class="section-heading">見せたいのは、機能の多さではなく作業の短さです。</h2>
                 <p>
-                  最初から全部入りにはせず、使う理由が強いコア体験を先に作ります。そのうえで、反応を見ながら改善し、最終的にアプリの魅力が最短で伝わる形へ調整します。
+                  {{ primary_app_title }} の画面は、PDF作業を途中で止めずに終点まで持っていくことを優先しています。左で手順を進め、右でプレビューを見て、最後に保存するという流れが一本につながっています。
                 </p>
               </article>
               <article class="cta-band section-stack">
-                <p class="section-eyebrow">Next</p>
-                <h2 class="section-heading">進め方が合いそうなら、相談内容を整理して送れます。</h2>
+                <p class="section-eyebrow">Open</p>
+                <h2 class="section-heading">説明より先に、公開中の画面を見に行けます。</h2>
                 <p class="section-text">
-                  要件が固まっていなくても大丈夫です。新規アプリ、既存プロダクト改善、AI導入のどれでも、相談ページから方向性をまとめられます。
+                  このページで構造を把握したら、そのまま実アプリを開いてください。実際のUIを見たうえで相談したい場合はお問い合わせへ進めます。
                 </p>
                 <div class="button-row">
-                  <a class="button-primary" href="./join.html">プロジェクト相談へ</a>
+                  <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
                   <a class="button-secondary" href="./contact.html">お問い合わせ</a>
                 </div>
               </article>

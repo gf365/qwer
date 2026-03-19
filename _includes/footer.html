@@ -2,11 +2,11 @@
   <div class="site-footer__inner">
     <div class="site-footer__lead">
       <p class="section-eyebrow">QWER TOKYO</p>
-      <h2 class="section-heading">作るだけで終わらせず、伝わる見せ方まで設計する。</h2>
+      <h2 class="section-heading">公開中の {{ primary_app_title }} を軸に、実際に触れる形で制作物を紹介しています。</h2>
       <p class="section-text">
-        AI支援ツール、業務改善アプリ、体験プロトタイプまで。QWER TOKYO は、企画の骨格づくりからUI、デモ、公開時の見せ方まで一気通貫で整えるためのショーケースサイトです。
+        {{ primary_app_title }} は、PDF読込から印・サイン・文字の配置、保存までをブラウザ上で進められる電子捺印アプリです。このサイトでは、実画面、使い方、制作意図をまとめて確認できます。
       </p>
-      <a class="button-primary" href="{{ '/join.html' | relative_url }}">プロジェクトを相談する</a>
+      <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
     </div>
 
     <div class="site-footer__grid">
@@ -14,8 +14,8 @@
         <p class="site-footer__label">Pages</p>
         <ul class="site-footer__list">
           <li><a href="{{ '/index.html' | relative_url }}">ホーム</a></li>
-          <li><a href="{{ '/explore.html' | relative_url }}">アプリ一覧</a></li>
-          <li><a href="{{ '/discover.html' | relative_url }}">制作プロセス</a></li>
+          <li><a href="{{ '/explore.html' | relative_url }}">公開中のアプリ</a></li>
+          <li><a href="{{ '/discover.html' | relative_url }}">特徴と使い方</a></li>
           <li><a href="{{ '/about.html' | relative_url }}">プロフィール</a></li>
           <li><a href="{{ '/contact.html' | relative_url }}">お問い合わせ</a></li>
         </ul>
@@ -23,10 +23,10 @@
       <div>
         <p class="site-footer__label">Focus</p>
         <ul class="site-footer__list">
-          <li>AIアプリケーション</li>
-          <li>業務改善ツール</li>
-          <li>プロトタイピング</li>
-          <li>体験設計 / UI</li>
+          <li>PDF読込から保存までの一連操作</li>
+          <li>印・サイン・文字入力の統合</li>
+          <li>簡易モードとプロモード</li>
+          <li>証明書と設定プロフィール管理</li>
         </ul>
       </div>
       <div>
@@ -35,14 +35,14 @@
           <li><a href="{{ '/search.html' | relative_url }}">検索</a></li>
           <li><a href="{{ '/privacy.html' | relative_url }}">プライバシー</a></li>
           <li><a href="{{ '/terms.html' | relative_url }}">利用規約</a></li>
-          <li><a href="https://qwer.tokyo">qwer.tokyo</a></li>
+          <li><a href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }}</a></li>
         </ul>
       </div>
     </div>
 
     <div class="site-footer__meta">
       <p>@2026 QWER TOKYO</p>
-      <p>App showcase, concept design, prototype delivery.</p>
+      <p>Live app, workflow design, UI delivery.</p>
     </div>
   </div>
 </footer>

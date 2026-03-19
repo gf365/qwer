@@ -14,6 +14,7 @@ const footer = await fs.readFile(path.join(includeDir, 'footer.html'), 'utf8');
 const apps = JSON.parse(await fs.readFile(path.join(dataDir, 'apps.json'), 'utf8'));
 
 validateApps(apps);
+const primaryApp = getPrimaryApp(apps);
 
 function validateApps(items) {
   if (!Array.isArray(items)) {
@@ -88,8 +89,8 @@ function replacePlaceholders(content, replacements) {
 
 function renderPage(content, { basePrefix = './', replacements = {} } = {}) {
   const rendered = stripFrontMatter(content)
-    .replace(/{%\s*include\s+header\.html\s*%}/g, header)
-    .replace(/{%\s*include\s+footer\.html\s*%}/g, footer)
+    .replace(/{%\s*include\s+header\.html\s*%}/g, replacePlaceholders(header, replacements))
+    .replace(/{%\s*include\s+footer\.html\s*%}/g, replacePlaceholders(footer, replacements))
     .replace(/\{\{\s*['"]([^'"]+)['"]\s*\|\s*relative_url\s*\}\}/g, (_, targetPath) =>
       toRelativeUrl(targetPath, basePrefix)
     )
@@ -100,6 +101,15 @@ function renderPage(content, { basePrefix = './', replacements = {} } = {}) {
 
 function uniqueCategories(items) {
   return [...new Set(items.map(app => app.category))];
+}
+
+function getPrimaryApp(items) {
+  return items.find(app => app.featured) || items[0];
+}
+
+function getPrimaryAppAction(app) {
+  const externalLink = (app.links || []).find(link => /^[a-z][a-z0-9+.-]*:/i.test(link.href));
+  return externalLink || { label: `${app.title} の詳細を見る`, href: `/apps/${app.slug}.html` };
 }
 
 function renderCategoryBadges(items) {
@@ -122,7 +132,7 @@ function renderAppCard(app, basePrefix) {
 
   return `
     <article class="app-card">
-      <a class="app-card__link" href="${escapeHtml(detailHref)}" aria-label="${escapeHtml(app.title)} のショーケース詳細を見る">
+      <a class="app-card__link" href="${escapeHtml(detailHref)}" aria-label="${escapeHtml(app.title)} の詳細を見る">
         <div class="app-card__media">
           <img src="${escapeHtml(coverHref)}" alt="${escapeHtml(app.coverAlt)}" loading="lazy" />
         </div>
@@ -137,7 +147,7 @@ function renderAppCard(app, basePrefix) {
           <div class="app-card__pills">
             ${highlights}
           </div>
-          <div class="app-card__footer">ショーケースを見る</div>
+          <div class="app-card__footer">詳細を見る</div>
         </div>
       </a>
     </article>
@@ -260,7 +270,7 @@ function renderAppDetailPage(app) {
                   <span class="app-card__status">${escapeHtml(app.status)}</span>
                   <span class="badge">${escapeHtml(app.year)}</span>
                 </div>
-                <p class="section-eyebrow">Showcase Detail</p>
+                <p class="section-eyebrow">App Detail</p>
                 <h1 class="section-heading">${escapeHtml(app.title)}</h1>
                 <p class="app-card__tagline">${escapeHtml(app.tagline)}</p>
                 <p class="section-text">${escapeHtml(app.summary)}</p>
@@ -275,7 +285,7 @@ function renderAppDetailPage(app) {
 
             <section class="surface-card section-stack">
               <p class="section-eyebrow">Overview</p>
-              <h2 class="section-heading">このアプリで解決したいこと</h2>
+              <h2 class="section-heading">このアプリでできること</h2>
               <div class="surface-grid">
                 <article class="surface-card">
                   <h3>Problem</h3>
@@ -294,7 +304,7 @@ function renderAppDetailPage(app) {
 
             <section class="surface-card section-stack">
               <p class="section-eyebrow">Highlights</p>
-              <h2 class="section-heading">見せたい価値と技術の要点</h2>
+              <h2 class="section-heading">操作設計と機能の要点</h2>
               <ul class="app-highlight-list">
                 ${renderHighlights(app)}
               </ul>
@@ -305,25 +315,25 @@ function renderAppDetailPage(app) {
 
             <section class="surface-card section-stack">
               <p class="section-eyebrow">Use Cases</p>
-              <h2 class="section-heading">使われる場面</h2>
+              <h2 class="section-heading">使う場面</h2>
               <div class="surface-grid">
                 ${renderUseCaseCards(app)}
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Gallery</p>
-              <h2 class="section-heading">画面とビジュアル</h2>
+              <p class="section-eyebrow">Screens</p>
+              <h2 class="section-heading">実際の画面</h2>
               <div class="app-gallery">
                 ${renderGallery(app, '../')}
               </div>
             </section>
 
             <section class="cta-band section-stack">
-              <p class="section-eyebrow">Discuss</p>
-              <h2 class="section-heading">${escapeHtml(app.title)} の方向性で相談する</h2>
+              <p class="section-eyebrow">Try / Contact</p>
+              <h2 class="section-heading">${escapeHtml(app.title)} を開いて、必要なら相談する</h2>
               <p class="section-text">
-                近いテーマの新規アプリ、既存サービス改善、デモ制作の相談を受け付けています。要件が固まり切っていなくても、課題の輪郭があれば整理できます。
+                まずは公開中の画面をそのまま試し、導入や制作の相談があればお問い合わせください。使う場面が固まり切っていなくても、PDF作業の流れから整理できます。
               </p>
               <div class="button-row">
                 ${renderLinkButtons(app, '../')}
@@ -338,17 +348,28 @@ function renderAppDetailPage(app) {
 </html>
   `;
 
-  return renderPage(template, { basePrefix: '../' });
+  return renderPage(template, { basePrefix: '../', replacements: createPageReplacements('../') });
 }
 
 function createPageReplacements(basePrefix) {
+  const primaryAction = getPrimaryAppAction(primaryApp);
+
   return {
     app_count: String(apps.length),
     app_category_count: String(uniqueCategories(apps).length),
     app_category_badges: renderCategoryBadges(apps),
     featured_apps_grid: renderFeaturedApps(apps, basePrefix),
     apps_catalog_grid: renderAppCatalog(apps, basePrefix),
-    searchable_files: renderSearchableFiles(apps)
+    searchable_files: renderSearchableFiles(apps),
+    primary_app_title: escapeHtml(primaryApp.title),
+    primary_app_tagline: escapeHtml(primaryApp.tagline),
+    primary_app_summary: escapeHtml(primaryApp.summary),
+    primary_app_category: escapeHtml(primaryApp.category),
+    primary_app_status: escapeHtml(primaryApp.status),
+    primary_app_year: escapeHtml(primaryApp.year),
+    primary_app_demo_href: escapeHtml(toRelativeUrl(primaryAction.href, basePrefix)),
+    primary_app_demo_label: escapeHtml(primaryAction.label),
+    primary_app_detail_href: escapeHtml(toRelativeUrl(`/apps/${primaryApp.slug}.html`, basePrefix))
   };
 }
 

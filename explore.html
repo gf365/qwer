@@ -10,10 +10,10 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>アプリ一覧 - QWER TOKYO</title>
+    <title>公開中のアプリ - QWER TOKYO</title>
     <meta
       name="description"
-      content="QWER TOKYO が制作するアプリケーションの方向性を一覧で紹介します。AI支援、業務改善、体験プロトタイプなど、課題と用途ごとに整理しています。"
+      content="QWER TOKYO で現在公開している実アプリを一覧で紹介します。AutoHanko の画面、要点、詳細、公開リンクを確認できます。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="./assets/css/site.css" />
@@ -27,13 +27,13 @@
       <span class="brand-mark" aria-hidden="true">Q</span>
       <span class="brand-copy">
         <span class="brand-name">QWER TOKYO</span>
-        <span class="brand-tag">App Showcase Studio</span>
+        <span class="brand-tag">Live Product Portfolio</span>
       </span>
     </a>
 
     <nav aria-label="メインメニュー" class="site-nav">
-      <a href="./explore.html">アプリ一覧</a>
-      <a href="./discover.html">制作プロセス</a>
+      <a href="./explore.html">公開中のアプリ</a>
+      <a href="./discover.html">特徴と使い方</a>
       <a href="./about.html">プロフィール</a>
       <a href="./contact.html">お問い合わせ</a>
     </nav>
@@ -41,9 +41,9 @@
     <div class="site-header__actions">
       <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
         <label for="search-q" class="sr-only">サイト内検索</label>
-        <input id="search-q" name="q" type="search" placeholder="アプリ・領域・制作方針を検索" />
+        <input id="search-q" name="q" type="search" placeholder="AutoHanko・PDF・電子捺印を検索" />
       </form>
-      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
+      <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を試す</a>
     </div>
   </div>
 </header>
@@ -51,97 +51,53 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Application Catalog</p>
-              <h1>制作しているアプリケーションを、更新しやすい一覧で見せる。</h1>
+              <p class="section-eyebrow">Published Apps</p>
+              <h1>テンプレートの一覧ではなく、公開中の実アプリを置くページに変えました。</h1>
               <p>
-                現在のショーケースは 3 件です。各アプリはカテゴリ、画像、利用シーン、要点をまとめて持ち、一覧と詳細へ同じ情報が反映される構成にしています。
+                現在このサイトで紹介している実アプリは 1 件です。AutoHanko を中心に、画面イメージ、できること、詳細ページ、外部公開リンクまでまとめて確認できる構成にしています。
               </p>
               <div class="button-row">
-                <a class="button-primary" href="./join.html">この方向性で相談する</a>
-                <a class="button-secondary" href="./search.html">サイト内検索</a>
+                <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
+                <a class="button-secondary" href="./apps/autohanko.html">詳細ページを見る</a>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Categories</p>
-              <h2 class="section-heading">代表的な制作テーマ</h2>
+              <p class="section-eyebrow">Theme</p>
+              <h2 class="section-heading">いま扱っているテーマ</h2>
               <p class="section-text">
-                アプリ名だけでなく、どの領域の課題に効くのかを軸に並べています。ビジュアルがあっても意味が伝わらなければ弱いので、要点とカテゴリを同時に出しています。
+                現在の公開対象は、PDF作業を短くする電子捺印アプリです。カテゴリだけを並べるのではなく、実際に何を触れるのかまで伝わるようにしています。
               </p>
               <div class="badge-list">
-                <span class="badge">AI Support</span>
-<span class="badge">Operations</span>
-<span class="badge">Prototype</span>
+                <span class="badge">電子捺印</span>
+                <span class="badge">ブラウザ完結</span>
+                <span class="badge">公開リンクあり</span>
               </div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Showcases</p>
+              <p class="section-eyebrow">App</p>
               <h2 class="section-heading">公開中のアプリ一覧</h2>
               <div class="app-grid">
                 <article class="app-card">
-      <a class="app-card__link" href="./apps/research-desk.html" aria-label="Research Desk のショーケース詳細を見る">
+      <a class="app-card__link" href="./apps/autohanko.html" aria-label="AutoHanko の詳細を見る">
         <div class="app-card__media">
-          <img src="./assets/images/apps/research-desk/cover.svg" alt="Research Desk cover image" loading="lazy" />
+          <img src="./assets/images/apps/autohanko/cover.png" alt="AutoHanko の簡易モード画面" loading="lazy" />
         </div>
         <div class="app-card__body">
           <div class="app-card__meta">
-            <span class="pill">AI Support</span>
+            <span class="pill">電子捺印</span>
             <span class="app-card__status">公開中</span>
           </div>
-          <h3 class="app-card__title">Research Desk</h3>
-          <p class="app-card__tagline">市場調査と競合比較を、ひとつのボードで進めるAIリサーチ支援アプリ。</p>
-          <p class="app-card__summary">情報収集、要点抽出、比較メモ作成までの流れを短くし、企画の初速を上げるためのショーケースアプリです。</p>
+          <h3 class="app-card__title">AutoHanko</h3>
+          <p class="app-card__tagline">PDFに印・手書きサイン・文字をまとめて配置し、そのまま保存できるブラウザ完結の電子捺印アプリ。</p>
+          <p class="app-card__summary">ブラウザ上でPDFを読み込み、配置内容を準備し、位置を調整しながら反映済みPDFを書き出せる実アプリです。簡易モードとプロモードを切り替えながら、初回利用から詳細運用までひとつの画面で進められます。</p>
           <div class="app-card__pills">
-            <span class="pill">ソース横断の要点整理</span>
-<span class="pill">比較メモのドラフト生成</span>
-<span class="pill">共有しやすい調査ボード</span>
+            <span class="pill">簡易モードで初回操作を迷わせない</span>
+<span class="pill">プロモードで証明書や設定プロフィールも扱える</span>
+<span class="pill">印・手書きサイン・文字入力をひとつのPDF作業に統合</span>
           </div>
-          <div class="app-card__footer">ショーケースを見る</div>
-        </div>
-      </a>
-    </article>
-<article class="app-card">
-      <a class="app-card__link" href="./apps/ops-pilot.html" aria-label="Ops Pilot のショーケース詳細を見る">
-        <div class="app-card__media">
-          <img src="./assets/images/apps/ops-pilot/cover.svg" alt="Ops Pilot cover image" loading="lazy" />
-        </div>
-        <div class="app-card__body">
-          <div class="app-card__meta">
-            <span class="pill">Operations</span>
-            <span class="app-card__status">導入提案中</span>
-          </div>
-          <h3 class="app-card__title">Ops Pilot</h3>
-          <p class="app-card__tagline">進捗、担当、確認漏れを一画面で把握できる業務進行ダッシュボード。</p>
-          <p class="app-card__summary">現場で散らばりやすい進捗情報をまとめ、更新確認や引き継ぎの手間を減らすための運用アプリです。</p>
-          <div class="app-card__pills">
-            <span class="pill">担当と期限の見える化</span>
-<span class="pill">確認漏れを減らす一覧設計</span>
-<span class="pill">更新状況を追いやすいダッシュボード</span>
-          </div>
-          <div class="app-card__footer">ショーケースを見る</div>
-        </div>
-      </a>
-    </article>
-<article class="app-card">
-      <a class="app-card__link" href="./apps/launch-preview.html" aria-label="Launch Preview のショーケース詳細を見る">
-        <div class="app-card__media">
-          <img src="./assets/images/apps/launch-preview/cover.svg" alt="Launch Preview cover image" loading="lazy" />
-        </div>
-        <div class="app-card__body">
-          <div class="app-card__meta">
-            <span class="pill">Prototype</span>
-            <span class="app-card__status">プロトタイプ</span>
-          </div>
-          <h3 class="app-card__title">Launch Preview</h3>
-          <p class="app-card__tagline">企画提案を、静的な資料ではなく触れるデモで伝える体験プロトタイプ。</p>
-          <p class="app-card__summary">新しいサービスや導線のアイデアを、第一印象と利用フローごと体験できる形で示すためのショーケースです。</p>
-          <div class="app-card__pills">
-            <span class="pill">第一印象を作るヒーロー設計</span>
-<span class="pill">利用開始までの導線試作</span>
-<span class="pill">提案用デモとしての見せ方</span>
-          </div>
-          <div class="app-card__footer">ショーケースを見る</div>
+          <div class="app-card__footer">詳細を見る</div>
         </div>
       </a>
     </article>
@@ -149,31 +105,31 @@
             </section>
 
             <section class="surface-card section-stack">
-              <h2 class="section-heading">一覧ページで伝える基準</h2>
+              <h2 class="section-heading">この一覧ページで分かること</h2>
               <div class="surface-grid">
                 <article class="surface-card">
-                  <h3>課題起点で説明する</h3>
-                  <p>機能説明より先に、誰のどの面倒を減らすアプリかを示します。</p>
+                  <h3>何の作業を短くするか</h3>
+                  <p>PDF読込から保存までの流れをひとつのUIにまとめ、毎回の捺印作業を短くするアプリであることが分かります。</p>
                 </article>
                 <article class="surface-card">
-                  <h3>利用シーンを明示する</h3>
-                  <p>実際に使う場面を添えて、導入後のイメージが湧くようにします。</p>
+                  <h3>どこまで実装されているか</h3>
+                  <p>実画面のスクリーンショットと詳細ページがあるので、概念だけでなく公開済みの状態を確認できます。</p>
                 </article>
                 <article class="surface-card">
-                  <h3>画像で実在感を出す</h3>
-                  <p>カバー画像と画面イメージを持たせることで、説明だけの一覧にしません。</p>
+                  <h3>すぐ試せるか</h3>
+                  <p>詳細ページを経由して公開リンクへ進めるため、説明だけ読んで終わらず、そのままアプリを開けます。</p>
                 </article>
               </div>
             </section>
 
             <section class="cta-band section-stack">
-              <p class="section-eyebrow">Consultation</p>
-              <h2 class="section-heading">この中に近いテーマがあるなら、相談の入口はここから。</h2>
+              <p class="section-eyebrow">Open</p>
+              <h2 class="section-heading">まずは AutoHanko の公開画面を見てください。</h2>
               <p class="section-text">
-                新規アプリの立ち上げ、既存プロダクトの見せ方改善、社内向けツールの整理まで。方向性が近ければ、要件が固まり切っていなくても相談できます。
+                このサイトの役割は、抽象的な制作紹介ではなく、いま動いているアプリへつなぐことです。必要なら詳細ページやお問い合わせも使えます。
               </p>
               <div class="button-row">
-                <a class="button-primary" href="./join.html">プロジェクト相談へ</a>
+                <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
                 <a class="button-secondary" href="./contact.html">お問い合わせ</a>
               </div>
             </section>
@@ -183,11 +139,11 @@
   <div class="site-footer__inner">
     <div class="site-footer__lead">
       <p class="section-eyebrow">QWER TOKYO</p>
-      <h2 class="section-heading">作るだけで終わらせず、伝わる見せ方まで設計する。</h2>
+      <h2 class="section-heading">公開中の AutoHanko を軸に、実際に触れる形で制作物を紹介しています。</h2>
       <p class="section-text">
-        AI支援ツール、業務改善アプリ、体験プロトタイプまで。QWER TOKYO は、企画の骨格づくりからUI、デモ、公開時の見せ方まで一気通貫で整えるためのショーケースサイトです。
+        AutoHanko は、PDF読込から印・サイン・文字の配置、保存までをブラウザ上で進められる電子捺印アプリです。このサイトでは、実画面、使い方、制作意図をまとめて確認できます。
       </p>
-      <a class="button-primary" href="./join.html">プロジェクトを相談する</a>
+      <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
     </div>
 
     <div class="site-footer__grid">
@@ -195,8 +151,8 @@
         <p class="site-footer__label">Pages</p>
         <ul class="site-footer__list">
           <li><a href="./index.html">ホーム</a></li>
-          <li><a href="./explore.html">アプリ一覧</a></li>
-          <li><a href="./discover.html">制作プロセス</a></li>
+          <li><a href="./explore.html">公開中のアプリ</a></li>
+          <li><a href="./discover.html">特徴と使い方</a></li>
           <li><a href="./about.html">プロフィール</a></li>
           <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
@@ -204,10 +160,10 @@
       <div>
         <p class="site-footer__label">Focus</p>
         <ul class="site-footer__list">
-          <li>AIアプリケーション</li>
-          <li>業務改善ツール</li>
-          <li>プロトタイピング</li>
-          <li>体験設計 / UI</li>
+          <li>PDF読込から保存までの一連操作</li>
+          <li>印・サイン・文字入力の統合</li>
+          <li>簡易モードとプロモード</li>
+          <li>証明書と設定プロフィール管理</li>
         </ul>
       </div>
       <div>
@@ -216,14 +172,14 @@
           <li><a href="./search.html">検索</a></li>
           <li><a href="./privacy.html">プライバシー</a></li>
           <li><a href="./terms.html">利用規約</a></li>
-          <li><a href="https://qwer.tokyo">qwer.tokyo</a></li>
+          <li><a href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko</a></li>
         </ul>
       </div>
     </div>
 
     <div class="site-footer__meta">
       <p>@2026 QWER TOKYO</p>
-      <p>App showcase, concept design, prototype delivery.</p>
+      <p>Live app, workflow design, UI delivery.</p>
     </div>
   </div>
 </footer>

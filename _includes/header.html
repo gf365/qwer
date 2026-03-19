@@ -4,13 +4,13 @@
       <span class="brand-mark" aria-hidden="true">Q</span>
       <span class="brand-copy">
         <span class="brand-name">QWER TOKYO</span>
-        <span class="brand-tag">App Showcase Studio</span>
+        <span class="brand-tag">Live Product Portfolio</span>
       </span>
     </a>
 
     <nav aria-label="メインメニュー" class="site-nav">
-      <a href="{{ '/explore.html' | relative_url }}">アプリ一覧</a>
-      <a href="{{ '/discover.html' | relative_url }}">制作プロセス</a>
+      <a href="{{ '/explore.html' | relative_url }}">公開中のアプリ</a>
+      <a href="{{ '/discover.html' | relative_url }}">特徴と使い方</a>
       <a href="{{ '/about.html' | relative_url }}">プロフィール</a>
       <a href="{{ '/contact.html' | relative_url }}">お問い合わせ</a>
     </nav>
@@ -18,9 +18,9 @@
     <div class="site-header__actions">
       <form role="search" action="{{ '/search.html' | relative_url }}" method="get" class="site-search" aria-label="サイト内検索">
         <label for="search-q" class="sr-only">サイト内検索</label>
-        <input id="search-q" name="q" type="search" placeholder="アプリ・領域・制作方針を検索" />
+        <input id="search-q" name="q" type="search" placeholder="AutoHanko・PDF・電子捺印を検索" />
       </form>
-      <a class="button-primary" href="{{ '/join.html' | relative_url }}">プロジェクトを相談する</a>
+      <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を試す</a>
     </div>
   </div>
 </header>
