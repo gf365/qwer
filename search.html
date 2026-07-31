@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,10 +10,10 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>検索 - QWER TOKYO</title>
+    <title>サイト内検索 | A1 TRUST</title>
     <meta
       name="description"
-      content="QWER TOKYO の公開中アプリ、アプリ詳細、特徴と使い方、プロフィール、問い合わせページを横断検索できます。"
+      content="A1 TRUSTのナレッジ、プロジェクト、このサイトについての情報を横断検索できます。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="./assets/css/site.css" />
@@ -179,33 +179,54 @@
         }
       }
     </style>
+    <link rel="canonical" href="https://www.a1-trust.com/search.html" />
+    <meta name="theme-color" content="#102a43" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="A1 TRUST" />
+    <meta property="og:title" content="サイト内検索 | A1 TRUST" />
+    <meta property="og:description" content="A1 TRUSTのナレッジ、プロジェクト、このサイトについての情報を横断検索できます。" />
+    <meta property="og:url" content="https://www.a1-trust.com/search.html" />
+    <meta property="og:image" content="https://www.a1-trust.com/assets/images/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="サイト内検索 | A1 TRUST" />
+    <meta name="twitter:description" content="A1 TRUSTのナレッジ、プロジェクト、このサイトについての情報を横断検索できます。" />
+    <meta name="twitter:image" content="https://www.a1-trust.com/assets/images/og.png" />
+    <script>
+      (() => {
+        const oldHosts = ['qwer.com', 'www.qwer.com', 'qwer.tokyo', 'www.qwer.tokyo'];
+        if (oldHosts.includes(window.location.hostname)) {
+          window.location.replace('https://www.a1-trust.com' + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="page-shell">
       <div class="layout-container">
         <header class="site-header" role="banner">
   <div class="site-header__inner">
-    <a href="./index.html" class="brand-link" aria-label="QWER TOKYO ホーム">
-      <span class="brand-mark" aria-hidden="true">Q</span>
+    <a href="./index.html" class="brand-link" aria-label="A1 TRUST ホーム">
+      <span class="brand-mark" aria-hidden="true">A1</span>
       <span class="brand-copy">
-        <span class="brand-name">QWER TOKYO</span>
-        <span class="brand-tag">Live Product Portfolio</span>
+        <span class="brand-name">A1 TRUST</span>
+        <span class="brand-tag">Knowledge · Practice · Work</span>
       </span>
     </a>
 
     <nav aria-label="メインメニュー" class="site-nav">
-      <a href="./explore.html">公開中のアプリ</a>
-      <a href="./discover.html">特徴と使い方</a>
-      <a href="./about.html">プロフィール</a>
+      <a href="./discover.html">ナレッジ</a>
+      <a href="./explore.html">プロジェクト</a>
+      <a href="./about.html">このサイトについて</a>
       <a href="./contact.html">お問い合わせ</a>
     </nav>
 
     <div class="site-header__actions">
       <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
         <label for="search-q" class="sr-only">サイト内検索</label>
-        <input id="search-q" name="q" type="search" placeholder="AutoHanko・PDF・電子捺印を検索" />
+        <input id="search-q" name="q" type="search" placeholder="テーマ・記録・プロジェクトを検索" />
       </form>
-      <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を試す</a>
+      <a class="button-primary" href="./about.html">A1 TRUSTについて</a>
     </div>
   </div>
 </header>
@@ -215,9 +236,9 @@
             <section class="hero-panel search-hero">
               <div>
                 <p class="section-eyebrow">Search</p>
-                <h1>公開中のアプリと関連ページを横断検索。</h1>
+                <h1>記録とプロジェクトを、<br />横断して探す。</h1>
                 <p>
-                  QWER TOKYO 内の公開中アプリ、各アプリの詳細ページ、特徴と使い方、プロフィール、問い合わせ導線、ポリシー類をまとめて検索できます。
+                  A1 TRUST内のナレッジ方針、学習テーマ、公開プロジェクト、このサイトについての情報をまとめて検索できます。
                 </p>
               </div>
               <form id="search-form" class="search-form" role="search">
@@ -227,7 +248,7 @@
                     id="search-input"
                     name="q"
                     class="search-input"
-                    placeholder="例: AutoHanko、PDF、電子捺印"
+                    placeholder="例: AI、業務改善、AutoHanko"
                     aria-label="検索ワードを入力"
                     autocomplete="off"
                   />
@@ -252,48 +273,48 @@
         <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__lead">
-      <p class="section-eyebrow">QWER TOKYO</p>
-      <h2 class="section-heading">公開中の AutoHanko を軸に、実際に触れる形で制作物を紹介しています。</h2>
+      <p class="section-eyebrow">A1 TRUST</p>
+      <h2 class="section-heading">学びを記録し、試し、次の実践へつなげる。</h2>
       <p class="section-text">
-        AutoHanko は、PDF読込から印・サイン・文字の配置、保存までをブラウザ上で進められる電子捺印アプリです。このサイトでは、実画面、使い方、制作意図をまとめて確認できます。
+        A1 TRUSTは、学習・調査・制作の過程を蓄積する個人ナレッジベースです。完成したものだけでなく、考えたことや試したことも未来の実績として残します。
       </p>
-      <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
+      <a class="button-primary" href="./discover.html">ナレッジの方針を見る</a>
     </div>
 
     <div class="site-footer__grid">
       <div>
-        <p class="site-footer__label">Pages</p>
+        <p class="site-footer__label">Explore</p>
         <ul class="site-footer__list">
           <li><a href="./index.html">ホーム</a></li>
-          <li><a href="./explore.html">公開中のアプリ</a></li>
-          <li><a href="./discover.html">特徴と使い方</a></li>
-          <li><a href="./about.html">プロフィール</a></li>
+          <li><a href="./discover.html">ナレッジ</a></li>
+          <li><a href="./explore.html">プロジェクト</a></li>
+          <li><a href="./about.html">このサイトについて</a></li>
           <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
-        <p class="site-footer__label">Focus</p>
+        <p class="site-footer__label">Themes</p>
         <ul class="site-footer__list">
-          <li>PDF読込から保存までの一連操作</li>
-          <li>印・サイン・文字入力の統合</li>
-          <li>簡易モードとプロモード</li>
-          <li>証明書と設定プロフィール管理</li>
+          <li>AI / LLM</li>
+          <li>DX / 業務改善</li>
+          <li>プロダクト設計</li>
+          <li>Web開発</li>
         </ul>
       </div>
       <div>
-        <p class="site-footer__label">Info</p>
+        <p class="site-footer__label">Information</p>
         <ul class="site-footer__list">
-          <li><a href="./search.html">検索</a></li>
+          <li><a href="./search.html">サイト内検索</a></li>
           <li><a href="./privacy.html">プライバシー</a></li>
           <li><a href="./terms.html">利用規約</a></li>
-          <li><a href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko</a></li>
+          <li><a href="https://www.a1-trust.com/">www.a1-trust.com</a></li>
         </ul>
       </div>
     </div>
 
     <div class="site-footer__meta">
-      <p>@2026 QWER TOKYO</p>
-      <p>Live app, workflow design, UI delivery.</p>
+      <p>© 2026 A1 TRUST</p>
+      <p>Knowledge compounds when it is recorded.</p>
     </div>
   </div>
 </footer>
@@ -317,7 +338,6 @@
           "./discover.html",
           "./about.html",
           "./contact.html",
-          "./join.html",
           "./privacy.html",
           "./terms.html",
           "./apps/autohanko.html"
@@ -368,15 +388,15 @@
               const response = await fetch(file);
               if (!response.ok) continue;
               const html = await response.text();
-              const plainHtml = html.toLowerCase();
-              if (!plainHtml.includes(q)) continue;
-
               const parser = new DOMParser();
               const doc = parser.parseFromString(html, 'text/html');
               const title = doc.querySelector('title')?.textContent?.trim() || file;
               const description =
                 doc.querySelector('meta[name="description"]')?.content?.trim() || '';
-              const snippet = createSnippet(doc.body?.textContent || '', query);
+              const mainText = doc.querySelector('main')?.textContent || '';
+              const searchableText = `${title} ${description} ${mainText}`;
+              if (!searchableText.toLowerCase().includes(q)) continue;
+              const snippet = createSnippet(mainText || description, query);
 
               results.push({
                 file,
@@ -480,20 +500,19 @@
         }
 
         function getBadge(file) {
-          if (file.startsWith('./apps/')) return 'App';
+          if (file.startsWith('./apps/')) return 'プロジェクト';
 
           const map = {
-            './index.html': 'Home',
-            './explore.html': 'Apps',
-            './discover.html': 'Process',
-            './about.html': 'Profile',
-            './contact.html': 'Contact',
-            './join.html': 'Brief',
-            './privacy.html': 'Policy',
-            './terms.html': 'Policy'
+            './index.html': 'ホーム',
+            './explore.html': 'プロジェクト',
+            './discover.html': 'ナレッジ',
+            './about.html': 'このサイトについて',
+            './contact.html': 'お問い合わせ',
+            './privacy.html': 'ポリシー',
+            './terms.html': 'ポリシー'
           };
 
-          return map[file] || 'Page';
+          return map[file] || 'ページ';
         }
       });
     </script>

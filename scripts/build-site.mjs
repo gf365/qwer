@@ -8,6 +8,9 @@ const outDir = path.join(rootDir, '_site');
 const includeDir = path.join(rootDir, '_includes');
 const rootAppsDir = path.join(rootDir, 'apps');
 const outAppsDir = path.join(outDir, 'apps');
+const siteName = 'A1 TRUST';
+const siteUrl = 'https://www.a1-trust.com';
+const siteDescription = '学習・調査・制作の記録を蓄積し、次の実践と仕事につなげる個人ナレッジベースです。';
 
 const header = await fs.readFile(path.join(includeDir, 'header.html'), 'utf8');
 const footer = await fs.readFile(path.join(includeDir, 'footer.html'), 'utf8');
@@ -87,7 +90,48 @@ function replacePlaceholders(content, replacements) {
   return rendered;
 }
 
-function renderPage(content, { basePrefix = './', replacements = {} } = {}) {
+function addSiteMetadata(content, canonicalPath = '/') {
+  const legacyCanonicalPaths = {
+    '/join.html': '/contact.html',
+    '/signin.html': '/',
+    '/signup.html': '/',
+    '/reset-password.html': '/'
+  };
+  const canonicalUrl = new URL(legacyCanonicalPaths[canonicalPath] || canonicalPath, `${siteUrl}/`).href;
+  const shouldNoindex = canonicalPath === '/404.html' || Boolean(legacyCanonicalPaths[canonicalPath]);
+  const title = content.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim() || siteName;
+  const description =
+    content.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']\s*\/?>/i)?.[1]?.trim() ||
+    siteDescription;
+  const noindexMeta = shouldNoindex
+    ? '    <meta name="robots" content="noindex, follow" />\n'
+    : '';
+  const metadata = `    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+${noindexMeta}    <meta name="theme-color" content="#102a43" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="${siteName}" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:image" content="${siteUrl}/assets/images/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta name="twitter:image" content="${siteUrl}/assets/images/og.png" />
+    <script>
+      (() => {
+        const oldHosts = ['qwer.com', 'www.qwer.com', 'qwer.tokyo', 'www.qwer.tokyo'];
+        if (oldHosts.includes(window.location.hostname)) {
+          window.location.replace('${siteUrl}' + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>`;
+
+  return content.replace(/\s*<\/head>/, `\n${metadata}\n  </head>`);
+}
+
+function renderPage(content, { basePrefix = './', replacements = {}, canonicalPath = '/' } = {}) {
   const rendered = stripFrontMatter(content)
     .replace(/{%\s*include\s+header\.html\s*%}/g, replacePlaceholders(header, replacements))
     .replace(/{%\s*include\s+footer\.html\s*%}/g, replacePlaceholders(footer, replacements))
@@ -96,7 +140,7 @@ function renderPage(content, { basePrefix = './', replacements = {} } = {}) {
     )
     .replace(/{%\s*comment\s*%}[\s\S]*?{%\s*endcomment\s*%}/g, '');
 
-  return replacePlaceholders(rendered, replacements).trimStart();
+  return addSiteMetadata(replacePlaceholders(rendered, replacements).trimStart(), canonicalPath);
 }
 
 function uniqueCategories(items) {
@@ -171,7 +215,6 @@ function renderSearchableFiles(items) {
     './discover.html',
     './about.html',
     './contact.html',
-    './join.html',
     './privacy.html',
     './terms.html'
   ];
@@ -241,7 +284,7 @@ function renderAppDetailPage(app) {
   const template = `---
 ---
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -252,7 +295,7 @@ function renderAppDetailPage(app) {
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-    <title>${escapeHtml(app.title)} - QWER TOKYO</title>
+    <title>${escapeHtml(app.title)} - プロジェクト | ${siteName}</title>
     <meta name="description" content="${escapeHtml(app.summary)}" />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
@@ -270,7 +313,7 @@ function renderAppDetailPage(app) {
                   <span class="app-card__status">${escapeHtml(app.status)}</span>
                   <span class="badge">${escapeHtml(app.year)}</span>
                 </div>
-                <p class="section-eyebrow">App Detail</p>
+                <p class="section-eyebrow">Project Detail</p>
                 <h1 class="section-heading">${escapeHtml(app.title)}</h1>
                 <p class="app-card__tagline">${escapeHtml(app.tagline)}</p>
                 <p class="section-text">${escapeHtml(app.summary)}</p>
@@ -285,7 +328,7 @@ function renderAppDetailPage(app) {
 
             <section class="surface-card section-stack">
               <p class="section-eyebrow">Overview</p>
-              <h2 class="section-heading">このアプリでできること</h2>
+              <h2 class="section-heading">課題から実装まで</h2>
               <div class="surface-grid">
                 <article class="surface-card">
                   <h3>Problem</h3>
@@ -330,10 +373,10 @@ function renderAppDetailPage(app) {
             </section>
 
             <section class="cta-band section-stack">
-              <p class="section-eyebrow">Try / Contact</p>
-              <h2 class="section-heading">${escapeHtml(app.title)} を開いて、必要なら相談する</h2>
+              <p class="section-eyebrow">Open / Feedback</p>
+              <h2 class="section-heading">${escapeHtml(app.title)} の実物を見る</h2>
               <p class="section-text">
-                まずは公開中の画面をそのまま試し、導入や制作の相談があればお問い合わせください。使う場面が固まり切っていなくても、PDF作業の流れから整理できます。
+                このプロジェクトは、学んだことを動く形まで落とし込んだ記録です。公開中の画面を試し、感想や改善案があればお寄せください。
               </p>
               <div class="button-row">
                 ${renderLinkButtons(app, '../')}
@@ -348,7 +391,11 @@ function renderAppDetailPage(app) {
 </html>
   `;
 
-  return renderPage(template, { basePrefix: '../', replacements: createPageReplacements('../') });
+  return renderPage(template, {
+    basePrefix: '../',
+    replacements: createPageReplacements('../'),
+    canonicalPath: `/apps/${app.slug}.html`
+  });
 }
 
 function createPageReplacements(basePrefix) {
@@ -373,6 +420,26 @@ function createPageReplacements(basePrefix) {
   };
 }
 
+function renderSitemap(pageFiles, items) {
+  const excludedPages = new Set([
+    '404.html',
+    'join.html',
+    'signin.html',
+    'signup.html',
+    'reset-password.html'
+  ]);
+  const pageUrls = pageFiles
+    .filter(fileName => !excludedPages.has(fileName))
+    .map(fileName => new URL(fileName === 'index.html' ? '/' : `/${fileName}`, `${siteUrl}/`).href);
+  const appUrls = items.map(app => `${siteUrl}/apps/${app.slug}.html`);
+  const urls = [...pageUrls, ...appUrls];
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join('\n')}
+</urlset>\n`;
+}
+
 async function build() {
   const entries = await fs.readdir(srcPagesDir, { withFileTypes: true });
   const htmlFiles = entries
@@ -392,7 +459,8 @@ async function build() {
 
   for (const fileName of htmlFiles) {
     const source = await fs.readFile(path.join(srcPagesDir, fileName), 'utf8');
-    const rendered = renderPage(source, { basePrefix: './', replacements });
+    const canonicalPath = fileName === 'index.html' ? '/' : `/${fileName}`;
+    const rendered = renderPage(source, { basePrefix: './', replacements, canonicalPath });
     await fs.writeFile(path.join(rootDir, fileName), rendered);
     await fs.writeFile(path.join(outDir, fileName), rendered);
   }
@@ -402,6 +470,13 @@ async function build() {
     await fs.writeFile(path.join(rootAppsDir, `${app.slug}.html`), rendered);
     await fs.writeFile(path.join(outAppsDir, `${app.slug}.html`), rendered);
   }
+
+  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`;
+  const sitemap = renderSitemap(htmlFiles, apps);
+  await fs.writeFile(path.join(rootDir, 'robots.txt'), robots);
+  await fs.writeFile(path.join(outDir, 'robots.txt'), robots);
+  await fs.writeFile(path.join(rootDir, 'sitemap.xml'), sitemap);
+  await fs.writeFile(path.join(outDir, 'sitemap.xml'), sitemap);
 }
 
 await build();

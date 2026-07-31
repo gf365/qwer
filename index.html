@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,42 +8,63 @@
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans+JP%3Awght%40400%3B500%3B600%3B700%3B800&amp;family=Space+Grotesk%3Awght%40500%3B600%3B700"
     />
-    <title>AutoHanko を公開中 - QWER TOKYO</title>
+    <title>学びを残し、次の仕事につなげる | A1 TRUST</title>
     <meta
       name="description"
-      content="AutoHanko は、PDFに印・サイン・文字を配置して保存できる公開中の電子捺印アプリです。QWER TOKYO のサイトでは、実画面と利用フローをまとめて紹介しています。"
+      content="A1 TRUSTは、学習・調査・制作の記録を蓄積し、次の実践と仕事につなげる個人ナレッジベースです。"
     />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="./assets/css/site.css" />
+    <link rel="canonical" href="https://www.a1-trust.com/" />
+    <meta name="theme-color" content="#102a43" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="A1 TRUST" />
+    <meta property="og:title" content="学びを残し、次の仕事につなげる | A1 TRUST" />
+    <meta property="og:description" content="A1 TRUSTは、学習・調査・制作の記録を蓄積し、次の実践と仕事につなげる個人ナレッジベースです。" />
+    <meta property="og:url" content="https://www.a1-trust.com/" />
+    <meta property="og:image" content="https://www.a1-trust.com/assets/images/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="学びを残し、次の仕事につなげる | A1 TRUST" />
+    <meta name="twitter:description" content="A1 TRUSTは、学習・調査・制作の記録を蓄積し、次の実践と仕事につなげる個人ナレッジベースです。" />
+    <meta name="twitter:image" content="https://www.a1-trust.com/assets/images/og.png" />
+    <script>
+      (() => {
+        const oldHosts = ['qwer.com', 'www.qwer.com', 'qwer.tokyo', 'www.qwer.tokyo'];
+        if (oldHosts.includes(window.location.hostname)) {
+          window.location.replace('https://www.a1-trust.com' + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="page-shell">
       <div class="layout-container">
         <header class="site-header" role="banner">
   <div class="site-header__inner">
-    <a href="./index.html" class="brand-link" aria-label="QWER TOKYO ホーム">
-      <span class="brand-mark" aria-hidden="true">Q</span>
+    <a href="./index.html" class="brand-link" aria-label="A1 TRUST ホーム">
+      <span class="brand-mark" aria-hidden="true">A1</span>
       <span class="brand-copy">
-        <span class="brand-name">QWER TOKYO</span>
-        <span class="brand-tag">Live Product Portfolio</span>
+        <span class="brand-name">A1 TRUST</span>
+        <span class="brand-tag">Knowledge · Practice · Work</span>
       </span>
     </a>
 
     <nav aria-label="メインメニュー" class="site-nav">
-      <a href="./explore.html">公開中のアプリ</a>
-      <a href="./discover.html">特徴と使い方</a>
-      <a href="./about.html">プロフィール</a>
+      <a href="./discover.html">ナレッジ</a>
+      <a href="./explore.html">プロジェクト</a>
+      <a href="./about.html">このサイトについて</a>
       <a href="./contact.html">お問い合わせ</a>
     </nav>
 
     <div class="site-header__actions">
       <form role="search" action="./search.html" method="get" class="site-search" aria-label="サイト内検索">
         <label for="search-q" class="sr-only">サイト内検索</label>
-        <input id="search-q" name="q" type="search" placeholder="AutoHanko・PDF・電子捺印を検索" />
+        <input id="search-q" name="q" type="search" placeholder="テーマ・記録・プロジェクトを検索" />
       </form>
-      <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を試す</a>
+      <a class="button-primary" href="./about.html">A1 TRUSTについて</a>
     </div>
   </div>
 </header>
@@ -52,97 +73,92 @@
           <div class="page-content">
             <section class="split-panel hero-stage">
               <article class="hero-panel">
-                <p class="section-eyebrow">Featured App</p>
-                <h1>PDFへの捺印作業を、AutoHanko でひとつの画面にまとめる。</h1>
+                <p class="section-eyebrow">Personal Knowledge Base</p>
+                <h1>学びを残し、<br />次の仕事に<br />つなげる。</h1>
                 <p>
-                  AutoHanko は、PDF読込、印・手書きサイン・文字入力の準備、位置調整、保存までをブラウザ上で進められる実アプリです。テンプレート説明ではなく、公開中の画面と導線をそのまま見せるサイトに更新しました。
+                  A1 TRUSTは、日々の学習、調査、試作、制作の過程を蓄積する場所です。知識を消費して終わらせず、あとから使える記録と、実際に動く成果へ育てていきます。
                 </p>
                 <div class="button-row">
-                  <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
-                  <a class="button-secondary" href="./apps/autohanko.html">詳細ページを見る</a>
-                </div>
-                <div class="badge-list">
-                  <span class="badge">電子捺印</span>
-                  <span class="badge">簡易モード / プロモード</span>
-                  <span class="badge">印・サイン・文字入力</span>
-                  <span class="badge">PDF保存</span>
+                  <a class="button-primary" href="./discover.html">ナレッジの方針を見る</a>
+                  <a class="button-secondary" href="./about.html">このサイトについて</a>
                 </div>
               </article>
 
-              <article class="surface-card section-stack hero-preview">
-                <p class="section-eyebrow">Live Screen</p>
-                <h2 class="section-heading">最初に見るのは、作業の流れが整理された左カラムです。</h2>
-                <img
-                  class="hero-preview__image"
-                  src="./assets/images/apps/autohanko/screen-01.png"
-                  alt="AutoHanko の簡易モード画面"
-                  loading="eager"
-                />
-                <p class="section-text">
-                  初回ガイド、表示モード切替、PDF読込から保存までの手順が一画面にまとまっているので、初見でも次に何をすればよいかが分かりやすくなっています。
-                </p>
-              </article>
+              <aside class="manifesto-card" aria-label="A1 TRUSTの目的">
+                <p class="section-eyebrow">Why A1 TRUST</p>
+                <ol class="manifesto-list">
+                  <li>
+                    <span>01</span>
+                    <div><strong>Record</strong><p>学んだことを、再利用できる形で残す。</p></div>
+                  </li>
+                  <li>
+                    <span>02</span>
+                    <div><strong>Practice</strong><p>小さく試し、理解を動くものに変える。</p></div>
+                  </li>
+                  <li>
+                    <span>03</span>
+                    <div><strong>Connect</strong><p>記録と成果を、次の挑戦や仕事につなげる。</p></div>
+                  </li>
+                </ol>
+              </aside>
             </section>
 
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">Workflow</p>
-              <h2 class="section-heading">画面からそのまま伝わる利用フロー</h2>
-              <div class="surface-grid">
-                <article class="surface-card">
-                  <h3>1. PDFを読み込む</h3>
-                  <p>左カラムの最初のステップからPDFをアップロードし、右側のプレビュー領域で確認しながら作業を始めます。</p>
+            <section class="editorial-section">
+              <div class="section-intro">
+                <p class="section-eyebrow">Purpose</p>
+                <h2 class="section-heading">このサイトが目指すこと</h2>
+                <p class="section-text">サービスを売るためのショーケースではなく、知識と経験が積み重なっていく過程を見せるメディアです。</p>
+              </div>
+              <div class="surface-grid purpose-grid">
+                <article class="surface-card number-card">
+                  <span class="card-index">01</span>
+                  <h3>知識を資産にする</h3>
+                  <p>学んだ内容、判断の理由、失敗から得た気づきを、あとで探して使える記録にします。</p>
                 </article>
-                <article class="surface-card">
-                  <h3>2. 配置内容を準備する</h3>
-                  <p>印、手書きサイン、文字入力をひとつの流れで準備できるので、別々のツールへ移動せずに済みます。</p>
+                <article class="surface-card number-card">
+                  <span class="card-index">02</span>
+                  <h3>実践で確かめる</h3>
+                  <p>理解したつもりで終わらせず、試作やツールづくりを通じて、知識を具体的な経験に変えます。</p>
                 </article>
-                <article class="surface-card">
-                  <h3>3. 位置を調整して配置する</h3>
-                  <p>PDFプレビューを見ながら配置位置を調整し、必要な要素を実際の文書へ反映します。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>4. 反映済みPDFを保存する</h3>
-                  <p>配置が完了すると保存操作へ進めるため、作業の終点が明確で、毎回の捺印手順を短くまとめられます。</p>
+                <article class="surface-card number-card">
+                  <span class="card-index">03</span>
+                  <h3>歩みを公開する</h3>
+                  <p>完成品だけでなく、問い、検証、改善の履歴も含めて、未来の実績として残していきます。</p>
                 </article>
               </div>
             </section>
 
-            <section class="split-panel">
+            <section class="split-panel focus-section">
               <article class="surface-card section-stack">
-                <p class="section-eyebrow">Modes</p>
-                <h2 class="section-heading">簡易モードで始めて、必要ならプロモードへ広げられる。</h2>
-                <p class="section-text">
-                  まずは簡易モードでPDF作業の基本だけを見せ、より細かい運用ではプロモードに切り替える設計です。画面を見た限りでも、証明書や設定プロフィール管理の導線が追加され、単発利用と継続利用の両方を意識した構成になっています。
-                </p>
-                <div class="badge-list">
-                  <span class="badge">はじめての方向けガイド</span>
-                  <span class="badge">署名用証明書</span>
-                  <span class="badge">設定プロフィール管理</span>
-                  <span class="badge">ワークフロー表示</span>
+                <p class="section-eyebrow">Current Focus</p>
+                <h2 class="section-heading">いま深めているテーマ</h2>
+                <p class="section-text">仕事や暮らしの中にある複雑さを、技術と設計で扱いやすくする領域を中心に記録します。</p>
+                <div class="topic-list">
+                  <a href="./search.html?q=AI">AI / LLM <span>知識活用と自動化</span></a>
+                  <a href="./search.html?q=業務改善">DX / 業務改善 <span>作業フローの再設計</span></a>
+                  <a href="./search.html?q=プロダクト">プロダクト設計 <span>迷いにくい体験づくり</span></a>
+                  <a href="./search.html?q=Web">Web開発 <span>公開し、育てられる実装</span></a>
                 </div>
               </article>
 
-              <article class="surface-card section-stack hero-preview">
-                <p class="section-eyebrow">Pro Mode</p>
-                <h2 class="section-heading">詳細運用向けのUIも公開中です。</h2>
-                <img
-                  class="hero-preview__image"
-                  src="./assets/images/apps/autohanko/screen-02.png"
-                  alt="AutoHanko のプロモード画面"
-                  loading="lazy"
-                />
-                <p class="section-text">
-                  プロモードでは、設定保存、署名証明書、状態確認が追加されます。必要なユーザーだけに情報を広げる形なので、複雑さを抑えながら機能を増やせます。
+              <article class="quote-panel section-stack">
+                <p class="section-eyebrow">Editorial Policy</p>
+                <h2 class="section-heading">完成度より、次に使えること。</h2>
+                <p>
+                  記録は、きれいな結論だけを残すためのものではありません。何を考え、どこで迷い、何を試したかが、次の判断を速くします。
                 </p>
+                <a class="text-link" href="./discover.html">記録のつくり方を見る <span>→</span></a>
               </article>
             </section>
 
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">Published App</p>
-              <h2 class="section-heading">現在このサイトで紹介している実アプリ</h2>
-              <p class="section-text">
-                いま公開しているアプリは 1 件です。実際に動く AutoHanko を起点に、画面、要点、詳細ページ、公開リンクまでまとめて確認できます。
-              </p>
+            <section class="editorial-section project-feature">
+              <div class="section-intro section-intro--row">
+                <div>
+                  <p class="section-eyebrow">Practice / Project</p>
+                  <h2 class="section-heading">学びを、動く形まで。</h2>
+                </div>
+                <p class="section-text">公開プロジェクトは、このサイトの主役ではなく、学習と検証の結果です。</p>
+              </div>
               <div class="app-grid">
                 <article class="app-card">
       <a class="app-card__link" href="./apps/autohanko.html" aria-label="AutoHanko の詳細を見る">
@@ -167,17 +183,16 @@
       </a>
     </article>
               </div>
+              <div class="section-action"><a class="text-link" href="./explore.html">プロジェクト一覧を見る <span>→</span></a></div>
             </section>
 
             <section class="cta-band section-stack">
-              <p class="section-eyebrow">Try It</p>
-              <h2 class="section-heading">AutoHanko をそのまま開いて試せます。</h2>
-              <p class="section-text">
-                まずは公開中のアプリを確認し、使いどころや改善相談があればお問い合わせください。サイト上の説明だけでなく、実画面へ直接移動できます。
-              </p>
+              <p class="section-eyebrow">Keep Learning</p>
+              <h2 class="section-heading">小さな記録を、長く効く知識へ。</h2>
+              <p class="section-text">A1 TRUSTは、新しく知ったことと実際に試したことを、少しずつ積み上げていきます。</p>
               <div class="button-row">
-                <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
-                <a class="button-secondary" href="./contact.html">お問い合わせ</a>
+                <a class="button-primary" href="./discover.html">ナレッジを見る</a>
+                <a class="button-secondary" href="./contact.html">感想・お問い合わせ</a>
               </div>
             </section>
           </div>
@@ -185,48 +200,48 @@
         <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__lead">
-      <p class="section-eyebrow">QWER TOKYO</p>
-      <h2 class="section-heading">公開中の AutoHanko を軸に、実際に触れる形で制作物を紹介しています。</h2>
+      <p class="section-eyebrow">A1 TRUST</p>
+      <h2 class="section-heading">学びを記録し、試し、次の実践へつなげる。</h2>
       <p class="section-text">
-        AutoHanko は、PDF読込から印・サイン・文字の配置、保存までをブラウザ上で進められる電子捺印アプリです。このサイトでは、実画面、使い方、制作意図をまとめて確認できます。
+        A1 TRUSTは、学習・調査・制作の過程を蓄積する個人ナレッジベースです。完成したものだけでなく、考えたことや試したことも未来の実績として残します。
       </p>
-      <a class="button-primary" href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko を開く</a>
+      <a class="button-primary" href="./discover.html">ナレッジの方針を見る</a>
     </div>
 
     <div class="site-footer__grid">
       <div>
-        <p class="site-footer__label">Pages</p>
+        <p class="site-footer__label">Explore</p>
         <ul class="site-footer__list">
           <li><a href="./index.html">ホーム</a></li>
-          <li><a href="./explore.html">公開中のアプリ</a></li>
-          <li><a href="./discover.html">特徴と使い方</a></li>
-          <li><a href="./about.html">プロフィール</a></li>
+          <li><a href="./discover.html">ナレッジ</a></li>
+          <li><a href="./explore.html">プロジェクト</a></li>
+          <li><a href="./about.html">このサイトについて</a></li>
           <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
-        <p class="site-footer__label">Focus</p>
+        <p class="site-footer__label">Themes</p>
         <ul class="site-footer__list">
-          <li>PDF読込から保存までの一連操作</li>
-          <li>印・サイン・文字入力の統合</li>
-          <li>簡易モードとプロモード</li>
-          <li>証明書と設定プロフィール管理</li>
+          <li>AI / LLM</li>
+          <li>DX / 業務改善</li>
+          <li>プロダクト設計</li>
+          <li>Web開発</li>
         </ul>
       </div>
       <div>
-        <p class="site-footer__label">Info</p>
+        <p class="site-footer__label">Information</p>
         <ul class="site-footer__list">
-          <li><a href="./search.html">検索</a></li>
+          <li><a href="./search.html">サイト内検索</a></li>
           <li><a href="./privacy.html">プライバシー</a></li>
           <li><a href="./terms.html">利用規約</a></li>
-          <li><a href="https://autohanko.dv0.workers.dev/" target="_blank" rel="noreferrer">AutoHanko</a></li>
+          <li><a href="https://www.a1-trust.com/">www.a1-trust.com</a></li>
         </ul>
       </div>
     </div>
 
     <div class="site-footer__meta">
-      <p>@2026 QWER TOKYO</p>
-      <p>Live app, workflow design, UI delivery.</p>
+      <p>© 2026 A1 TRUST</p>
+      <p>Knowledge compounds when it is recorded.</p>
     </div>
   </div>
 </footer>

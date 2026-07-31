@@ -1,22 +1,14 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
-    />
-    <title>公開中のアプリ - QWER TOKYO</title>
-    <meta
-      name="description"
-      content="QWER TOKYO で現在公開している実アプリを一覧で紹介します。AutoHanko の画面、要点、詳細、公開リンクを確認できます。"
-    />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans+JP%3Awght%40400%3B500%3B600%3B700%3B800&amp;family=Space+Grotesk%3Awght%40500%3B600%3B700" />
+    <title>プロジェクト | A1 TRUST</title>
+    <meta name="description" content="A1 TRUSTで学びや検証を動く形にした公開プロジェクトを紹介します。" />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   </head>
@@ -27,65 +19,46 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Published Apps</p>
-              <h1>テンプレートの一覧ではなく、公開中の実アプリを置くページに変えました。</h1>
+              <p class="section-eyebrow">Projects</p>
+              <h1>つくったものを、<br />学びの証拠として残す。</h1>
               <p>
-                現在このサイトで紹介している実アプリは {{ app_count }} 件です。{{ primary_app_title }} を中心に、画面イメージ、できること、詳細ページ、外部公開リンクまでまとめて確認できる構成にしています。
+                ここに並ぶのは、調べたこと、考えたこと、試したことを実際に動く形へ落とし込んだ記録です。サービス一覧ではなく、課題から実装までのプロセスを残すプロジェクトアーカイブです。
               </p>
-              <div class="button-row">
-                <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
-                <a class="button-secondary" href="{{ primary_app_detail_href }}">詳細ページを見る</a>
+            </section>
+
+            <section class="editorial-section">
+              <div class="section-intro section-intro--row">
+                <div>
+                  <p class="section-eyebrow">Published Work</p>
+                  <h2 class="section-heading">公開中のプロジェクト</h2>
+                </div>
+                <p class="section-text">現在 {{ app_count }} 件を公開しています。今後も検証と改善の履歴を追加します。</p>
               </div>
+              <div class="app-grid">{{ apps_catalog_grid }}</div>
             </section>
 
             <section class="surface-card section-stack">
-              <p class="section-eyebrow">Theme</p>
-              <h2 class="section-heading">いま扱っているテーマ</h2>
-              <p class="section-text">
-                現在の公開対象は、PDF作業を短くする電子捺印アプリです。カテゴリだけを並べるのではなく、実際に何を触れるのかまで伝わるようにしています。
-              </p>
-              <div class="badge-list">
-                {{ app_category_badges }}
-                <span class="badge">ブラウザ完結</span>
-                <span class="badge">公開リンクあり</span>
-              </div>
-            </section>
-
-            <section class="surface-card section-stack">
-              <p class="section-eyebrow">App</p>
-              <h2 class="section-heading">公開中のアプリ一覧</h2>
-              <div class="app-grid">
-                {{ apps_catalog_grid }}
-              </div>
-            </section>
-
-            <section class="surface-card section-stack">
-              <h2 class="section-heading">この一覧ページで分かること</h2>
+              <p class="section-eyebrow">What to Look For</p>
+              <h2 class="section-heading">成果物と一緒に残すこと</h2>
               <div class="surface-grid">
-                <article class="surface-card">
-                  <h3>何の作業を短くするか</h3>
-                  <p>PDF読込から保存までの流れをひとつのUIにまとめ、毎回の捺印作業を短くするアプリであることが分かります。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>どこまで実装されているか</h3>
-                  <p>実画面のスクリーンショットと詳細ページがあるので、概念だけでなく公開済みの状態を確認できます。</p>
-                </article>
-                <article class="surface-card">
-                  <h3>すぐ試せるか</h3>
-                  <p>詳細ページを経由して公開リンクへ進めるため、説明だけ読んで終わらず、そのままアプリを開けます。</p>
-                </article>
+                <article class="surface-card"><span class="card-index">01</span><h3>解きたかった課題</h3><p>何が不便で、どの範囲を変えようとしたのか。</p></article>
+                <article class="surface-card"><span class="card-index">02</span><h3>設計上の判断</h3><p>誰が、どの場面で使うかをどう画面や流れに反映したのか。</p></article>
+                <article class="surface-card"><span class="card-index">03</span><h3>次に改善すること</h3><p>公開して分かった課題と、これから試したい方向性。</p></article>
               </div>
+            </section>
+
+            <section class="quote-panel section-stack">
+              <p class="section-eyebrow">Position</p>
+              <h2 class="section-heading">プロジェクトは目的ではなく、学びを確かめる手段です。</h2>
+              <p>機能の多さを競うのではなく、ひとつの課題をどこまで理解し、使える形にできたかを大切にします。</p>
             </section>
 
             <section class="cta-band section-stack">
-              <p class="section-eyebrow">Open</p>
-              <h2 class="section-heading">まずは {{ primary_app_title }} の公開画面を見てください。</h2>
-              <p class="section-text">
-                このサイトの役割は、抽象的な制作紹介ではなく、いま動いているアプリへつなぐことです。必要なら詳細ページやお問い合わせも使えます。
-              </p>
+              <p class="section-eyebrow">Knowledge</p>
+              <h2 class="section-heading">プロジェクトの背景にある、学びの方針へ。</h2>
               <div class="button-row">
-                <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を開く</a>
-                <a class="button-secondary" href="./contact.html">お問い合わせ</a>
+                <a class="button-primary" href="./discover.html">ナレッジを見る</a>
+                <a class="button-secondary" href="./contact.html">感想を送る</a>
               </div>
             </section>
           </div>

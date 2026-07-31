@@ -1,0 +1,34 @@
+---
+---
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ページが見つかりません | A1 TRUST</title>
+    <meta name="description" content="お探しのページは移動または削除された可能性があります。" />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="layout-container">
+        {% include header.html %}
+        <main class="page-main">
+          <div class="page-content">
+            <section class="hero-panel">
+              <p class="section-eyebrow">404 / Not Found</p>
+              <h1>ページが見つかりません。</h1>
+              <p>URL変更やサイト再構成により、ページが移動した可能性があります。ホームまたは検索からお探しください。</p>
+              <div class="button-row">
+                <a class="button-primary" href="./index.html">ホームへ</a>
+                <a class="button-secondary" href="./search.html">サイト内を検索</a>
+              </div>
+            </section>
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

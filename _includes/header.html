@@ -1,26 +1,26 @@
 <header class="site-header" role="banner">
   <div class="site-header__inner">
-    <a href="{{ '/index.html' | relative_url }}" class="brand-link" aria-label="QWER TOKYO ホーム">
-      <span class="brand-mark" aria-hidden="true">Q</span>
+    <a href="{{ '/index.html' | relative_url }}" class="brand-link" aria-label="A1 TRUST ホーム">
+      <span class="brand-mark" aria-hidden="true">A1</span>
       <span class="brand-copy">
-        <span class="brand-name">QWER TOKYO</span>
-        <span class="brand-tag">Live Product Portfolio</span>
+        <span class="brand-name">A1 TRUST</span>
+        <span class="brand-tag">Knowledge · Practice · Work</span>
       </span>
     </a>
 
     <nav aria-label="メインメニュー" class="site-nav">
-      <a href="{{ '/explore.html' | relative_url }}">公開中のアプリ</a>
-      <a href="{{ '/discover.html' | relative_url }}">特徴と使い方</a>
-      <a href="{{ '/about.html' | relative_url }}">プロフィール</a>
+      <a href="{{ '/discover.html' | relative_url }}">ナレッジ</a>
+      <a href="{{ '/explore.html' | relative_url }}">プロジェクト</a>
+      <a href="{{ '/about.html' | relative_url }}">このサイトについて</a>
       <a href="{{ '/contact.html' | relative_url }}">お問い合わせ</a>
     </nav>
 
     <div class="site-header__actions">
       <form role="search" action="{{ '/search.html' | relative_url }}" method="get" class="site-search" aria-label="サイト内検索">
         <label for="search-q" class="sr-only">サイト内検索</label>
-        <input id="search-q" name="q" type="search" placeholder="AutoHanko・PDF・電子捺印を検索" />
+        <input id="search-q" name="q" type="search" placeholder="テーマ・記録・プロジェクトを検索" />
       </form>
-      <a class="button-primary" href="{{ primary_app_demo_href }}" target="_blank" rel="noreferrer">{{ primary_app_title }} を試す</a>
+      <a class="button-primary" href="{{ '/about.html' | relative_url }}">A1 TRUSTについて</a>
     </div>
   </div>
 </header>

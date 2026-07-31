@@ -1,22 +1,14 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
-    />
-    <title>プロジェクト相談 - QWER TOKYO</title>
-    <meta
-      name="description"
-      content="QWER TOKYO のプロジェクト相談ページです。新規アプリ、既存プロダクト改善、AI導入、プロトタイプ制作などの相談内容を整理できます。"
-    />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans+JP%3Awght%40400%3B500%3B600%3B700%3B800&amp;family=Space+Grotesk%3Awght%40500%3B600%3B700" />
+    <title>お問い合わせに統合しました | A1 TRUST</title>
+    <meta name="description" content="プロジェクト相談はA1 TRUSTのお問い合わせページに統合しました。" />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   </head>
@@ -27,61 +19,12 @@
         <main class="page-main">
           <div class="page-content">
             <section class="hero-panel">
-              <p class="section-eyebrow">Project Brief</p>
-              <h1>新規アプリ、改善提案、プロトタイプ相談の入口。</h1>
-              <p>
-                相談内容を最小限の項目で整理して、連絡時にそのまま使える形へまとめます。まだ要件が固まっていない段階でも、現状の課題と目指したい体験がわかれば十分です。
-              </p>
-            </section>
-
-            <section class="two-column">
-              <form id="join-form" class="surface-card form-card">
-                <div>
-                  <label for="join-name">お名前 / チーム名</label>
-                  <input id="join-name" type="text" name="name" required />
-                </div>
-                <div>
-                  <label for="join-email">メールアドレス</label>
-                  <input id="join-email" type="email" name="email" required />
-                </div>
-                <div>
-                  <label for="join-type">相談したい内容</label>
-                  <select id="join-type" name="type">
-                    <option>新規アプリの立ち上げ</option>
-                    <option>既存サービスの見せ方改善</option>
-                    <option>AI 機能の導入</option>
-                    <option>デモ / プロトタイプ制作</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="join-goal">目指したい状態</label>
-                  <input id="join-goal" type="text" name="goal" placeholder="例: 問い合わせ導線を改善したい、情報整理を自動化したい" />
-                </div>
-                <div>
-                  <label for="join-state">現在の状況</label>
-                  <textarea id="join-state" name="state" placeholder="いまの課題、既存運用、参考にしたいサービスなどを記入してください。"></textarea>
-                </div>
-                <div>
-                  <label for="join-schedule">希望時期</label>
-                  <input id="join-schedule" type="text" name="schedule" placeholder="例: 今月中に相談開始、来月中に試作を見たい" />
-                </div>
-                <button type="submit" class="button-primary">相談メモをコピーする</button>
-                <p id="join-result" class="section-text" role="status" aria-live="polite"></p>
-              </form>
-
-              <div class="surface-card section-stack">
-                <h2 class="section-heading">こんな相談に向いています</h2>
-                <ul class="section-text">
-                  <li>アプリの方向性はあるが、見せ方がまだ弱い。</li>
-                  <li>業務改善ツールを作りたいが、何から切り出すか迷っている。</li>
-                  <li>AI を使いたいが、実運用でどこに組み込むべきか整理したい。</li>
-                  <li>企画提案のために、短期間で触れるデモを作りたい。</li>
-                </ul>
-                <div class="section-stack">
-                  <p class="section-text"><strong>連絡先URL:</strong> <a class="inline-link" href="https://qwer.tokyo">qwer.tokyo</a></p>
-                  <p class="section-text"><strong>進め方:</strong> 相談内容の整理 → 方向性確認 → 必要なら試作へ。</p>
-                  <p class="section-text"><strong>補足:</strong> 上の内容はコピーして、そのまま初回連絡に使えます。</p>
-                </div>
+              <p class="section-eyebrow">Moved</p>
+              <h1>相談の入口を、<br />ひとつにまとめました。</h1>
+              <p>プロジェクト相談は、感想や情報交換と同じお問い合わせページに統合しました。まだ話がまとまっていない段階でも構いません。</p>
+              <div class="button-row">
+                <a class="button-primary" href="./contact.html">お問い合わせへ</a>
+                <a class="button-secondary" href="./index.html">ホームへ</a>
               </div>
             </section>
           </div>
@@ -89,33 +32,5 @@
         {% include footer.html %}
       </div>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('join-form');
-        const result = document.getElementById('join-result');
-
-        form.addEventListener('submit', async event => {
-          event.preventDefault();
-          const summary = [
-            '【プロジェクト相談】',
-            `お名前 / チーム名: ${form.name.value.trim()}`,
-            `メールアドレス: ${form.email.value.trim()}`,
-            `相談内容: ${form.type.value}`,
-            `目指したい状態: ${form.goal.value.trim()}`,
-            `希望時期: ${form.schedule.value.trim()}`,
-            '',
-            '現在の状況',
-            form.state.value.trim()
-          ].join('\n');
-
-          try {
-            await navigator.clipboard.writeText(summary);
-            result.textContent = '相談メモをコピーしました。qwer.tokyo の連絡導線へ貼り付けて送れます。';
-          } catch (error) {
-            result.textContent = 'コピーに失敗しました。内容を選択して手動でコピーしてください。';
-          }
-        });
-      });
-    </script>
   </body>
 </html>
